@@ -28,7 +28,7 @@ module.exports = {
 
 /* ---Added Anime Characters list---  /
 
- 0 --- Yaka MD
+ 0 --- Yaka
  1 --- Power
  2 --- Makima
  3 --- Denji
@@ -49,10 +49,13 @@ module.exports = {
 18 --- Shinbou
 19 --- Eiko
 20 --- Benimaru
-
+21 --- Hinata
+22 --- Obito
+23 --- Mikasa
+24 --- Emilia
 */
 
-      let botNames = ['Yaka MD', '𝙋𝙤𝙬𝙚𝙧', '𝙈𝙖𝙠𝙞𝙢𝙖', '𝘿𝙚𝙣𝙟𝙞', '𝙕𝙚𝙧𝙤 𝙏𝙬𝙤', '𝘾𝙝𝙞𝙠𝙖' , '𝙈𝙞𝙠𝙪', '𝙈𝙖𝙧𝙞𝙣 𝙆𝙞𝙩𝙖𝙜𝙖𝙬𝙖','𝘼𝙮𝙖𝙣𝙤𝙠𝙤𝙟𝙞','𝙍𝙪𝙠𝙖','𝙈𝙞𝙯𝙪𝙝𝙖𝙧𝙖','𝙍𝙚𝙢','𝙎𝙪𝙢𝙞','𝙆𝙖𝙜𝙪𝙮𝙖','𝙔𝙪𝙢𝙚𝙠𝙤','𝙆𝙪𝙧𝙪𝙢𝙞','𝙈𝙖𝙞','𝙔𝙤𝙧','𝙎𝙝𝙞𝙣𝙤𝙗𝙪','𝙀𝙞𝙠𝙤', '𝘽𝙚𝙣𝙞𝙢𝙖𝙧𝙪']
+      let botNames = ['𝕐𝕒𝕜𝕒 𝕄𝔻', '𝙋𝙤𝙬𝙚𝙧', '𝙈𝙖𝙠𝙞𝙢𝙖', '𝘿𝙚𝙣𝙟𝙞', '𝙕𝙚𝙧𝙤 𝙏𝙬𝙤', '𝘾𝙝𝙞𝙠𝙖' , '𝙈𝙞𝙠𝙪', '𝙈𝙖𝙧𝙞𝙣 𝙆𝙞𝙩𝙖𝙜𝙖𝙬𝙖','𝘼𝙮𝙖𝙣𝙤𝙠𝙤𝙟𝙞','𝙍𝙪𝙠𝙖','𝙈𝙞𝙯𝙪𝙝𝙖𝙧𝙖','𝙍𝙚𝙢','𝙎𝙪𝙢𝙞','𝙆𝙖𝙜𝙪𝙮𝙖','𝙔𝙪𝙢𝙚𝙠𝙤','𝙆𝙪𝙧𝙪𝙢𝙞','𝙈𝙖𝙞','𝙔𝙤𝙧','𝙎𝙝𝙞𝙣𝙤𝙗𝙪','𝙀𝙞𝙠𝙤', '𝘽𝙚𝙣𝙞𝙢𝙖𝙧𝙪']
       let botLogos =[
         'https://cdn.dribbble.com/users/2400955/screenshots/10843457/media/4853cc6ddfdd1f5400ea40a608f10fef.jpg',
         'https://wallpapercave.com/wp/wp11253614.jpg',
@@ -74,7 +77,11 @@ module.exports = {
         'https://images7.alphacoders.com/123/1236729.jpg',
         'https://wallpapercave.com/wp/wp4650481.jpg',
         'https://images8.alphacoders.com/122/1229829.jpg',
-        'https://wallpapercave.com/wp/wp9179142.jpg'
+        'https://wallpapercave.com/wp/wp9179142.jpg',
+        'https://wallpapercave.com/uwp/uwp985562.jpeg',
+        'https://images3.alphacoders.com/105/1052843.jpg',
+        'https://wallpapercave.com/wp/wp8142276.png',
+        'https://wallpapercave.com/wp/wp8142276.png'
           
       ]
 
@@ -213,6 +220,30 @@ module.exports = {
                 return m.reply(`An error occurred while updating the character number.`)
             })}
            else if (charNum == '20') {
+            await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async(res) => {
+                await Miku.sendMessage(m.from, { image: {url:botLogos[charNum]},caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+            }).catch(error => {
+                return m.reply(`An error occurred while updating the character number.`)
+            })}
+           else if (charNum == '21') {
+            await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async(res) => {
+                await Miku.sendMessage(m.from, { image: {url:botLogos[charNum]},caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+            }).catch(error => {
+                return m.reply(`An error occurred while updating the character number.`)
+            })}
+           else if (charNum == '22') {
+            await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async(res) => {
+                await Miku.sendMessage(m.from, { image: {url:botLogos[charNum]},caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+            }).catch(error => {
+                return m.reply(`An error occurred while updating the character number.`)
+            })}
+           else if (charNum == '23') {
+            await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async(res) => {
+                await Miku.sendMessage(m.from, { image: {url:botLogos[charNum]},caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+            }).catch(error => {
+                return m.reply(`An error occurred while updating the character number.`)
+            })}
+           else if (charNum == '24') {
             await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async(res) => {
                 await Miku.sendMessage(m.from, { image: {url:botLogos[charNum]},caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
             }).catch(error => {
