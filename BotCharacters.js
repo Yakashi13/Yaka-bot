@@ -292,8 +292,8 @@ global.charID22 = {
 }
 
 global.charID23 = {
-  botName : "Mikasa",
-  botVideo : fs.readFileSync("./Assets/makima.mp4"),
+  botName : "𝙈𝙞𝙠𝙖𝙨𝙖",
+  botVideo : fs.readFileSync("./Assets/mikasa.mp4"),
   botImage1 : "https://wallpapercave.com/uwp/uwp2564410.jpeg", 
   botImage2 : "https://wallpapercave.com/wp/wp9257843.jpg", 
   botImage3 : "https://wallpapercave.com/wp/wp6281199.jpg", 
@@ -303,7 +303,7 @@ global.charID23 = {
 }
 
 global.charID24 = {
-  botName : "Emilia",
+  botName : "𝙀𝙢𝙞𝙡𝙞𝙖",
   botVideo : fs.readFileSync("./Assets/emilia.mp4"),
   botImage1 : "https://wallpapercave.com/uwp/uwp1074204.jpeg", 
   botImage2 : "https://wallpapercave.com/uwp/uwp1074206.jpeg", 
