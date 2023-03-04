@@ -40,7 +40,7 @@ Image Source: https://wallpapercave.com/
 
 global.charID0 = {
     botName : "𝙔𝙖𝙠𝙖",
-    botVideo : fs.readFileSync("Yaka-MD-main/Assets/Img/yaka.jpg"),
+    botVideo : fs.readFileSync("Yaka-MD/Assets/Img/yaka.jpg"),
     botImage1 : "https://cdn.dribbble.com/users/2400955/screenshots/10843457/test_4x.jpg",
     botImage2 : "https://cdn.dribbble.com/users/2400955/screenshots/10843457/test_4x.jpg",
     botImage3 : "https://cdn.dribbble.com/users/2400955/screenshots/10843457/test_4x.jpg",
