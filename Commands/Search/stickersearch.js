@@ -11,7 +11,7 @@ module.exports = {
   desc: "To search any sticker",
   category: "Search",
   usage: `stickersearch <search term>`,
-  react: "🍁",
+  react: "🔥",
   start: async (Miku, m, { text, prefix, args, pushName }) => {
     if (!args[0])
       return Miku.sendMessage(
@@ -38,7 +38,7 @@ module.exports = {
         type: StickerTypes.FULL,
         categories: ['🤩', '🎉'],
         id: '12345',
-        quality: 60,
+        quality: 50,
         background: 'transparent'
     });
     const stickerBuffer2 = await stickerMess.toBuffer()
