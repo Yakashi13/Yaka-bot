@@ -6,7 +6,7 @@ require("../../Core.js");
 
 module.exports = {
     name: "pervert",
-    alias: ["perv","gay","handsome","hot","sexy","ugly","cute","playboy","playgirl","beautiful","lesbian","whore","motherfucker","sucker","horny","foolish","nibba","nibbi","bitch","waifu","crackhead","rascal","idiot","girlyboy","tomboy","gigachad","mf","introvert","extrovert","sigma","psycho","brainless","useless"],
+    alias: ["perv","gay","handsome","hot","sexy","ugly","cute","playboy","playgirl","beautiful","lesbian","whore","motherfucker","sucker","horny","foolish","nibba","nibbi","bitch","waifu","crackhead","rascal","idiot","girlyboy","tomboy","gigachad","mf","introvert","extrovert","sigma","psycho","brainless","useless","loli-simper","lolisimper","goofy","nigga","impostor","sus","rizz","w","dickhead","simper","hentai"],
     desc: "character fun",
     cool:2,
     react: "🤣",
