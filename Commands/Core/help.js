@@ -2,7 +2,7 @@ module.exports = {
   name: "help",
   alias: ["menu", "h", "helpm", "helpmenu"],
   desc: "Gives all bot commands list",
-  react: "📖",
+  react: "🤖",
   category: "Core",
   start: async (Miku, m, {prefix,pushName,NSFWstatus,args,commands,text}) => {
 
@@ -27,9 +27,7 @@ if (args[0]) {
             return Miku.sendMessage(m.from,buth,{quoted:m})
         } else {
 
-let textHelpMenu = `𝐊𝐨𝐧𝐢𝐜𝐡𝐢𝐰𝐚 *${pushName}* 𝐒𝐞𝐧𝐩𝐚𝐢 ...,
-
-I am *${botName}*..
+let textHelpMenu = `I'm *${botName}* Bot..
 
 🔗 My prefix is: *${prefix}*
 
@@ -42,7 +40,7 @@ Here's the list of my Commands.\n
 ├・🎐 ꜱᴄʀɪᴘᴛ, ꜱᴛᴀʟᴋ, 
 ├・🎐 ꜱᴜᴘᴘᴏʀᴛ, ʀᴀɴᴋ
 ├
-╰──────────────────╯
+╰────────────╯
 ╭────ꕥ Group ꕥ────╮
 ├
 ├・⭕️ ᴀᴅᴍɪɴꜱ, ᴀɴɴᴏᴜɴᴄᴇ,
@@ -57,7 +55,7 @@ Here's the list of my Commands.\n
 ├・⭕️ ꜱᴇᴛɢᴄᴅᴇꜱᴄ, ꜱᴇᴛᴘᴘɢᴄ, 
 ├・⭕️ ᴛᴀɢᴀʟʟ, ᴡᴇʟᴄᴏᴍᴇ
 ├
-╰──────────────────╯
+╰────────────╯
 ╭────ꕥ Mods ꕥ────╮
 ├
 ├・🌀 ᴀᴅᴅᴍᴏᴅ, ᴅᴇʟᴇᴛᴇᴍᴏᴅ, 
@@ -69,7 +67,7 @@ Here's the list of my Commands.\n
 ├・🌀 ᴘᴍᴄʜᴀᴛʙᴏᴛ, ᴄʜᴀʀʟɪꜱᴛ, 
 ├・🌀 ꜱᴇᴛᴄʜᴀʀᴀᴄᴛᴇʀ
 ├
-╰──────────────────╯          
+╰────────────╯          
 ╭────ꕥ Media ꕥ────╮
 ├
 ├・📺 ɪɢᴅʟ, ɪɢᴅʟ2, 
@@ -77,7 +75,7 @@ Here's the list of my Commands.\n
 ├・📺 ʏᴛᴀᴜᴅɪᴏ, ʏᴛᴠɪᴅᴇᴏ, 
 ├・📺 ʏᴛꜱ
 ├
-╰──────────────────╯
+╰────────────╯
 ╭────ꕥ Search ꕥ────╮
 ├
 ├・🔎 ᴀɴɪᴍᴇ, ɢɪꜰꜱᴇᴀʀᴄʜ, 
@@ -87,7 +85,7 @@ Here's the list of my Commands.\n
 ├・🔎 ꜱᴛɪᴄᴋᴇʀꜱᴇᴀʀᴄʜ, ᴡᴇᴀᴛʜᴇʀ, 
 ├・🔎 ʏᴏᴜᴛᴜʙᴇꜱᴇᴀʀᴄʜ
 ├
-╰──────────────────╯
+╰────────────╯
 ╭────ꕥ Utilities ꕥ────╮
 ├
 ├・🎗 ᴇᴍᴏᴊɪᴍɪx, Q / Qᴜᴏᴛᴇ, 
@@ -96,14 +94,14 @@ Here's the list of my Commands.\n
 ├・🎗 ᴛᴏᴍᴘ3, ᴛᴏᴍᴘ4, 
 ├・🎗 ᴛᴏᴜʀʟ
 ├
-╰──────────────────╯
+╰────────────╯
 ╭────ꕥ Image Edit ꕥ────╮
 ├
 ├・💠 ʙʟᴜʀ, ᴄɪʀᴄʟᴇ, 
 ├・💠 ᴊᴀɪʟ, ʀᴇᴍᴏᴠᴇʙɢ, 
 ├・💠 ᴛʀɪɢɢᴇʀ
 ├
-╰──────────────────╯
+╰────────────╯
 ╭────ꕥ Audio Edit ꕥ────╮
 ├
 ├・🎧 ʙᴀꜱꜱ, ʙʟᴏᴡɴ, 
@@ -111,7 +109,7 @@ Here's the list of my Commands.\n
 ├・🎧 ɴɪɢʜᴛᴄᴏʀᴇ, ʀᴇᴠᴇʀꜱᴇ, 
 ├・🎧 ʀᴏʙᴏᴛ, ꜱʟᴏᴡ, 
 ├・🎧 ꜱᴍᴏᴏᴛʜ, ᴛᴇᴍᴘᴏ
-╰──────────────────╯
+╰────────────╯
 ╭────ꕥ Essentials ꕥ────╮
 ├
 ├・🧩 ᴇʟᴇᴍᴇɴᴛ, ɪɢᴜꜱᴇʀ, 
@@ -120,7 +118,7 @@ Here's the list of my Commands.\n
 ├・🧩 ꜱᴀʏʜɪɴᴅɪ, ᴜᴅɪᴄᴛɪᴏɴᴀʀʏ
 ├・🧩 Qᴜᴇꜱᴛɪᴏɴ
 ├
-╰──────────────────╯
+╰────────────╯
 ╭────ꕥ Weeb ꕥ────╮
 ├
 ├・ 🧧 ᴀɴɪᴍᴇQᴜᴏᴛᴇ, ᴄᴏꜱᴘʟᴀʏ, 
@@ -128,7 +126,7 @@ Here's the list of my Commands.\n
 ├・ 🧧 ᴍᴀɪᴅ, ᴡᴀʟʟᴘᴀᴘᴇʀ, 
 ├・ 🧧 ᴡᴀɪꜰᴜ
 ├
-╰──────────────────╯
+╰────────────╯
 ╭────ꕥ Reactions ꕥ────╮
 ├
 ├・ 👽 ʙᴇʜᴀᴘᴘʏ, ʙɪᴛᴇ, 
@@ -142,7 +140,7 @@ Here's the list of my Commands.\n
 ├・ 👽 ᴡᴀᴠᴇ, ᴡɪɴᴋ, 
 ├・ 👽 ʏᴇᴇᴛ
 ├
-╰──────────────────╯
+╰────────────╯
 ╭────ꕥ Logo Maker ꕥ────╮
 ├
 ├・ 🖼 3ᴅᴄʜʀɪꜱᴛᴍᴀꜱ, 3ᴅɴᴇᴏɴ, 
@@ -166,14 +164,14 @@ Here's the list of my Commands.\n
 ├・ 🖼 ᴛʀᴀɴꜱꜰᴏʀᴍᴇʀ, ᴡᴀʟʟ,
 ├・ 🖼 ᴡᴏʟꜰ
 ├
-╰──────────────────╯
+╰────────────╯
 ╭────ꕥ Mine Craft ꕥ────╮
 ├
 ├・ 🎒 ʙᴜʏ, ɪɴᴠᴇɴᴛᴏʀʏ, 
 ├・ 🎒 ᴍɪɴᴇ, ꜱʜᴏᴘ, 
 ├・ 🎒 ʀᴇɢ-ɪɴᴠ, 
 ├
-╰──────────────────╯
+╰────────────╯
 ╭────ꕥ ECONOMY ꕥ────╮
 ├
 ├・ 🔖 ʙᴀɴᴋ, ᴄᴀᴘᴀᴄɪᴛʏ, 
@@ -183,7 +181,7 @@ Here's the list of my Commands.\n
 ├・ 🔖 ᴛʀᴀɴꜱꜰᴇʀ, ᴡᴀʟʟᴇᴛ, 
 ├・ 🔖 ᴡɪᴛʜᴅʀᴀᴡ
 ├
-╰──────────────────╯\n\n`
+╰────────────╯\n\n`
           
 if (NSFWstatus == "true"){
 textHelpMenu += `╭────ꕥ NSFW ꕥ────╮
@@ -241,16 +239,15 @@ textHelpMenu += `╭────ꕥ NSFW ꕥ────╮
 ├・ 👅💦 ᴛᴀᴛᴛᴏᴏ, ᴄʜᴀɪɴ,
 ├・ 👅💦 ꜰʟᴀᴛᴄʜᴇꜱᴛ, ᴏᴘᴘᴀɪ, 
 ├
-╰──────────────────╯\n\n`
+╰────────────╯\n\n`
 }
           
-textHelpMenu +=`*🖤  ${botName}  🖤*
+textHelpMenu +=`*✨ ${botName} ✨*
 
-☞ _Owned By: *🇾‌ 🇦‌ 🇰‌ 🇦‌ 🇸‌ 🇭‌ 🇮‌.*_
+☞ _Owned By: 𝖄𝖆𝖐𝖆𝖘𝖍𝖎_
 
 ⚠️ To use any of these commands type " *${prefix}Command name* ".
 
-📌 Type *${prefix}rank* to get your rank.
 \n`
 
 let buttons = [
@@ -264,6 +261,11 @@ let buttons = [
       buttonText: { displayText: "Owner" },
       type: 1,
     },
+    {
+      buttonId: `Hey`,
+      buttonText: { displayText: "Hello" },
+      type: 1,
+    }
   ];
   let buttonMessage = {
     video: botVideo, gifPlayback: true,
