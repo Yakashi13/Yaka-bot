@@ -9,7 +9,7 @@ module.exports = {
     alias: ["perv","gay","handsome","hot","sexy","ugly","cute","playboy","playgirl","beautiful","lesbian","whore","motherfucker","sucker","horny","foolish","nibba","nibbi","bitch","waifu","crackhead","rascal","idiot","girlyboy","tomboy","gigachad","mf","introvert","extrovert","sigma","psycho","brainless","useless","loli-simper","lolisimper","goofy","nigga","impostor","sus","rizz","w","dickhead","simper","hentai"],
     desc: "character fun",
     cool:2,
-    react: "🤣",
+    react: "💀",
     category: "Fun",
     start: async (Miku, m, { pushName, prefix,participants,isGroup }) => {
       
@@ -21,7 +21,7 @@ module.exports = {
         let buttons = [
             {
                 buttonId: `${prefix}hidetag`,
-                buttonText: { displayText: "😂" },
+                buttonText: { displayText: "💀💀💀" },
                 type: 1
             },
         ];
