@@ -1,12 +1,4 @@
 const axios = require("axios");
-const fs = require("fs"); 
-const { unlink } = require("fs").promises;
-const child_process = require("child_process");
-const sleep = (ms) => {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms);
-  });
-};
 const { fetchJson, GIFBufferToVideoBuffer } = require("../../lib/myfunc.js");
 
 module.exports = {
@@ -15,7 +7,7 @@ module.exports = {
   desc: "To highfive for user",
   category: "Reaction",
   usage: `highfive @user`,
-  react: "🍁",
+  react: "😎",
   start: async (Miku, m, { text, prefix, args,mentionByTag }) => {
     var pat = await fetchJson(`https://api.waifu.pics/sfw/highfive`);
     try {
