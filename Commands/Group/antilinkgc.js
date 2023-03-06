@@ -11,7 +11,7 @@ module.exports = {
     desc: "Enable or disable the antilink feature in a group",
     category: "Group",
     usage: "antilinkgc [on/off]",
-    react: "🔒",
+    react: "🔐",
     start: async (
       Miku,
       m,
@@ -89,18 +89,18 @@ module.exports = {
         let buttonsntilink = [
           {
             buttonId: `${prefix}antilinkgc on`,
-            buttonText: { displayText: "On" },
+            buttonText: { displayText: "✅✅" },
             type: 1,
           },
           {
             buttonId: `${prefix}antilinkgc off`,
-            buttonText: { displayText: "Off" },
+            buttonText: { displayText: "❎❎" },
             type: 1,
           },
         ];
         let bmffg = {
           image: {url : botImage6} ,
-          caption: `\n*「  Group Altilink configuration  」*\n\nPlease click the button below\n*On / Off*\n`,
+          caption: `\n*「 Group Antilink configuration 」*\n\nPlease click the button below\n*On / Off*\n\n⚠️ Note: This will *delete* all links from groups and *remove* someone if they send any other *"WhatsApp Group"* Link.`,
           footer: `*${botName}*`,
           buttons: buttonsntilink,
           headerType: 4,
