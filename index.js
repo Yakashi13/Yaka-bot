@@ -1,4 +1,3 @@
-
 require("./config.js");
 require("./Core.js");
 
@@ -21,8 +20,6 @@ const {
 
 const fs = require("fs");
 const chalk = require("chalk");
-const Jimp = require('jimp');
-const yargs = require("yargs");
 const path = require("path");
 const figlet = require('figlet');
 const FileType = require('file-type');
@@ -31,14 +28,7 @@ const { join } = require("path");
 const {
     Boom
 } = require("@hapi/boom");
-const CFonts = require('cfonts');
-const moment = require('moment-timezone');
 const PhoneNumber = require('awesome-phonenumber');
-const {
-    exec,
-    spawn,
-    execSync
-} = require("child_process");
 const store = makeInMemoryStore({
     logger: pino().child({
         level: 'silent',
@@ -79,10 +69,6 @@ const {
 Commands.prefix = prefa
 const mongoose = require("mongoose");
 const Auth = require('./Processes/Auth');
-const {
-    clear
-} = require("console");
-
 
 const readCommands = () => {
     let dir = path.join(__dirname, "./Commands")
@@ -94,7 +80,6 @@ const readCommands = () => {
             Commands.category = dirs.filter(v => v !== "_").map(v => v)
             cmdlist[groups] = []
             let files = fs.readdirSync(`${dir}/${res}`).filter((file) => file.endsWith(".js"))
-            //console.log(files)
             for (const file of files) {
                 const command = require(`${dir}/${res}/${file}`)
                 cmdlist[groups].push(command)
@@ -128,7 +113,7 @@ async function startMiku() {
         clearState,
     } = await getAuthFromDatabase()
 
-    console.log(color(figlet.textSync('Y A K A  M D', {
+   console.log(color(figlet.textSync('Y A K A  M D', {
         font: 'Pagga',
         horizontalLayout: 'default',
         vertivalLayout: 'default',
@@ -171,7 +156,7 @@ async function startMiku() {
         status = connection;
         if (connection) {
             await console.info(`Yaka MD Server Status => ${connection}`);
-        }
+          }
 
         if (connection === 'close') {
             let reason = new Boom(lastDisconnect?.error)?.output.statusCode
@@ -220,10 +205,10 @@ async function startMiku() {
         require("./Core.js")(Miku, m, Commands, chatUpdate)
     })
 
-
-    Miku.getName = (jid, withoutContact = false) => {
+    
+     Miku.getName = (jid, withoutContact  = false) => {
         id = Miku.decodeJid(jid)
-        withoutContact = Miku.withoutContact || withoutContact
+        withoutContact = Miku.withoutContact || withoutContact 
         let v
         if (id.endsWith("@g.us")) return new Promise(async (resolve) => {
             v = store.contacts[id] || {}
@@ -236,7 +221,7 @@ async function startMiku() {
         } : id === Miku.decodeJid(Miku.user.id) ?
             Miku.user :
             (store.contacts[id] || {})
-        return (withoutContact ? '' : v.name) || v.subject || v.verifiedName || PhoneNumber('+' + jid.replace('@s.whatsapp.net', '')).getNumber('international')
+            return (withoutContact ? '' : v.name) || v.subject || v.verifiedName || PhoneNumber('+' + jid.replace('@s.whatsapp.net', '')).getNumber('international')
     }
 
     Miku.decodeJid = (jid) => {
@@ -337,7 +322,7 @@ async function startMiku() {
      * @returns 
      */
     Miku.sendImage = async (jid, path, caption = '', quoted = '', options) => {
-        let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+        let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,` [1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
         return await Miku.sendMessage(jid, {
             image: buffer,
             caption: caption,
@@ -357,7 +342,7 @@ async function startMiku() {
      * @returns 
      */
     Miku.sendVideo = async (jid, path, caption = '', quoted = '', gif = false, options) => {
-        let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+        let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,` [1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
         return await Miku.sendMessage(jid, {
             video: buffer,
             caption: caption,
@@ -378,7 +363,7 @@ async function startMiku() {
      * @returns 
      */
     Miku.sendAudio = async (jid, path, quoted = '', ptt = false, options) => {
-        let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+        let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,` [1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
         return await Miku.sendMessage(jid, {
             audio: buffer,
             ptt: ptt,
@@ -415,7 +400,7 @@ async function startMiku() {
      * @returns 
      */
     Miku.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
-        let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+        let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,` [1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
         let buffer
         if (options && (options.packname || options.author)) {
             buffer = await writeExifImg(buff, options)
@@ -443,7 +428,7 @@ async function startMiku() {
      * @returns 
      */
     Miku.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
-        let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
+        let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,` [1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
         let buffer
         if (options && (options.packname || options.author)) {
             buffer = await writeExifVid(buff, options)
@@ -569,7 +554,7 @@ async function startMiku() {
 
     Miku.getFile = async (PATH, save) => {
         let res
-        let data = Buffer.isBuffer(PATH) ? PATH : /^data:.*?\/.*?;base64,/i.test(PATH) ? Buffer.from(PATH.split`,`[1], 'base64') : /^https?:\/\//.test(PATH) ? await (res = await getBuffer(PATH)) : fs.existsSync(PATH) ? (filename = PATH, fs.readFileSync(PATH)) : typeof PATH === 'string' ? PATH : Buffer.alloc(0)
+        let data = Buffer.isBuffer(PATH) ? PATH : /^data:.*?\/.*?;base64,/i.test(PATH) ? Buffer.from(PATH.split`,` [1], 'base64') : /^https?:\/\//.test(PATH) ? await (res = await getBuffer(PATH)) : fs.existsSync(PATH) ? (filename = PATH, fs.readFileSync(PATH)) : typeof PATH === 'string' ? PATH : Buffer.alloc(0)
         //if (!Buffer.isBuffer(data)) throw new TypeError('Result is not a buffer')
         let type = await FileType.fromBuffer(data) || {
             mime: 'application/octet-stream',
@@ -645,23 +630,23 @@ app.use("/", express.static(join(__dirname, "Page")));
 app.get("/qr", async (req, res) => {
     const { session } = req.query;
     if (!session)
-        return void res
-            .status(404)
-            .setHeader("Content-Type", "text/plain")
-            .send("Provide the session id for authentication")
-            .end();
+    return void res
+      .status(404)
+      .setHeader("Content-Type", "text/plain")
+      .send("Provide the session id for authentication")
+      .end();
     if (sessionId !== session)
-        return void res
-            .status(404)
-            .setHeader("Content-Type", "text/plain")
-            .send("Invalid session")
-            .end();
+    return void res
+      .status(404)
+      .setHeader("Content-Type", "text/plain")
+      .send("Invalid session")
+      .end();
     if (status == "open")
-        return void res
-            .status(404)
-            .setHeader("Content-Type", "text/plain")
-            .send("Session already exist")
-            .end();
+    return void res
+      .status(404)
+      .setHeader("Content-Type", "text/plain")
+      .send("Session already exist")
+      .end();
     res.setHeader("content-type", "image/png");
     res.send(await qrcode.toBuffer(QR_GENERATE));
 });
