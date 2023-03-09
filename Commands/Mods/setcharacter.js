@@ -81,7 +81,7 @@ module.exports = {
         'https://wallpapercave.com/uwp/uwp985562.jpeg',
         'https://images3.alphacoders.com/105/1052843.jpg',
         'https://wallpapercave.com/wp/wp8142276.png',
-        'https://wallpapercave.com/wp/wp8142276.png'
+        'https://wallpapercave.com/wp/wp3921802.jpg'
           
       ]
 
