@@ -16,6 +16,6 @@ module.exports = {
         await Miku.sendMessage(m.from,{image:{url:botImage3},caption:`\n*Konnichiwa ${pushName} -Kun ❤️‍🔥 !!, I am ${botName} bot*.
         \nType *${prefix}help* to get my full command list.
         \n\n_📶 Server Uptime:_ *${uptime()}*
-        \n_💯 Status:_ *Stable*\n`},{quoted:m})
+       \n_💯 Status:_ ${botName} *is stable*\n`},{quoted:m})
     }
 }
