@@ -29,7 +29,8 @@ const { mkchar } = require("./Database/dataschema.js");
 22 --- Obito
 23 --- Mikasa
 24 --- Emilia
-25 --- Ayane // Not yet programmed
+25 --- Ayane 
+26 --- Yotsuba
 
 Image Source: https://wall.alphacoders.com/
 Image Source: https://wallpapercave.com/
@@ -116,7 +117,7 @@ global.charID6 = {
 }
 
 global.charID7 = {
-  botName : "𝙈𝙖𝙧𝙞𝙣 𝙆𝙞𝙩𝙖𝙜𝙖𝙬𝙖",
+  botName : "𝙈𝙖𝙧𝙞𝙣",
   botVideo : fs.readFileSync("./Assets/marin.mp4"),
   botImage1 : "https://images2.alphacoders.com/125/1257915.jpg",
   botImage2 : "https://wallpapercave.com/wp/wp10472356.png",
@@ -313,10 +314,33 @@ global.charID24 = {
   botImage6 : "https://wallpapercave.com/wp/wp1860762.png",
 }
 
+global.charID25 = {
+  botName : "𝐀𝐲𝐚𝐧𝐞",
+  botVideo : fs.readFileSync(".Assets/ayane.mp4"),
+  botImage1 : "", 
+  botImage2 : "", 
+  botImage3 : "", 
+  botImage4 : "",
+  botImage5 : "",
+  botImage6 : "",
+}
+
+global.charID26 = {
+  botName : "𝐘𝐨𝐭𝐬𝐮𝐛𝐚",
+  botVideo : fs.readFileSync("./Assets/yotsuba.mp4"),
+  botImage1 : "", 
+  botImage2 : "", 
+  botImage3 : "", 
+  botImage4 : "",
+  botImage5 : "",
+  botImage6 : "",
+}
+
+
 /*
 
 global.charID25 = {
-  botName : "Ayane",
+  botName : "",
   botVideo : fs.readFileSync(""),
   botImage1 : "", 
   botImage2 : "", 
