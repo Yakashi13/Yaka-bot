@@ -5,7 +5,7 @@ module.exports={
     alias: ["rank"],
     desc: "shows the rank",
     cool:3,
-    react:"✅",
+    react:"🔮️",
     category: "General",
     start: async(Miku, m,{text,pushName,sender}) => {
         const userq = await Levels.fetch(m.sender, "bot");
@@ -101,7 +101,7 @@ if (levelRole <= 2) {
 			} else {
 				textr += `*${m.sender}#${disc}'s* Exp\n\n`
 			}
-			textr += `*🎯️XP*: ${userq.xp} / ${Levels.xpFor(userq.level + 1)}\n*❤️Level*: ${userq.level}\n*🔮️Role*: ${role}`
+			textr += `*🎯️ XP*: ${userq.xp} / ${Levels.xpFor(userq.level + 1)}\n*❤️ Level*: ${userq.level}\n*🔮️ Role*: ${role}`
 
 			try {
                     ppuser = await Miku.profilePictureUrl(m.sender, 'image')
