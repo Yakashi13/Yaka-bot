@@ -27,24 +27,24 @@ module.exports = {
             let yz = ownerList.map(owner => owner+"94774516277@s.whatsapp.net");
             let xyz = xy.concat(yz);
 
-            let textM = `             🧣  *${botName} Mods*  🧣\n\n`;
+            let textM = `             ╟- *${botName} Owner & Mods* -╢\n\n`;
 
             if(ownerList.length == 0){
               textM = "*No Mods Added !*";
             }
 
             for (var i = 0; i < ownerList.length; i++) {
-              textM += `\n👹 @ ${ownerList[i]}\n`
+              textM += `\n👹 Owner - @94774516277\n`
             }
 
             if(modlistString != ""){
               for (var i = 0; i < modlist.length; i++) {
-                textM += `\n👻 @ ${modlist[i].id.split("@")[0]}\n`
+                textM += `\n👻 Mods - @${modlist[i].id.split("@")[0]}\n`
               }
             } 
             
             if(modlistString != "" || ownerList.length != 0){
-               textM += `\n\n⛩ For any help, ask in group 💬.\n\n*Thanks for using ${botName}.*\n`
+               textM += `\n\n⛩ For any help, ask in group 💬.\n\n*Thanks for using ${botName} Bot!..*\n`
             }
             
             return Miku.sendMessage( 
