@@ -76,7 +76,7 @@ let ments = [m.sender]
 
 const listMessage = {
 footer: `*${botName}*`,
-text: 'Powered By TEAM ATLAS',
+text: 'Get Ready to mine !',
 title: con,
 buttonText: `CLICK HERE ⎙`,
 mentions: ments,
