@@ -30,6 +30,11 @@ module.exports = {
         buttonText: { displayText: "🎞 Video 🎞" },
         type: 1,
       },
+     {
+        buttonId: `${prefix}ytdoc ${song.url}`,
+        buttonText: { displayText: "♬ Document ♬" },
+        type: 1,
+      },
     ];
     let buttonMessage = {
       image: { url: song.thumbnail },
