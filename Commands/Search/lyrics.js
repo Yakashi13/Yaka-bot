@@ -1,4 +1,4 @@
-const { lyricsv2 } = require("@bochilteam/scraper");
+const { lyrics, lyricsv2 } = require("@bochilteam/scraper");
 
 module.exports = {
   name: "lyrics",
@@ -6,7 +6,7 @@ module.exports = {
   desc: "To get any song lyrics",
   category: "Search",
   usage: `lyrics <song name>`,
-  react: "🍁",
+  react: "🧑‍🎤",
   start: async (Miku, m, { text, prefix, args }) => {
     if (!args[0])
       return Miku.sendMessage(
@@ -16,8 +16,8 @@ module.exports = {
       );
     var LyricssearchTerm = args.join(" ");
 
-    const resultlyrics = await lyricsv2(LyricssearchTerm).catch(
-      async (_) => await lyrics(LyricssearchTerm)
+    const resultlyrics = await lyrics(LyricssearchTerm).catch(
+      async (_) => await lyricsv2(LyricssearchTerm)
     );
 
     let resText = `  *『  ⚡️ Lyrics Search Engine ⚡️  』*\n\n\n_Search Term:_ *${LyricssearchTerm}*\n\n\n*📍 Lyrics:* \n\n${resultlyrics.lyrics}\n\n`;
