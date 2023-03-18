@@ -317,31 +317,31 @@ global.charID24 = {
 global.charID25 = {
   botName : "𝐀𝐲𝐚𝐧𝐞",
   botVideo : fs.readFileSync(".Assets/ayane.mp4"),
-  botImage1 : "", 
-  botImage2 : "", 
-  botImage3 : "", 
-  botImage4 : "",
-  botImage5 : "",
-  botImage6 : "",
+  botImage1 : "https://i.pinimg.com/564x/a9/98/c8/a998c8653cd690080c2c2232355fadd2.jpg", 
+  botImage2 : "https://i.pinimg.com/originals/1d/cb/09/1dcb091b56d89c7b501c8c850bbe6e76.jpg", 
+  botImage3 : "https://i.pinimg.com/564x/be/0d/f3/be0df3a2aa21181b6431e13cfbe71793.jpg", 
+  botImage4 : "https://i.pinimg.com/564x/82/53/70/825370003ba8742eef78ee5a6ffbdc6a.jpg",
+  botImage5 : "https://i.pinimg.com/564x/c7/55/94/c75594b74171500c0942ff5a7c60416a.jpg",
+  botImage6 : "https://i.pinimg.com/736x/63/ee/8c/63ee8ce41427eeba6b0b140e5342fc10.jpg",
 }
 
 global.charID26 = {
   botName : "𝐘𝐨𝐭𝐬𝐮𝐛𝐚",
   botVideo : fs.readFileSync("./Assets/yotsuba.mp4"),
-  botImage1 : "", 
-  botImage2 : "", 
-  botImage3 : "", 
-  botImage4 : "",
-  botImage5 : "",
-  botImage6 : "",
+  botImage1 : "https://wallpapercave.com/wp/wp9494921.png", 
+  botImage2 : "https://wallpapercave.com/wp/wp8144247.jpg", 
+  botImage3 : "https://wallpapercave.com/wp/wp9494776.jpg", 
+  botImage4 : "https://wallpapercave.com/wp/wp9494653.jpg",
+  botImage5 : "https://wallpapercave.com/wp/wp9494754.jpg",
+  botImage6 : "https://wallpapercave.com/wp/wp9012050.jpg",
 }
 
 
 /*
 
-global.charID25 = {
+global.charID27 = {
   botName : "",
-  botVideo : fs.readFileSync(""),
+  botVideo : fs.readFileSync("./Assets/"),
   botImage1 : "", 
   botImage2 : "", 
   botImage3 : "", 
