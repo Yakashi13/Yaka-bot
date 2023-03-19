@@ -51,7 +51,9 @@
   <p align="center"> <br>
 <a href="https://repl.it/github/Yakashi13/Yaka-MD">
 <p align="center">
-    <img src="https://i.ibb.co/zrB5kMh/deploy-on-repl.jpg" width="170px" alt="Deploy on Heroku">
+    <a href="https://repl.it/github/Yakashi13/Yaka-MD">
+    <img src="https://i.ibb.co/zrB5kMh/deploy-on-repl.jpg" width="170px" alt="Deploy on replit">
+         </a>
     </a>
 </p>
 </p>
