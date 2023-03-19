@@ -7,7 +7,35 @@ module.exports = {
   react: "☢️",
   start: async (Miku, m, { text, prefix, modStatus }) => {
 
-    let txt = `       『  *Bot Charactes*  』\n\n\n_0 - Yaka MD_\n\n_1 - Power_\n\n_2 - Makima_\n\n_3 - Denji_\n\n_4 - Zero Two_\n\n_5 - Chika_\n\n_6 - Miku_\n\n_7 - Marin_\n\n_8 - Ayanokoji_\n\n_9 - Ruka_\n\n_10 - Mizuhara_\n\n_11 - Rem_\n\n_12 - Sumi_\n\n_13 - Kaguya_\n\n_14 - Yumeko_\n\n_15 - Kurumi_\n\n_16 - Mai_\n\n_17 - Yor_\n\n_18 - Shinbou_\n\n_19 - Eiko_\n\n_20 - Benimaru_\n\n_21 - Hinata_\n\n_22 - Obito_\n\n_23 - Mikasa_\n\n_24 - Emilia_\n\n_25 - Ayane_\n\n\nExample: *${prefix}setchar 7* or choose button below.\n`;
+    let txt = `       『  *Bot Charactes*  』
+    \n\n\n_0 - Yaka MD_
+    \n\n_1 - Power_
+    \n\n_2 - Makima_
+    \n\n_3 - Denji_
+    \n\n_4 - Zero Two_
+    \n\n_5 - Chika_
+    \n\n_6 - Miku_
+    \n\n_7 - Marin_
+    \n\n_8 - Ayanokoji_
+    \n\n_9 - Ruka_
+    \n\n_10 - Mizuhara_
+    \n\n_11 - Rem_
+    \n\n_12 - Sumi_
+    \n\n_13 - Kaguya_
+    \n\n_14 - Yumeko_
+    \n\n_15 - Kurumi_
+    \n\n_16 - Mai_
+    \n\n_17 - Yor_
+    \n\n_18 - Shinbou_
+    \n\n_19 - Eiko_
+    \n\n_20 - Benimaru_
+    \n\n_21 - Hinata_
+    \n\n_22 - Obito_
+    \n\n_23 - Mikasa_
+    \n\n_24 - Emilia_
+    \n\n_25 - Ayane_
+    \n\n_26 - Yotsuba_
+    \n\n\nExample: *${prefix}setchar 7* or choose button below.\n`;
 
     let botLogos = [
       'https://cdn.dribbble.com/users/2400955/screenshots/10843457/test_4x.jpg',
