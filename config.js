@@ -9,7 +9,7 @@ if (!gg) {
 
 
 global.owner = gg.split(",");
-global.mongodb = process.env.MONGODB || "mongodb+srv://Yakashi13:JgqyU1h6rCuoWZB3@cluster0.bxg2jzn.mongodb.net/?retryWrites=true&w=majority"; // paste your own MongoDB url..
+global.mongodb = process.env.MONGODB || " "; // paste your own MongoDB url..
 global.sessionId = process.env.SESSION_ID || "ok";
 global.prefa = process.env.PREFIX || "-";
 global.tenorApiKey =
