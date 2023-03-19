@@ -316,7 +316,7 @@ global.charID24 = {
 
 global.charID25 = {
   botName : "𝐀𝐲𝐚𝐧𝐞",
-  botVideo : fs.readFileSync(".Assets/ayane.mp4"),
+  botVideo : fs.readFileSync("./Assets/ayane.mp4"),
   botImage1 : "https://i.pinimg.com/564x/a9/98/c8/a998c8653cd690080c2c2232355fadd2.jpg", 
   botImage2 : "https://i.pinimg.com/originals/1d/cb/09/1dcb091b56d89c7b501c8c850bbe6e76.jpg", 
   botImage3 : "https://i.pinimg.com/564x/be/0d/f3/be0df3a2aa21181b6431e13cfbe71793.jpg", 
