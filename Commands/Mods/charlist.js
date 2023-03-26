@@ -37,29 +37,30 @@ module.exports = {
     \n\nExample: *${prefix}setchar 7* or choose button below.\n`;
 
     let botLogos = [
-      'https://cdn.dribbble.com/users/2400955/screenshots/10843457/media/4853cc6ddfdd1f5400ea40a608f10fef.jpg', // 1
-      'https://wallpapercave.com/wp/wp5950608.png', // 2
-      'https://wallpapercave.com/wp/wp11998979.jpg', // 3
-      'https://wallpapercave.com/wp/wp2714940.jpg', // 4
-      'https://wallpapercave.com/uwp/uwp2564410.jpeg', // 5
-      'https://wallpapercave.com/uwp/uwp1074204.jpeg', // 6
-      'https://i.pinimg.com/564x/a9/98/c8/a998c8653cd690080c2c2232355fadd2.jpg', // 7
-      'https://wallpapercave.com/wp/wp9494921.png', // 8
-      'https://wallpapercave.com/wp/wp8435260.png', // 9
-      'https://wallpapercave.com/wp/wp7579400.jpg', // 10
-      'https://wallpapercave.com/wp/wp10917529.jpg', // 11
-      'https://wallpapercave.com/wp/wp1860711.png', // 12
-      'https://images6.alphacoders.com/112/1126221.jpg', // 13
-      'https://wallpapercave.com/wp/wp9269166.jpg', // 14
-      'https://images6.alphacoders.com/919/919193.jpg', // 15
-      'https://images8.alphacoders.com/790/790834.png', // 16
-      'https://wallpapercave.com/wp/wp8354244.jpg', // 17
-      'https://images5.alphacoders.com/124/1245177.jpg', // 18
-      'https://wallpapercave.com/wp/wp8869413.png', // 19
-      'https://wallpapercave.com/wp/wp8241464.jpg', // 20
-      'https://images2.alphacoders.com/117/1172959.png', // 21
-      'https://wallpapercave.com/wp/wp5894889.jpg', // 22
-      'https://wallpapercave.com/wp/wp10959288.jpg' // 23
+    'https://cdn.dribbble.com/users/2400955/screenshots/10843457/media/4853cc6ddfdd1f5400ea40a608f10fef.jpg', 
+      'https://wallpapercave.com/wp/wp5950608.png', 
+      'https://wallpapercave.com/wp/wp11998979.jpg',
+      'https://wallpapercave.com/wp/wp8526286.jpg',
+      'https://wallpapercave.com/wp/wp2714940.jpg', 
+      'https://wallpapercave.com/uwp/uwp2564410.jpeg', 
+      'https://wallpapercave.com/uwp/uwp1074204.jpeg', 
+      'https://i.pinimg.com/564x/a9/98/c8/a998c8653cd690080c2c2232355fadd2.jpg', 
+      'https://wallpapercave.com/wp/wp9494921.png', 
+      'https://wallpapercave.com/wp/wp8435260.png', 
+      'https://wallpapercave.com/wp/wp7579400.jpg',  
+      'https://wallpapercave.com/wp/wp10917529.jpg', 
+      'https://wallpapercave.com/wp/wp1860711.png', 
+      'https://images6.alphacoders.com/112/1126221.jpg', 
+      'https://wallpapercave.com/wp/wp9269166.jpg', 
+      'https://images6.alphacoders.com/919/919193.jpg', 
+      'https://images8.alphacoders.com/790/790834.png', 
+      'https://wallpapercave.com/wp/wp8354244.jpg', 
+      'https://images5.alphacoders.com/124/1245177.jpg', 
+      'https://wallpapercave.com/wp/wp8869413.png', 
+      'https://wallpapercave.com/wp/wp8241464.jpg', 
+      'https://images2.alphacoders.com/117/1172959.png', 
+      'https://wallpapercave.com/wp/wp5894889.jpg', 
+      'https://wallpapercave.com/wp/wp10959288.jpg' 
     ];
 
     let randomimage = botLogos[Math.floor(Math.random() * botLogos.length)];
@@ -80,6 +81,7 @@ module.exports = {
     ]
     let buttonDesc = [`🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Yaka MD`,
       `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Benimaru Shinmon`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Power`,
       `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Hinata Hyuuga`,
       `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Obito Uchiha`,
       `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Mikasa Ackerman`,
