@@ -7,7 +7,7 @@ module.exports = {
   desc: "To get an anime search result",
   category: "Search",
   usage: `anime <search term>`,
-  react: "🍁",
+  react: "👹",
   start: async (Miku, m, { text, prefix, args }) => {
     if (!args[0])
       return Miku.sendMessage(
@@ -20,7 +20,7 @@ module.exports = {
     let anime = await client.searchAnime(AnimesearchTerm);
 
     let result = anime.data[0];
-    let details = `       *『  Anime Search Engine  』*\n\n\n*🎀 Anime Title:* ${result.title}\n`;
+    let details = `       *『  Anime Search Engine  』*\n\n\n*🍃 Anime Title:* ${result.title}\n`;
     details += `\n*🎋 Format:* ${result.type}\n`;
     details += `*📈 Status:* ${result.status.toUpperCase().replace(/\_/g, " ")}\n`;
     details += `*🍥 Total episodes:* ${result.episodes}\n`;

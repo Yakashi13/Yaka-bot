@@ -8,7 +8,7 @@ module.exports = {
   desc: "To search any gif",
   category: "Search",
   usage: `gif <search term>`,
-  react: "🍁",
+  react: "👹",
   start: async (Miku, m, { text, prefix, args }) => {
     if (!args[0])
       return Miku.sendMessage(
@@ -25,7 +25,7 @@ module.exports = {
 
     
         let buttons = [
-          { buttonId: `${prefix}gifsearch ${gifSearchTerm}`, buttonText: { displayText: ">>" }, type: 1 },
+          { buttonId: `${prefix}gifsearch ${gifSearchTerm}`, buttonText: { displayText: "⏩💦" }, type: 1 },
         ];
         let buttonMessage = {
           video: { url: gifUrl }, gifPlayback:true,

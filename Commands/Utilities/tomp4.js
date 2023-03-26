@@ -7,7 +7,7 @@ module.exports = {
   desc: "To get Video from sticker",
   category: "Utilities",
   usage: "tomp4 <reply to animated sticker>",
-  react: "🍁",
+  react: "👹",
   start: async (Miku, m, { text, prefix, quoted, pushName, mime, body }) => {
     if (/webp/.test(mime)) {
       let mediaMess = await Miku.downloadAndSaveMediaMessage(quoted)

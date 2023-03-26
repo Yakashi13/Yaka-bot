@@ -6,7 +6,7 @@ module.exports = {
     desc: "To applt cool fonts on text.",
     category: "Media",
     usage: `fonts <text>`,
-    react: "🍁",
+    react: "👹",
     start: async (Miku, m, { text, prefix, args, mime }) => {
       if (!args[0])
         return Miku.sendMessage(

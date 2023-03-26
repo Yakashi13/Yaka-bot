@@ -6,7 +6,7 @@ module.exports = {
     desc: "Get weather data of any place.",
     category: "Search",
     usage: `weather <search term>`,
-    react: "🍁",
+    react: "👹",
     start: async (Miku, m, { text, prefix, args }) => {
       if (!args[0])
         return Miku.sendMessage(

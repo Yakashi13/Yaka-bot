@@ -6,13 +6,13 @@ module.exports = {
   desc: "To get a random Fox girl image",
   category: "Weeb",
   usage: `foxgirl`,
-  react: "🍁",
+  react: "👹",
   start: async (Miku, m, { prefix }) => {
     var foxgirl = await axios.get(`https://nekos.life/api/v2/img/fox_girl`)
     var fgbutton = [
       {
         buttonId: `${prefix}awoo`,
-        buttonText: { displayText: `>>` },
+        buttonText: { displayText: `⏩💦` },
         type: 1,
       },
     ];

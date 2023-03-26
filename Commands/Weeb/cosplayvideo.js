@@ -12,7 +12,7 @@ module.exports = {
     var Button = [
       {
         buttonId: `${prefix}cv`,
-        buttonText: { displayText: `>>` },
+        buttonText: { displayText: `⏩💦` },
         type: 1,
       },
     ];

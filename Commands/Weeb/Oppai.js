@@ -12,7 +12,7 @@ module.exports = {
 let Button = [
       {
         buttonId: `${prefix}oppai`,
-        buttonText: { displayText: `>>` },
+        buttonText: { displayText: `⏩💦` },
         type: 1,
       },
     ];

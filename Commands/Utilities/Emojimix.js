@@ -7,7 +7,7 @@ module.exports = {
   desc: "To combine two emojis and get a new image",
   category: "utilities",
   usage: `emoji <emoji1>+<emoji2>`,
-  react: "🍁",
+  react: "👹",
   start: async (Miku, m, { text, prefix, args, reply,pushName }) => {
     if (!args[0]) return m.reply(`Please provide two emojis to combine! *Example :* ${prefix + command} 🦉+🤣`);
     let [emoji1, emoji2] = args[0].split("+");

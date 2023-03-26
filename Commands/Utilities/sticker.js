@@ -6,7 +6,7 @@ module.exports = {
     desc: "To make sticker",
     category: "Utilities",
     usage: "sticker <reply to image>",
-    react: "🍁",
+    react: "👹",
     start: async (Miku, m, { text, prefix,quoted,pushName,mime,body }) => {
         if (/image/.test(mime)) {
             let mediaMess = await quoted.download();

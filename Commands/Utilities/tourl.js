@@ -8,7 +8,7 @@ module.exports = {
     desc: "To make a url from image/video/gif",
     category: "Utilities",
     usage: "sticker <reply to image>",
-    react: "🍁",
+    react: "👹",
     start: async (Miku, m, { text, prefix,quoted,pushName,mime,body }) => {
         let media = await Miku.downloadAndSaveMediaMessage(quoted);
         let m2 = await quoted.download()

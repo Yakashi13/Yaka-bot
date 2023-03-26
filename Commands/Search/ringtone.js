@@ -6,7 +6,7 @@ module.exports = {
   desc: "To search any ringtone",
   category: "Search",
   usage: `ringtone <search term>`,
-  react: "🍁",
+  react: "👹",
   start: async (Miku, m, { text, prefix, args,mime }) => {
     if (!args[0])
       return Miku.sendMessage(

@@ -8,7 +8,7 @@ module.exports = {
     desc: "To add reverse effect in a song",
     category: "Audio Edit",
     usage: "reverse <reply to audio>",
-    react: "🍁",
+    react: "👹",
     start: async (Miku, m, { text, prefix,quoted,pushName,mime,body }) => {
 
      let media = await Miku.downloadAndSaveMediaMessage(quoted)

@@ -12,7 +12,7 @@ module.exports = {
 var Button = [
       {
         buttonId: `${prefix}smd`,
-        buttonText: { displayText: `>>` },
+        buttonText: { displayText: `⏩💦` },
         type: 1,
       },
     ];
