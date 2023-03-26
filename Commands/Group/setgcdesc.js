@@ -4,7 +4,7 @@ module.exports = {
   desc: "Change the group description",
   category: "Group",
   usage: `setdesc <New group description>`,
-  react: "🍁",
+  react: "👹",
   start: async (
     Miku,
     m,

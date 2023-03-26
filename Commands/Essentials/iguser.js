@@ -6,7 +6,7 @@ module.exports = {
   desc: "To get details of an instagram user",
   category: "Essentials",
   usage: "iguser <instagram username>",
-  react: "🍁",
+  react: "👹",
   start: async (Miku, m, { text, prefix, pushName,args }) => {
     if (!text)
       return m.reply(

@@ -11,7 +11,7 @@ module.exports = {
     desc: "Enable or disable the autoreply feature in a group",
     category: "Group",
     usage: "chatbotgc [on/off]",
-    react: "🎀",
+    react: "🍃",
     start: async (
       Miku,
       m,

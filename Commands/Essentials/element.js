@@ -7,7 +7,7 @@ module.exports = {
     alias: ["elementinfo"],
     desc: "To get info of an element from priodic table", 
     usage: "element br",
-    react: "🍁",
+    react: "👹",
     category: "Essentials",
     start: async(Miku, m,{pushName,prefix,args,text}) => {
         if(!args[0]) return m.reply(`Please use this command like this: ${prefix}element br`);

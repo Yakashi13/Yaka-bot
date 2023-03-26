@@ -31,7 +31,7 @@ const ty = eco.connect(config.mongodb);
                 } else {
                     tname = Miku.getName(h[i].userID);
                 }
-                str += `*${i+1}*\n╭─────────────◆\n│ *🎀 Name:-* _${tname}_\n│ *⚜️ User:-* _@${h[i].userID.split('@')[0]}_\n│ *💳 Wallet:-* _${h[i].wallet}_\n│ *📄 Bank Amount:-* _${h[i].bank}_\n│ *📊 Bank Capacity:-* _${h[i].bankCapacity}_\n╰─────────────◆\n\n`;  	 
+                str += `*${i+1}*\n╭─────────────◆\n│ *🍃 Name:-* _${tname}_\n│ *⚜️ User:-* _@${h[i].userID.split('@')[0]}_\n│ *💳 Wallet:-* _${h[i].wallet}_\n│ *📄 Bank Amount:-* _${h[i].bank}_\n│ *📊 Bank Capacity:-* _${h[i].bankCapacity}_\n╰─────────────◆\n\n`;  	 
                 arr.push(h[i].userID);
             }
             Miku.sendMessage(m.from, { text: str, mentions: arr }, { quoted: m });

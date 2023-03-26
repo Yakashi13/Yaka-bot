@@ -7,7 +7,7 @@ module.exports = {
     cool:3600,
     category: "Group",
     usage: `report <describe issue>`,
-    react: "🍁",
+    react: "👹",
     start: async (
       Miku,
       m,
@@ -25,7 +25,7 @@ module.exports = {
                 userPfp = botImage3;
               }
 
-            let reportMessage = `              *「 Report Recieved 」*\n\n*👤 Reported By:* @${userTag}\n\n*📝 Message:* ${userMess}\n\n*📅 Date:* ${moment().tz('Asia/Kolkata').format('DD/MM/YYYY')}\n*⏰ Time:* ${moment().tz('Asia/Kolkata').format('hh:mm:ss A')}\n*🍁 Character using:* ${botName}\n\n*📌 Note: This is an automated message, please do not reply to this message to avoid blocking.*`;
+            let reportMessage = `              *「 Report Recieved 」*\n\n*👤 Reported By:* @${userTag}\n\n*📝 Message:* ${userMess}\n\n*📅 Date:* ${moment().tz('Asia/Kolkata').format('DD/MM/YYYY')}\n*⏰ Time:* ${moment().tz('Asia/Kolkata').format('hh:mm:ss A')}\n*👹 Character using:* ${botName}\n\n*📌 Note: This is an automated message, please do not reply to this message to avoid blocking.*`;
             m.reply(`Sending report to main developer...\n\nIf it is a spam you might get *blocked* and *banned*.`);
             
             let devs = [`94774516277@s.whatsapp.net`]
@@ -46,7 +46,7 @@ module.exports = {
               } catch {
                 ppgc = botImage3;
               }
-              let reportMessage = `              *「 Report Recieved 」*\n\n*👤 Reported By:* @${userTag}\n*🧩 Group Name:* ${gcName}\n\n*📝 Message:* ${userMess}\n\n*📅 Date:* ${moment().tz('Asia/Kolkata').format('DD/MM/YYYY')}\n*⏰ Time:* ${moment().tz('Asia/Kolkata').format('hh:mm:ss A')}\n*🍁 Character using:* ${botName}\n\n*📌 Note: This is an automated message, please do not reply to this message to avoid blocking.*`;
+              let reportMessage = `              *「 Report Recieved 」*\n\n*👤 Reported By:* @${userTag}\n*🧩 Group Name:* ${gcName}\n\n*📝 Message:* ${userMess}\n\n*📅 Date:* ${moment().tz('Asia/Kolkata').format('DD/MM/YYYY')}\n*⏰ Time:* ${moment().tz('Asia/Kolkata').format('hh:mm:ss A')}\n*👹 Character using:* ${botName}\n\n*📌 Note: This is an automated message, please do not reply to this message to avoid blocking.*`;
               m.reply(`Sending report to main developer...\n\nIf it is a spam you might get *blocked* and *banned*.`);
 
               let devs = [`94774516277@s.whatsapp.net`]

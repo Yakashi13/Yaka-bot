@@ -19,11 +19,11 @@ module.exports = {
             let name = args[0].toLowerCase()
             let cmd = commands.get(name) || Array.from(commands.values()).find((v) => v.alias.includes(name))
             if (!cmd || cmd.type == "hide") return m.reply("No Command Found")
-            else data.push(`🍁Command : ${cmd.name.replace(/^\w/, c => c.toUpperCase())}`)
+            else data.push(`👹Command : ${cmd.name.replace(/^\w/, c => c.toUpperCase())}`)
             if (cmd.alias) data.push(`👾Alias : ${cmd.alias.join(", ")}`)
             if (cmd.cool) data.push(`⏱️Cooldown: ${cmd.cool}`)
             if (cmd.desc) data.push(`🧾Description : ${cmd.desc}`)
-            if (cmd.usage) data.push(`💡Example : ${cmd.usage.replace(/%prefix/gi, prefix).replace(/%command/gi, cmd.name).replace(/%text/gi, text)}`)
+            if (cmd.usage) data.push(`⭕Example : ${cmd.usage.replace(/%prefix/gi, prefix).replace(/%command/gi, cmd.name).replace(/%text/gi, text)}`)
             var buttonss = [
                 { buttonId: `${prefix}help`, buttonText: { displayText: `help` }, type: 1 },]
             let buth = {
@@ -35,34 +35,48 @@ module.exports = {
             return Miku.sendMessage(m.from, buth, { quoted: m })
         } else {
 
-            let txt = `               ☲☲☲ List of Command Menu ☲☲☲\n\n
-    
-    *⊶ Konnichiwa ${pushName} - Senpai😺!!*\n 
-    
-    *⊶ I'm ${botName}.. My Prefix is ${prefix}*\n\n\n
-    
-    _📶 Server Uptime_ : *${uptime()}*\n
-    _💯 Status_ : ${botName} *is stable*\n`;
+            let txt = `⎾ ░ • 𝑳𝒊𝒔𝒕 𝒐𝒇 𝑪𝒐𝒎𝒎𝒂𝒏𝒅 𝑴𝒆𝒏𝒖 • ░ ⏌
+══════════════════
+👾 *Core* - *ʙᴀsɪᴄ* ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅs.
+👾 *Group* - ᴍᴀɪɴ ɢʀᴏᴜᴘ ʀᴇʟᴀᴛᴇᴅ ᴄᴏᴍᴍᴀɴᴅs.
+👾 *Mod* - ᴍᴏᴅ ᴄᴏᴍᴍᴀɴᴅs.
+👾 *Fun* - ғᴜɴ ᴄᴏᴍᴍᴀɴᴅs! Cᴀɴ ᴜsᴇ ɪɴ ɢʀᴏᴜᴘs.
+👾 *Media* - ᴅᴏᴡɴʟᴏᴀᴅ ʏᴛ/ᴛɪᴋᴛᴏᴋ/ɪɢ ᴠɪᴅ/ᴀᴜᴅ (ɪɴᴄʟᴜᴅᴇ ᴅᴏᴄ ᴛʏᴘᴇ).
+👾 *Search Engines* - ᴀɴɪᴍᴇ, ɢᴏᴏɢʟᴇ, sᴏɴɢ ʟʏʀɪᴄs ᴇᴛᴄ.
+👾 *Audio* - ᴀᴜᴅɪᴏ ʀᴇʟᴀᴛᴇᴅ ᴄᴏᴍᴍᴀɴᴅs.
+👾 *Utility* - ᴍᴀᴋᴇ ᴀ sᴛɪᴄᴋᴇʀ/ϙᴜᴏᴛᴇ, ᴛᴜʀɴ ᴛᴏ ᴀᴜᴅ/ᴠɪᴅ.
+👾 *Essentials* - sᴀʏ ᴀɴʏᴛʜɪɴɢ ɪɴ ᴇɴɢʟɪsʜ, ᴊᴀᴘᴀɴᴇsᴇ.
+👾 *Image Edit* - ᴍᴀᴋᴇ ᴀɴʏ ɪᴍᴀɢᴇ ɪɴᴛᴏ ʙʟᴜʀ, ᴄɪʀᴄʟᴇ ᴏʀ ʀᴇᴍᴏᴠᴇ ʙɢ.
+👾 *Weeb* - *ᴏɴʟʏ ғᴏʀ ᴛʜᴇ ᴡᴇᴇʙs!* Iғ ʏᴏᴜ ʟᴜᴄᴋʏ, ᴄᴀɴ sᴇᴇ ᴛʜᴇ NSFW ᴄᴏᴍᴍᴀɴᴅs ᴀs ᴡᴇʟʟ.
+👾 *Reaction* - ʀᴇᴀᴄᴛɪᴏɴ ᴄᴏᴍᴍᴀɴᴅs.
+👾 *Logo* - ᴍᴀᴋᴇ ᴀɴ ᴀᴡsᴏᴍᴇ ʟᴏɢᴏ ᴜsɪɴɢ ʙᴏᴛ!
+👾 *Minecraft* - RPG ɢᴀᴍᴇ. Mɪɴᴇ!!
+👾 *Economy* - ɢᴇᴛ ᴛʜᴇ ᴇᴄᴏɴᴏᴍʏ ʀᴇʟᴀᴛᴇᴅ ᴄᴏᴍᴍᴀɴᴅs.
+
+📶 𝚂𝚎𝚛𝚟𝚎𝚛 𝚄𝚙𝚝𝚒𝚖𝚎  |  *${uptime()}*`;
 
             let sections = []
 
-            let chars = ['⊶ Core ⊷',
-                '⊶ Group ⊷',
-                '⊶ Mod ⊷',
-                '⊶ Fun Commands ⊷',
-                '⊶ Media ⊷',
-                '⊶ Search Engines ⊷',
-                '⊶ Utility ⊷',
-                '⊶ Image Edit ⊷',
-                '⊶ Audio Edit ⊷',
-                '⊶ Essentials ⊷',
-                '⊶ Weeb ⊷',
-                '⊶ Reactions ⊷',
-                '⊶ Logo Maker ⊷',
-                '⊶ Minecraft ⊷',
-                '⊶ Economy ⊷']
+            let chars = [
+                '🈁 Core Command List',
+                '🈁 Group Command List',
+                '🈁 Mod Command List',
+                '🈁 Fun Command List',
+                '🈁 Media Command List',
+                '🈁 Search Engines Command List',
+                '🈁 Utility Command List',
+                '🈁 Image Edit Command List',
+                '🈁 Audio Edit Command List',
+                '🈁 Essentials Command List',
+                '🈁 Weeb Command List',
+                '🈁 Reactions Command List',
+                '🈁 Logo Maker Command List',
+                '🈁 Minecraft Command List',
+                '🈁 Economy Command List'
+            ]
 
-            let buttonDesc = [`Get The Core Command List.`,
+            let buttonDesc = [
+                `Get The Core Command List.`,
                 `Get The Group Command List.`,
                 `Get The Mod Command List.`,
                 `Get The Fun Command List.`,
@@ -76,30 +90,32 @@ module.exports = {
                 `Get The Reaction Command List.`,
                 `Get The Logo Maker Command List.`,
                 `Get The RPG - Minecraft Command List.`,
-                `Get The Economy Command List.`]
+                `Get The Economy Command List.`
+            ]
 
 
-            let buttonTexts = [`${prefix}core`,
-            `${prefix}grpc`,
-            `${prefix}modc`,
-            `${prefix}func`,
-            `${prefix}mediac`,
-            `${prefix}searchc`,
-            `${prefix}utilitiesc`,
-            `${prefix}imageeditc`,
-            `${prefix}audioeditc`,
-            `${prefix}essentialsc`,
-            `${prefix}weebc`,
-            `${prefix}reactionc`,
-            `${prefix}logomakerc`,
-            `${prefix}minecraftc`,
-            `${prefix}economyc`
+            let buttonTexts = [
+                `${prefix}core`,
+                `${prefix}grpc`,
+                `${prefix}modc`,
+                `${prefix}func`,
+                `${prefix}mediac`,
+                `${prefix}searchc`,
+                `${prefix}utilitiesc`,
+                `${prefix}imageeditc`,
+                `${prefix}audioc`,
+                `${prefix}essentialsc`,
+                `${prefix}weebc`,
+                `${prefix}reactionc`,
+                `${prefix}logomakerc`,
+                `${prefix}minecraftc`,
+                `${prefix}economyc`
             ]
 
 
             for (let i = 0; i < chars.length; i++) {
                 const list = {
-                    title: `• ━━━━━━━━━━━━━━━━━━━━━━━━━━ •`,
+                    title: `Command usage ||  "${buttonTexts[i]}"`,
                     rows: [
                         {
                             title: `${chars[i]}`,
@@ -111,10 +127,10 @@ module.exports = {
                 sections.push(list)
             }
             let buttonMessage = {
-                //image: { url: randomimage },
+                //image: { url: botImage2 },
                 text: txt,
-                footer: `*${botName}*`,
-                buttonText: "Help Menu ◉",
+                footer: `${botName} |  ᴡᴏʀᴋɪɴɢ..`,
+                buttonText: "Mᴇɴᴜ ⎙",
                 sections,
             };
 

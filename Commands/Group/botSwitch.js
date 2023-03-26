@@ -11,7 +11,7 @@ module.exports = {
     desc: "Enable or disable bot in a group",
     category: "Group",
     usage: "cmd [on/off]",
-    react: "🎀",
+    react: "🍃",
     start: async (
       Miku,
       m,

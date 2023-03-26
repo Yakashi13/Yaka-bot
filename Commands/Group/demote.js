@@ -7,7 +7,7 @@ module.exports = {
   desc: "Demote a member",
   category: "Group",
   usage: "demote @user",
-  react: "🍁",
+  react: "👹",
   start: async (
     Miku,
     m,

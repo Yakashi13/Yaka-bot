@@ -4,7 +4,7 @@ module.exports = {
   desc: "To delete a message",
   category: "Group",
   usage: `Tag a message and type *del*`,
-  react: "🍁",
+  react: "👹",
   start: async (Miku, m, { isAdmin, isBotAdmin, pushName }) => {
     if (!m.quoted)
       return Miku.sendMessage(

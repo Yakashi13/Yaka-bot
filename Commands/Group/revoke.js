@@ -7,7 +7,7 @@ module.exports = {
   desc: "Reset group link",
   category: "Group",
   usage: "revoke",
-  react: "🍁",
+  react: "👹",
   start: async (
     Miku,
     m,

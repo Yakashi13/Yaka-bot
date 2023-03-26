@@ -4,7 +4,7 @@ module.exports = {
   desc: "Promote a member",
   category: "Group",
   usage: "promote @user",
-  react: "🍁",
+  react: "👹",
   start: async (
     Miku,
     m,

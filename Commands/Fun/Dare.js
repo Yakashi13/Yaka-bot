@@ -20,7 +20,7 @@ module.exports = {
       },
       {
         buttonId: `${prefix}d`,
-        buttonText: { displayText: ">>" },
+        buttonText: { displayText: "⏩💦" },
         type: 1,
       },
     ];
