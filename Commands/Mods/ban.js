@@ -12,7 +12,7 @@ module.exports = {
   desc: "Ban a member",
   category: "core",
   usage: "ban @user",
-  react: "🎀",
+  react: "🍃",
   start: async (
     Miku,
     m,

@@ -9,7 +9,7 @@ module.exports = {
     desc: "Unban a member", 
     category: "core", 
     usage: "unban @user", 
-    react: "🎀", 
+    react: "🍃", 
     start: async (
       Miku, 
       m, 

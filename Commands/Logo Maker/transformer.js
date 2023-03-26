@@ -4,7 +4,7 @@ module.exports = {
     name: "transformar",
     alias: ["transformer"],
     desc: "Make text logo.",
-    react: "🍁",
+    react: "👹",
     category: "Logo Maker",
     start: async(Miku, m,{pushName,prefix,text}) => {
         if(!text) return m.reply(`Example: *${prefix}transformer Yaka Bot*`);

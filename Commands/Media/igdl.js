@@ -10,7 +10,7 @@ module.exports = {
     desc: "To download an instagram video or image",
     category: "Media",
     usage: `igdl <video /> image link>`,
-    react: "🍁",
+    react: "👹",
     start: async (Miku, m, { text, prefix, args }) => {
 
         if (!args[0])

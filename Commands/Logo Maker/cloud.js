@@ -4,7 +4,7 @@ module.exports = {
     name: "cloud",
     alias: ["cl"],
     desc: "Make text logo.",
-    react: "🍁",
+    react: "👹",
     category: "Logo Maker",
     start: async(Miku, m,{pushName,prefix,text}) => {
         if(!text) return m.reply(`Example: *${prefix}cloud Yaka Bot*`);

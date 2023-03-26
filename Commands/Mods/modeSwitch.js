@@ -11,7 +11,7 @@ module.exports = {
     desc: "Change bot working mode to public/private",
     category: "Mods",
     usage: "mode [public/private]",
-    react: "🎀",
+    react: "🍃",
     start: async (
       Miku,
       m,

@@ -4,7 +4,7 @@ module.exports = {
     name: "3dspace",
     alias: ["3dsp"],
     desc: "Make text logo.",
-    react: "🍁",
+    react: "👹",
     category: "Logo Maker",
     start: async(Miku, m,{pushName,prefix,text}) => {
         if(!text.includes("|")) return m.reply(`Example: *${prefix}3dspace Yaka MD | Yakashi*`);

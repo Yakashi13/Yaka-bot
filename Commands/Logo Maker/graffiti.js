@@ -4,7 +4,7 @@ module.exports = {
     name: "graffiti",
     alias: ["grafiti"],
     desc: "Make text logo.",
-    react: "🍁",
+    react: "👹",
     category: "Logo Maker",
     start: async(Miku, m,{pushName,prefix,text}) => {
         if(!text.includes("|")) return m.reply(`Example: *${prefix}graffiti Yaka MD | Yakashi*`);

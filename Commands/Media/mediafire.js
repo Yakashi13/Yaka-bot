@@ -6,7 +6,7 @@ module.exports = {
     desc: "To download a mediafire document",
     category: "Media",
     usage: `mediafire <link>`,
-    react: "🍁",
+    react: "👹",
     start: async (Miku, m, { text, prefix, args, mime }) => {
       if (!args[0])
         return Miku.sendMessage(
@@ -24,7 +24,7 @@ module.exports = {
         
         let txt =`        *『 Mediafire Downloader 』*
         
-*🎀 File Name* : ${MDF[0].nama}
+*🍃 File Name* : ${MDF[0].nama}
 *🧩 File Size* : ${MDF[0].size}
 *📌File Format* : ${MDF[0].mime}
 

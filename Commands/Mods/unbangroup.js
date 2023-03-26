@@ -11,7 +11,7 @@ module.exports = {
     desc: "Un Ban a group",
     category: "core",
     usage: "unbangroup",
-    react: "🎀",
+    react: "🍃",
     start: async (Miku, m, { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,groupName,modStatus }) => {
     
     if (modStatus == "false" && !isCreator) return Miku.sendMessage(m.from, { text: 'Sorry, only my *Devs* and *Mods* can use this command !' }, { quoted: m });

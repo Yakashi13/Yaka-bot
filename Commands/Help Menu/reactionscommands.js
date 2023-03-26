@@ -2,7 +2,7 @@ module.exports = {
     name: "reactioncommands",
     alias: ["reactionc", "reactionscommands"],
     desc: "Gives Help command list",
-    react: "💡",
+    react: "⭕",
     category: "Help Menu",
     start: async (Miku, m, { prefix, pushName, args, commands, text }) => {
   
@@ -11,11 +11,11 @@ module.exports = {
         let name = args[0].toLowerCase()
         let cmd = commands.get(name) || Array.from(commands.values()).find((v) => v.alias.includes(name))
         if (!cmd || cmd.type == "hide") return m.reply("No Command Found")
-        else data.push(`🍁Command : ${cmd.name.replace(/^\w/, c => c.toUpperCase())}`)
+        else data.push(`👹Command : ${cmd.name.replace(/^\w/, c => c.toUpperCase())}`)
         if (cmd.alias) data.push(`👾Alias : ${cmd.alias.join(", ")}`)
         if (cmd.cool) data.push(`⏱️Cooldown: ${cmd.cool}`)
         if (cmd.desc) data.push(`🧾Description : ${cmd.desc}`)
-        if (cmd.usage) data.push(`💡Example : ${cmd.usage.replace(/%prefix/gi, prefix).replace(/%command/gi, cmd.name).replace(/%text/gi, text)}`)
+        if (cmd.usage) data.push(`⭕Example : ${cmd.usage.replace(/%prefix/gi, prefix).replace(/%command/gi, cmd.name).replace(/%text/gi, text)}`)
         var buttonss = [
           { buttonId: `${prefix}help`, buttonText: { displayText: `Help` }, type: 1 },]
         let buth = {

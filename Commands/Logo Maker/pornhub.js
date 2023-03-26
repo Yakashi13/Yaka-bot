@@ -4,7 +4,7 @@ module.exports = {
     name: "pornhub",
     alias: ["ph"],
     desc: "Make text logo.",
-    react: "🍁",
+    react: "👹",
     category: "Logo Maker",
     start: async(Miku, m,{pushName,prefix,text}) => {
         if(!text.includes("|")) return m.reply(`Example: *${prefix}pornhub Yaka MD | Yakashi*`);

@@ -6,7 +6,7 @@ module.exports = {
     desc: "To block an user from bot's account",
     category: "Mods",
     usage: "block @user",
-    react: "🎀",
+    react: "🍃",
     start: async (
       Miku,
       m,

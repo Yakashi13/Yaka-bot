@@ -4,7 +4,7 @@ module.exports = {
     name: "3dstone",
     alias: ["3ds"],
     desc: "Make text logo.",
-    react: "🍁",
+    react: "👹",
     category: "Logo Maker",
     start: async(Miku, m,{pushName,prefix,text}) => {
         if(!text) return m.reply(`Example: *${prefix}3dstone Yaka Bot*`);

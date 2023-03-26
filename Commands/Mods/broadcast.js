@@ -11,7 +11,7 @@ module.exports = {
     desc: "Broadcast a message in all groups where that bot is present",
     category: "Mods",
     usage: "bc <message>",
-    react: "🎀",
+    react: "🍃",
     start: async (Miku, m, { text, prefix, isBotAdmin, participants, pushName, isCreator , args,modStatus}) => {
     
     if (modStatus == "false" && !isCreator) return Miku.sendMessage(m.from, { text: 'Sorry, only my *Devs* and *Mods* can use this command !' }, { quoted: m });

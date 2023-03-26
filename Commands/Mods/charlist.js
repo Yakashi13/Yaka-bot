@@ -4,139 +4,129 @@ module.exports = {
   desc: "Ban a member",
   category: "Mods",
   usage: "setchar 0/1/2/3/4/5/6/7",
-  react: "☢️",
+  react: "🧝‍♀️",
   start: async (Miku, m, { text, prefix, modStatus }) => {
 
-    let txt = `       『  *Bot Charactes*  』
-    \n\n\n_0 - Yaka MD_
-    \n\n_1 - Power_
-    \n\n_2 - Makima_
-    \n\n_3 - Denji_
-    \n\n_4 - Zero Two_
-    \n\n_5 - Chika_
-    \n\n_6 - Miku_
-    \n\n_7 - Marin_
-    \n\n_8 - Ayanokoji_
-    \n\n_9 - Ruka_
-    \n\n_10 - Mizuhara_
-    \n\n_11 - Rem_
-    \n\n_12 - Sumi_
-    \n\n_13 - Kaguya_
-    \n\n_14 - Yumeko_
-    \n\n_15 - Kurumi_
-    \n\n_16 - Mai_
-    \n\n_17 - Yor_
-    \n\n_18 - Shinbou_
-    \n\n_19 - Eiko_
-    \n\n_20 - Benimaru_
-    \n\n_21 - Hinata_
-    \n\n_22 - Obito_
-    \n\n_23 - Mikasa_
-    \n\n_24 - Emilia_
-    \n\n_25 - Ayane_
-    \n\n_26 - Yotsuba_
-    \n\n\nExample: *${prefix}setchar 7* or choose button below.\n`;
+    let txt = `*Bot Charactes*
+     \n╠━━━━━━━━━━━━━━
+   \n\n╠ • 0 - 𝐘𝐚𝐤𝐚
+     \n╠ • 1 - 𝐁𝐞𝐧𝐢𝐦𝐚𝐫𝐮
+     \n╠ • 2 - 𝐏𝐨𝐰𝐞𝐫
+     \n╠ • 3 - 𝐇𝐢𝐧𝐚𝐭𝐚
+     \n╠ • 4 - 𝐎𝐛𝐢𝐭𝐨
+     \n╠ • 5 - 𝐌𝐢𝐤𝐚𝐬𝐚
+     \n╠ • 6 - 𝐄𝐦𝐢𝐥𝐢𝐚
+     \n╠ • 7 - 𝐀𝐲𝐚𝐧𝐞
+     \n╠ • 8 - 𝐘𝐨𝐭𝐬𝐮𝐛𝐚
+     \n╠ • 9 - 𝐌𝐚𝐢
+     \n╠ • 10 - 𝐓𝐨𝐡𝐫𝐮
+     \n╠ • 11 - 𝐌𝐚𝐫𝐢𝐧
+     \n╠ • 12 - 𝐑𝐞𝐦
+     \n╠ • 13 - 𝐌𝐚𝐤𝐢𝐦𝐚
+     \n╠ • 14 - 𝐍𝐞𝐳𝐮𝐤𝐨
+     \n╠ • 15 - 𝐎𝐜𝐡𝐚𝐜𝐨
+     \n╠ • 16 - 𝐀𝐪𝐮𝐚
+     \n╠ • 17 - 𝐅𝐮𝐛𝐮𝐤𝐢
+     \n╠ • 18 - 𝐆𝐨𝐣𝐨
+     \n╠ • 19 - 𝐇𝐚𝐲𝐚𝐬𝐞
+     \n╠ • 20 - 𝐈𝐭𝐚𝐜𝐡𝐢
+     \n╠ • 21 - 𝐒𝐡𝐨𝐤𝐨
+     \n╠ • 22 - 𝐊𝐮𝐫𝐮𝐦𝐢
+     \n╠ • 23 - 𝐌𝐢𝐭𝐬𝐮𝐫𝐢
+     \n╠━━━━━━━━━━━━━━
+    \n\nExample: *${prefix}setchar 7* or choose button below.\n`;
 
     let botLogos = [
-      'https://cdn.dribbble.com/users/2400955/screenshots/10843457/test_4x.jpg',
-      'https://wallpapercave.com/wp/wp11287624.jpg',
-      'https://wallpapercave.com/wp/wp9666938.jpg',
-      'https://wallpapercave.com/wp/wp11646689.jpg',
-      'https://wallpapercave.com/uwp/uwp2159409.jpeg',
-      'https://images4.alphacoders.com/100/1002134.png',
-      'https://wallpapercave.com/wp/wp5440431.jpg',
-      'https://wallpapercave.com/uwp/uwp2518151.webp',
-      'https://wallpapers.com/images/file/kiyotaka-ayanokoji-in-pink-qs33qgqm79ccsq7n.jpg',
-      'https://wallpapercave.com/uwp/uwp1175293.png',
-      'https://wallpapercave.com/wp/wp7231907.jpg',
-      'https://wallpapercave.com/wp/wp3923451.png',
-      'https://moewalls.com/wp-content/uploads/2022/07/sumi-sakurasawa-hmph-rent-a-girlfriend-thumb.jpg',
-      'https://wallpapercave.com/uwp/uwp912010.jpeg',
-      'https://wallpapercave.com/wp/wp5235308.png',
-      'https://wallpapercave.com/wp/wp5894820.jpg',
-      'https://wallpapercave.com/wp/wp10128659.png',
-      'https://wallpapercave.com/wp/wp11031122.jpg',
-      'https://wallpapercave.com/uwp/uwp3393663.webp',
-      'https://images8.alphacoders.com/122/1229829.jpg',
-      'https://wallpapercave.com/wp/wp9179142.jpg',
-      'https://wallpapercave.com/uwp/uwp985562.jpeg',
-      'https://images3.alphacoders.com/105/1052843.jpg',
-      'https://wallpapercave.com/wp/wp8142276.png',
-      'https://wallpapercave.com/wp/wp8142276.png',
-      'https://i.pinimg.com/564x/a9/98/c8/a998c8653cd690080c2c2232355fadd2.jpg',
-      'https://wallpapercave.com/wp/wp9494921.png'
+      'https://cdn.dribbble.com/users/2400955/screenshots/10843457/media/4853cc6ddfdd1f5400ea40a608f10fef.jpg', // 1
+      'https://wallpapercave.com/wp/wp5950608.png', // 2
+      'https://wallpapercave.com/wp/wp11998979.jpg', // 3
+      'https://wallpapercave.com/wp/wp2714940.jpg', // 4
+      'https://wallpapercave.com/uwp/uwp2564410.jpeg', // 5
+      'https://wallpapercave.com/uwp/uwp1074204.jpeg', // 6
+      'https://i.pinimg.com/564x/a9/98/c8/a998c8653cd690080c2c2232355fadd2.jpg', // 7
+      'https://wallpapercave.com/wp/wp9494921.png', // 8
+      'https://wallpapercave.com/wp/wp8435260.png', // 9
+      'https://wallpapercave.com/wp/wp7579400.jpg', // 10
+      'https://wallpapercave.com/wp/wp10917529.jpg', // 11
+      'https://wallpapercave.com/wp/wp1860711.png', // 12
+      'https://images6.alphacoders.com/112/1126221.jpg', // 13
+      'https://wallpapercave.com/wp/wp9269166.jpg', // 14
+      'https://images6.alphacoders.com/919/919193.jpg', // 15
+      'https://images8.alphacoders.com/790/790834.png', // 16
+      'https://wallpapercave.com/wp/wp8354244.jpg', // 17
+      'https://images5.alphacoders.com/124/1245177.jpg', // 18
+      'https://wallpapercave.com/wp/wp8869413.png', // 19
+      'https://wallpapercave.com/wp/wp8241464.jpg', // 20
+      'https://images2.alphacoders.com/117/1172959.png', // 21
+      'https://wallpapercave.com/wp/wp5894889.jpg', // 22
+      'https://wallpapercave.com/wp/wp10959288.jpg' // 23
     ];
 
     let randomimage = botLogos[Math.floor(Math.random() * botLogos.length)];
 
     let sections = []
-    let chars = ['𝐘𝐚𝐤𝐚', '𝐏𝐨𝐰𝐞𝐫', '𝐌𝐚𝐤𝐢𝐦𝐚', 
-                 '𝐃𝐞𝐧𝐣𝐢', '𝐙𝐞𝐫𝐨 𝐓𝐰𝐨', '𝐂𝐡𝐢𝐤𝐚', 
-                 '𝐌𝐢𝐤𝐮', '𝐌𝐚𝐫𝐢𝐧', '𝐀𝐲𝐚𝐧𝐨𝐤𝐨𝐣𝐢', 
-                 '𝐑𝐮𝐤𝐚', '𝐌𝐢𝐳𝐮𝐡𝐚𝐫𝐚', '𝐑𝐞𝐦', 
-                 '𝐒𝐮𝐦𝐢', '𝐊𝐚𝐠𝐮𝐲𝐚', '𝐘𝐮𝐦𝐞𝐤𝐨', 
-                 '𝐊𝐮𝐫𝐮𝐦𝐢', '𝐌𝐚𝐢', '𝐘𝐨𝐫', 
-                 '𝐒𝐡𝐢𝐧𝐛𝐨𝐮', '𝐄𝐢𝐤𝐨', '𝐁𝐞𝐧𝐢𝐦𝐚𝐫𝐮',
-                 '𝐇𝐢𝐧𝐚𝐭𝐚', '𝐎𝐛𝐢𝐭𝐨', '𝐌𝐢𝐤𝐚𝐬𝐚', 
-                 '𝐄𝐦𝐢𝐥𝐢𝐚','𝐀𝐲𝐚𝐧𝐞','𝐘𝐨𝐭𝐬𝐮𝐛𝐚'
-                ]
-    let buttonDesc = [`Set bot character to Yaka MD`, 
-                      `Set bot character to Power`, 
-                      `Set bot character to Makima`, 
-                      `Set bot character to Denji`, 
-                      `Set bot character to Zero Two`, 
-                      `Set bot character to Chika`, 
-                      `Set bot character to Miku`, 
-                      `Set bot character to Marin`, 
-                      `Set bot character to Ayanokoji`,
-                      `Set bot character to Ruka`, 
-                      `Set bot character to Mizuhara`,
-                      `Set bot character to Rem`, 
-                      `Set bot character to Sumi`, 
-                      `Set bot character to Kaguya`, 
-                      `Set bot character to Yumeko`, 
-                      `Set bot character to Kurumi`, 
-                      `Set bot character to Mai`, 
-                      `Set bot character to Yor`, 
-                      `Set bot character to Shinbou`, 
-                      `Set bot character to Eiko`,
-                      `Set bot character to Benimaru Shinmon`,
-                      `Set bot character to Hinata Hyuga`,
-                      `Set bot character to Obito`, 
-                      `Set bot character to Mikasa`, 
-                      `Set bot character to Emilia`,
-                      `Set bot character to Ayane`,
-                      `Set bot character to Yotsuba`
-                     ]
+    let chars = ['𝐘𝐚𝐤𝐚', '𝐁𝐞𝐧𝐢𝐦𝐚𝐫𝐮',
+      '𝐏𝐨𝐰𝐞𝐫', '𝐇𝐢𝐧𝐚𝐭𝐚',
+      '𝐎𝐛𝐢𝐭𝐨', '𝐌𝐢𝐤𝐚𝐬𝐚',
+      '𝐄𝐦𝐢𝐥𝐢𝐚', '𝐀𝐲𝐚𝐧𝐞',
+      '𝐘𝐨𝐭𝐬𝐮𝐛𝐚', '𝐌𝐚𝐢',
+      '𝐓𝐨𝐡𝐫𝐮', '𝐌𝐚𝐫𝐢𝐧',
+      '𝐑𝐞𝐦', '𝐌𝐚𝐤𝐢𝐦𝐚',
+      '𝐍𝐞𝐳𝐮𝐤𝐨', '𝐎𝐜𝐡𝐚𝐜𝐨',
+      '𝐀𝐪𝐮𝐚', '𝐅𝐮𝐛𝐮𝐤𝐢',
+      '𝐆𝐨𝐣𝐨', '𝐇𝐚𝐲𝐚𝐬𝐞',
+      '𝐈𝐭𝐚𝐜𝐡𝐢', '𝐒𝐡𝐨𝐤𝐨',
+      '𝐊𝐮𝐫𝐮𝐦𝐢', '𝐌𝐢𝐭𝐬𝐮𝐫𝐢'
+    ]
+    let buttonDesc = [`🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Yaka MD`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Benimaru Shinmon`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Hinata Hyuuga`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Obito Uchiha`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Mikasa Ackerman`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Emilia`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Ayane Shirakawa`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Yotsuba`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Mai Sakurajima`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Tohru Kobayashi`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Marin Kitagawa`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Rem`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Makima`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Nezuko Kamado`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Ochaco Uraraka`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Aqua`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Fubuki`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Gojo Satoru`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Hayase Nagatoro`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Itachi Uchiha`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Shoko Komi`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Kurumi Tokisaki`,
+      `🔥 𝘾𝙝𝙖𝙣𝙜𝙚 𝘽𝙤𝙩 𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧 𝙩𝙤 Mitsuri Kanroji`
+    ]
     let buttonTexts = [`${prefix}setchar 0`,
-                       `${prefix}setchar 1`,
-                       `${prefix}setchar 2`,
-                       `${prefix}setchar 3`,
-                       `${prefix}setchar 4`,
-                       `${prefix}setchar 5`,
-                       `${prefix}setchar 6`,
-                       `${prefix}setchar 7`,
-                       `${prefix}setchar 8`,
-                       `${prefix}setchar 9`,
-                       `${prefix}setchar 10`,
-                       `${prefix}setchar 11`,
-                       `${prefix}setchar 12`, 
-                       `${prefix}setchar 13`, 
-                       `${prefix}setchar 14`, 
-                       `${prefix}setchar 15`,
-                       `${prefix}setchar 16`,
-                       `${prefix}setchar 17`, 
-                       `${prefix}setchar 18`, 
-                       `${prefix}setchar 19`, 
-                       `${prefix}setchar 20`, 
-                       `${prefix}setchar 21`, 
-                       `${prefix}setchar 22`, 
-                       `${prefix}setchar 23`, 
-                       `${prefix}setchar 24`, 
-                       `${prefix}setchar 25`,
-                       `${prefix}setchar 26`, 
-                       `${prefix}setchar 27`
-                      ]
+    `${prefix}setchar 1`,
+    `${prefix}setchar 2`,
+    `${prefix}setchar 3`,
+    `${prefix}setchar 4`,
+    `${prefix}setchar 5`,
+    `${prefix}setchar 6`,
+    `${prefix}setchar 7`,
+    `${prefix}setchar 8`,
+    `${prefix}setchar 9`,
+    `${prefix}setchar 10`,
+    `${prefix}setchar 11`,
+    `${prefix}setchar 12`,
+    `${prefix}setchar 13`,
+    `${prefix}setchar 14`,
+    `${prefix}setchar 15`,
+    `${prefix}setchar 16`,
+    `${prefix}setchar 17`,
+    `${prefix}setchar 18`,
+    `${prefix}setchar 19`,
+    `${prefix}setchar 20`,
+    `${prefix}setchar 21`,
+    `${prefix}setchar 22`,
+    `${prefix}setchar 23`
+    ]
 
     for (let i = 0; i < chars.length; i++) {
       const list = {
@@ -158,7 +148,7 @@ module.exports = {
       //image: { url: randomimage },
       text: txt,
       footer: `*${botName}*`,
-      buttonText: "Choose Character",
+      buttonText: "Change Character",
       sections,
     };
 
