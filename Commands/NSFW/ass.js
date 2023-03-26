@@ -6,7 +6,7 @@ module.exports = {
   desc: "Hentai picture of waifu ass", 
   category: "Nsfw",
   usage: `ass`,
-  react: "🍁",
+  react: "👹",
   start: async (Miku, m, { prefix,NSFWstatus }) => {
 
     if (NSFWstatus == "false") return m.reply(`This group is not NSFW enabled!\n\nTo configure NSFW mode, type:\n\n*${prefix}nsfw*`);
@@ -23,13 +23,13 @@ module.exports = {
       },
       {
         buttonId: `${prefix}ass`,
-        buttonText: { displayText: `>>` },
+        buttonText: { displayText: `⏩💦` },
         type: 1,
       },
     ];
     let bmffg = {
       image: {url: imgURL},
-      caption: `\n* Here What you are looking for 👀..*\n\n*`,
+      caption: `\n* Here What you are looking for 👀..*\n`,
       footer: `*${botName}*`,
       buttons: Button,
       headerType: 4,

@@ -6,7 +6,7 @@ module.exports = {
   desc: "Get a hetai video", 
   category: "Nsfw",
   usage: `hvideo`,
-  react: "🍁",
+  react: "👹",
   start: async (Miku, m, { prefix,NSFWstatus }) => {
 
     if (NSFWstatus == "false") return m.reply(`This group is not NSFW enabled!\n\nTo configure NSFW mode, type:\n\n*${prefix}nsfw*`);

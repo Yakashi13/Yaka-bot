@@ -6,7 +6,7 @@ module.exports = {
   desc: "Hentai picture of miku",
   category: "Weeb",
   usage: `hmiku`,
-  react: "🍁",
+  react: "👹",
   start: async (Miku, m, { prefix,NSFWstatus }) => {
 
     if (NSFWstatus == "false") return m.reply(`This group is not NSFW enabled!\n\nTo configure NSFW mode, type:\n\n*${prefix}nsfw*`);
@@ -14,7 +14,7 @@ module.exports = {
     let Button = [
       {
         buttonId: `${prefix}hmiku`,
-        buttonText: { displayText: `>>` },
+        buttonText: { displayText: `⏩💦` },
         type: 1,
       },
     ];
