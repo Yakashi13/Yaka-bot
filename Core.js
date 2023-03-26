@@ -17,11 +17,13 @@ const prefix = global.prefa;
 global.Levels = require("discord-xp");
 Levels.setURL(mongodb);
 
-console.log(color("\nDatabase 1 has been connected Successfully !\n", "lime"));
+console.log(color("\nDatabase 1 has been connected Successfully !", "lime"));
 
 console.log(color("\nDatabase 2 has been connected Successfully !\n", "lime"));
 
 console.log(color("\nConnected !!\n", "yellow"));
+
+console.log(color('\nDo not modify this bot on your own!!\nAsk Owner before you do..\n', 'red'))
 
 module.exports = async (Miku, m, commands, chatUpdate, store) => {
   try {
@@ -30,26 +32,26 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
       type == "buttonsResponseMessage"
         ? m.message[type].selectedButtonId
         : type == "listResponseMessage"
-        ? m.message[type].singleSelectReply.selectedRowId
-        : type == "templateButtonReplyMessage"
-        ? m.message[type].selectedId
-        : m.text;
+          ? m.message[type].singleSelectReply.selectedRowId
+          : type == "templateButtonReplyMessage"
+            ? m.message[type].selectedId
+            : m.text;
     let prat =
       type === "conversation" && body?.startsWith(prefix)
         ? body
         : (type === "imageMessage" || type === "videoMessage") &&
           body &&
           body?.startsWith(prefix)
-        ? body
-        : type === "extendedTextMessage" && body?.startsWith(prefix)
-        ? body
-        : type === "buttonsResponseMessage" && body?.startsWith(prefix)
-        ? body
-        : type === "listResponseMessage" && body?.startsWith(prefix)
-        ? body
-        : type === "templateButtonReplyMessage" && body?.startsWith(prefix)
-        ? body
-        : "";
+          ? body
+          : type === "extendedTextMessage" && body?.startsWith(prefix)
+            ? body
+            : type === "buttonsResponseMessage" && body?.startsWith(prefix)
+              ? body
+              : type === "listResponseMessage" && body?.startsWith(prefix)
+                ? body
+                : type === "templateButtonReplyMessage" && body?.startsWith(prefix)
+                  ? body
+                  : "";
 
     const metadata = isGroup ? await Miku.groupMetadata(from) : {};
     const pushname = m.pushName; //|| 'NO name'
@@ -95,7 +97,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
       );
     const mentionByTag =
       type == "extendedTextMessage" &&
-      m.message.extendedTextMessage.contextInfo != null
+        m.message.extendedTextMessage.contextInfo != null
         ? m.message.extendedTextMessage.contextInfo.mentionedJid
         : [];
 
@@ -216,9 +218,8 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
           Miku.sendMessage(
             from,
             {
-              text: `\`\`\`「  Antilink System  」\`\`\`\n\n@${
-                kice.split("@")[0]
-              } Removed for sending WhatsApp group link in this group! Message has been deleted.`,
+              text: `\`\`\`「  Antilink System  」\`\`\`\n\n@${kice.split("@")[0]
+                } Removed for sending WhatsApp group link in this group! Message has been deleted.`,
               mentions: [kice],
             },
             {
@@ -389,7 +390,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
 
     //----------------------------------------------------------------------------------------------------------------//
 
-    
+
 
     const flags = args.filter((arg) => arg.startsWith("--"));
     if (body.startsWith(prefix) && !icmd) {
@@ -424,8 +425,8 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
         chalk.black(chalk.bgWhite("[ MESSAGE ]")),
         chalk.black(chalk.bgGreen(new Date())),
         chalk.black(chalk.bgBlue(budy || m.mtype)) +
-          "\n" +
-          chalk.magenta("=> From"),
+        "\n" +
+        chalk.magenta("=> From"),
         chalk.green(pushname),
         chalk.yellow(m.sender) + "\n" + chalk.blueBright("=> In"),
         chalk.green(m.isGroup ? m.from : "Private Chat", m.chat)
@@ -496,26 +497,26 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
     const timestamps = cool.get(m.sender);
     const cdAmount = (cmd.cool || 0) * 1000;
 
-    if(!isOwner&&modStatus == "false"&&!botNumber.includes(m.sender)){
-    if (timestamps.has(m.sender)) {
-      const expiration = timestamps.get(m.sender) + cdAmount;
+    if (!isOwner && modStatus == "false" && !botNumber.includes(m.sender)) {
+      if (timestamps.has(m.sender)) {
+        const expiration = timestamps.get(m.sender) + cdAmount;
 
-      if (now < expiration) {
-        let timeLeft = (expiration - now) / 1000;
-        return await Miku.sendMessage(
-          m.from,
-          {
-            text: `Command Rejected ! Don't Spam ! You can use command after _${timeLeft.toFixed(
-              1
-            )} second(s)_`,
-          },
-          {
-            quoted: m,
-          }
-        );
+        if (now < expiration) {
+          let timeLeft = (expiration - now) / 1000;
+          return await Miku.sendMessage(
+            m.from,
+            {
+              text: `Command Rejected ! Don't Spam ! You can use command after _${timeLeft.toFixed(
+                1
+              )} second(s)_`,
+            },
+            {
+              quoted: m,
+            }
+          );
+        }
       }
     }
-  }
     timestamps.set(m.sender, now);
     setTimeout(() => timestamps.delete(m.sender), cdAmount);
 

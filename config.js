@@ -1,5 +1,8 @@
 
 require("dotenv").config();
+const mongoose = require('mongoose');
+mongoose.set('strictQuery', true);
+
 let gg = process.env.MODS;
 if (!gg) {
   gg = "94774516277";   // You can Change this number //
@@ -9,14 +12,14 @@ if (!gg) {
 
 
 global.owner = gg.split(",");
-global.mongodb = process.env.MONGODB || " "; // paste your own MongoDB url..
+global.mongodb = process.env.MONGODB || ""; // paste your own MongoDB url..
 global.sessionId = process.env.SESSION_ID || "ok";
-global.prefa = process.env.PREFIX || "-";
+global.prefa = process.env.PREFIX || ".";
 global.tenorApiKey =
   process.env.TENOR_API_KEY || "AIzaSyCAYZ930Rq1EFiRNRJuSeGGrKljCnOb8-U"; // paste Your own Api Key..
-global.packname = process.env.PACKNAME || `👹𝕐𝕒𝕜𝕒ᵐᵈ`;
+global.packname = process.env.PACKNAME || `👹 𝕐𝕒𝕜𝕒ᵐᵈ`;
 global.author = process.env.AUTHOR || "by: 𝖄𝖆𝖐𝖆𝖘𝖍𝖎";
-global.port = process.env.PORT || "8000";
+global.port = process.env.PORT || "8080";
 
 module.exports = {
   mongodb: global.mongodb,
