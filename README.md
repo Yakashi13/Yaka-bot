@@ -1,32 +1,32 @@
 <p align="center">
-<a href="https://github.com/Yakashi13/Yaka-MD">
+<a href="https://github.com/Yakashi13/Yaka-bot">
     <img src="./Page/yaka.jpg">
   </a>
 
-<h1 align="center"> Y A K A <sup>MD
+<h1 align="center"> Y A K A <sup>BOT
 </h1>
 
 <p align="center"> 
     <b>Greetings traveller... <br>
     I am <br>
-    Y A K A <sup>M D</sup> <br>
-     A "personal modified whatsapp bot" with more <b>Features, Stability</b> and <b>Compatibility</b>.
+    Y A K A <sup>B O T</sup> <br>
+     An "Anime whatsapp bot" with more <b>Features, Stability</b> and <b>Compatibility</b>.
 <br>
 <br>
 
 <p align="center">
-  <a href="https://github.com/Yakashi13/Yaka-MD/fork">
-    <img src="https://img.shields.io/github/forks/Yakashi13/Yaka-MD?label=Fork&style=social">
+  <a href="https://github.com/Yakashi13/Yaka-bot/fork">
+    <img src="https://img.shields.io/github/forks/Yakashi13/Yaka-bot?label=Fork&style=social">
     
     
-  <a href="https://github.com/Yakashi13/Yaka-MD/stargazers">
-    <img src="https://img.shields.io/github/stars/Yakashi13/Yaka-MD?style=social">
+  <a href="https://github.com/Yakashi13/Yaka-bot/stargazers">
+    <img src="https://img.shields.io/github/stars/Yakashi13/Yaka-bot?style=social">
   </a>
 
 <br>
 
-<a href="https://github.com/Yakashi13/Yaka-MD">
-    <img src="https://visitor-badge.glitch.me/badge?page_id=https://github.com/Yakashi13/Yaka-MD.visitor-badge&left_text=Total%20People%20Visited">
+<a href="https://github.com/Yakashi13/Yaka-bot">
+    <img src="https://visitor-badge.glitch.me/badge?page_id=https://github.com/Yakashi13/Yaka-bot.visitor-badge&left_text=Total%20People%20Visited">
   </a>
 
 </p>
@@ -39,7 +39,7 @@
 <br>
 <br>
         
-<h2 align="center">👽 Y A K A <sup>M D</sup> Platform Compatibility 👽
+<h2 align="center">👽 Y A K A <sup>B O T</sup> Platform Compatibility 👽
 </h2> 
 
 <br>
@@ -49,9 +49,9 @@
 </p>
 
   <p align="center"> <br>
-<a href="https://repl.it/github/Yakashi13/Yaka-MD">
+<a href="https://repl.it/github/Yakashi13/Yaka-bot">
 <p align="center">
-    <a href="https://repl.it/github/Yakashi13/Yaka-MD">
+    <a href="https://repl.it/github/Yakashi13/Yaka-bot">
     <img src="https://i.ibb.co/zrB5kMh/deploy-on-repl.jpg" width="170px" alt="Deploy on replit">
          </a>
     </a>
@@ -130,8 +130,7 @@ Join the <a href="">Whatsapp</a> group if you have any issues..
         
 - This is a `modified bot` with more `Characters` and `Command featuers`.
 - The bot is modified of <a href="https://github.com/FantoX001/Atlas-MD">Atlas-MD</a> bot which Is made by <a href="https://github.com/FantoX001/">FantoX001</a> .
-- This bot is not made by `WhatsApp.inc` so overusing bot may result in WhatsApp account ban. Use at your own risk.
-- `Modified becouse user can have the best experience through the bot and for "*experiment purposes"` ( `*To help the original bot` ) . 
+- This bot is not made by `WhatsApp.inc` so overusing bot may result in WhatsApp account ban. Use at your own risk. 
 - If you Modify this bot and face any Issues, I am not responsible for that because it's not possible for me to help everyone in bot Development / Modification. Only modify if you know what you are doing.
 - If you faced any errors after modifications, i'm not responsible for it.
 - This bot is made for `Educational / Fun / Group Management` purposes only. I and will not be responsible for any misuse of this bot.
@@ -159,7 +158,7 @@ Join the <a href="">Whatsapp</a> group if you have any issues..
 
 <br>
 
-- Become a [ Contributor](https://github.com/Yakashi13/Yaka-MD/graphs/contributors).
+- Become a [ Contributor](https://github.com/Yakashi13/Yaka-bot/graphs/contributors).
 - Feel free to contribute in this project. I will merge your respected contribution after reviewing it. ( Only if you not done any personal changes.. )
   
 <br>
