@@ -39,7 +39,7 @@ module.exports = {
 
 function generateStatsText(users, bots, groups, mods, commands, sessions, uptime) {
     return `
-*|• ━━━❰⭕ INFO ⭕❱━━━ •|*
+*|• ━━━❰⭕ ${botName} ⭕❱━━━ •|*
 ╠ • ⚓️ Users: ${users}
 ╠ • 🤖 Bots: ${bots}
 ╠ • 🤼 Groups: ${groups}
