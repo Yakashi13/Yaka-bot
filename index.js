@@ -121,7 +121,7 @@ async function startMiku() {
         whitespaceBreak: true
     }), 'red'))
 
-    console.log(color('\nHello, I am Yakashi, \n\nThanks for using Yaka MD.\n', 'darkgreen'))
+    console.log(color('\nHello,\nThanks for using Yaka bot.\nI am,\n', 'darkgreen'))
 
     console.log(color(figlet.textSync('Yakashi', {
         font: 'ANSI Shadow',
@@ -140,7 +140,7 @@ async function startMiku() {
             level: 'silent'
         }),
         printQRInTerminal: true,
-        browser: ['Yaka', 'Safari', '1.0.0'],
+        browser: ['YakaBot', 'Yakashi', '1.0.0'],
         auth: state,
         version
     })
@@ -159,7 +159,7 @@ async function startMiku() {
         } = update
         status = connection;
         if (connection) {
-            await console.info(`Yaka MD Status => ${connection}`);
+            await console.info(`Yaka Bot Status => ${connection}`);
         }
 
         if (connection === 'close') {
@@ -187,7 +187,7 @@ async function startMiku() {
                 console.log("Connection TimedOut, Reconnecting...");
                 startMiku();
             } else {
-                console.log(`Disconnected: Reason "Reboot the bot!\n\nCheck your WhatsApp !"`)
+                console.log(`Disconnected: "Reboot the bot!\n\nCheck your WhatsApp !"`)
             }
         }
         if (qr) {
