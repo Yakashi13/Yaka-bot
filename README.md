@@ -88,7 +88,7 @@
 
 <br>
 
-- Yaka is a `multi character bot` which means you can `change bot's character` to any of the 8 added characters or add more characters by yourself.
+- Yaka is a `multi character bot` which means you can `change bot's character` to any of the 23 added characters or add more characters by yourself.
 - Yaka is a `multi mode` bot which means you can use it in `Self / Public / Private` mode.
 - Yaka has a pre installed chatbot which means you can use it as a `group chatbot and dm chatbot`.
 - Yaka has `300+` commands.
@@ -129,7 +129,7 @@ Join the <a href="">Whatsapp</a> group if you have any issues..
 <br>
         
 - This is a `modified bot` with more `Characters` and `Command featuers`.
-- The bot is modified of <a href="https://github.com/FantoX001/Atlas-MD">Atlas-MD</a> bot which Is made by <a href="https://github.com/FantoX001/">FantoX001</a> .
+- This bot is modified of <a href="https://github.com/FantoX001/Atlas-MD">Atlas-MD</a> bot which Is made by <a href="https://github.com/FantoX001/">FantoX001</a> .
 - This bot is not made by `WhatsApp.inc` so overusing bot may result in WhatsApp account ban. Use at your own risk. 
 - If you Modify this bot and face any Issues, I am not responsible for that because it's not possible for me to help everyone in bot Development / Modification. Only modify if you know what you are doing.
 - If you faced any errors after modifications, i'm not responsible for it.
