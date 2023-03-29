@@ -1,9 +1,10 @@
 module.exports = {
     name: "hi",
-    alias: ["hello", "alive", "ping", "moshimoshi", "yoo", "konichiwa"],
+    alias: ["hello", "moshimoshi", "yoo", "konichiwa", "konnichiwa"],
     desc: "Say hello to bot.",
     react: "💜",
     category: "Core",
+
     start: async (Miku, m, { prefix, pushName, args, commands, text }) => {
         const pad = (s) => (s < 10 ? "0" : "") + s;
         const formatTime = (seconds) => {
@@ -12,6 +13,17 @@ module.exports = {
             const secs = Math.floor(seconds % 60);
             return time = `${pad(hours)}:${pad(minutes)}:${pad(secs)}`;
         };
+        const now = new Date();
+        const hour = now.getHours();
+        let greeting;
+
+        if (hour >= 0 && hour < 12) {
+            greeting = "Ohayō"; //good morning
+        } else if (hour >= 12 && hour < 18) {
+            greeting = "Konnichiwa"; //good afternoon
+        } else {
+            greeting = "Konbanwa"; //good evening
+        }
         const uptime = () => formatTime(process.uptime());
         if (args[0]) {
             let data = []
@@ -33,29 +45,39 @@ module.exports = {
             }
             return Miku.sendMessage(m.from, buth, { quoted: m })
         } else {
+          
 
-            let textHelpMenu = `Konnichiwa ${pushName} -Kun ❤️‍🔥 !!,\n I'm *${botName}* Bot.. \n
-            A Multi Character bot with many Commands!!\n`
+         let textHelpMenu = `| • ━━━━━━━━━━━━━━━━━━━━\n`
 
-            textHelpMenu += `\n\n\n_📶 Server Uptime_ : *${uptime()}*
-        \n_💯 Status_ : ${botName} ɪꜱ ꜱᴛᴀʙʟᴇ`;
+            textHelpMenu += `| • ${greeting} ~ ${pushName} -Kun ❤️‍🔥 !!\n`
+
+            textHelpMenu += `| • ━━━━━━━━━━━━━━━━━━━━\n`
+
+            textHelpMenu += `| • I'm *${botName}* Bot..\n`
+
+            textHelpMenu += `| • ━━━━━━━━━━━━━━━━━━━━\n`
+
+            textHelpMenu += `| • Type ${prefix}help to get bot command list.\n`
+
+            textHelpMenu += `| • ━━━━━━━━━━━━━━━━━━━━\n`
+
 
             let buttons = [
                 {
                     buttonId: `${prefix}help`,
-                    buttonText: { displayText: "🌀 Help Menu 🌀" },
+                    buttonText: { displayText: "🌀Menu🌀" },
                     type: 1,
                 },
                 {
                     buttonId: `${prefix}owner`,
-                    buttonText: { displayText: "👽 Owner 👽" },
+                    buttonText: { displayText: "👽Owner👽" },
                     type: 1,
                 }
             ];
             let buttonMessage = {
                 video: botVideo, gifPlayback: true,
                 caption: textHelpMenu,
-                footer: `*${botName}*`,
+                footer: `_Uptime_ | *${uptime()}*\n_Status_ | ${botName} ɪꜱ ꜱᴛᴀʙʟᴇ`,
                 buttons: buttons,
                 headerType: 4,
             };
