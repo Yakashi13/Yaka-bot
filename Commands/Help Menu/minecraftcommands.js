@@ -56,7 +56,7 @@ module.exports = {
     ];
   
         let buttonMessage = {
-          video: botVideo, gifPlayback: true,
+          image: {url: 'https://wallpapercave.com/wp/wp11417135.jpg'},
           caption: textHelpMenu,
           footer: `*${botName}*`,
           buttons: buttons,
