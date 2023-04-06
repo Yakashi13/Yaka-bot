@@ -97,7 +97,7 @@
     "yargs": "^17.6.2",
     "yarn": "^1.22.19",
     "youtube-yts": "^2.0.0",
-    "youtubedl-core": "^4.11.1"
+    "youtubedl-core": "^4.11.3"
   },
   "devDependencies": {
     "@hapi/boom": "^10.0.0",
