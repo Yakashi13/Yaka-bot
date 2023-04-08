@@ -322,7 +322,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
         if (m.quoted) {
           if (m.quoted.sender == botNumber) {
             const botreply = await axios.get(
-              `http://api.brainshop.ai/get?bid=172352&key=vTmMboAxoXfsKEQQ&uid=[uid]&msg=[${budy}]`
+              `http://api.brainshop.ai/get?bid=174300&key=ugPE0tD90fafvu2N&uid=[uid]&msg=[${budy}]`
             );
             txt = `${botreply.data.cnt}`;
             setTimeout(function () {
@@ -342,7 +342,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
 
       if (!m.isGroup && PMcsts == "true" && !icmd && !isCmd) {
         const botreply = await axios.get(
-          `http://api.brainshop.ai/get?bid=172352&key=vTmMboAxoXfsKEQQ&uid=[uid]&msg=[${budy}]`
+          `http://api.brainshop.ai/get?bid=174300&key=ugPE0tD90fafvu2N&uid=[uid]&msg=[${budy}]`
         );
         txt = `${botreply.data.cnt}`;
         setTimeout(function () {
