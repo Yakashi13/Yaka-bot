@@ -21,9 +21,9 @@ console.log(color("\nDatabase 1 has been connected Successfully !", "lime"));
 
 console.log(color("\nDatabase 2 has been connected Successfully !\n", "lime"));
 
-console.log(color("\nConnected !!\n", "yellow"));
+console.log(color("\nLoading please wait...\n", "yellow"));
 
-console.log(color('\nDo not modify this bot on your own!!\nAsk Owner before you do..\n', 'red'))
+console.log(color('N O T E :\nDo not modify this bot on your own!!\nAsk Owner before you do..\n', 'red'))
 
 module.exports = async (Miku, m, commands, chatUpdate, store) => {
   try {
