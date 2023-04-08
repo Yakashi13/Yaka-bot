@@ -113,7 +113,7 @@ async function startMiku() {
         clearState,
     } = await getAuthFromDatabase()
 
-    console.log(color(figlet.textSync('YAKA BOT', {
+    console.log(color(figlet.textSync('YAKA', {
         font: 'Bloody',
         horizontalLayout: 'default',
         vertivalLayout: 'default',
@@ -140,7 +140,7 @@ async function startMiku() {
             level: 'silent'
         }),
         printQRInTerminal: true,
-        browser: ['YakaBot', 'Yakashi', '1.0.0'],
+        browser: ['YakaBot', 'Opera', '1.0.0'],
         auth: state,
         version
     })
@@ -159,7 +159,7 @@ async function startMiku() {
         } = update
         status = connection;
         if (connection) {
-            await console.info(`Yaka Bot Status => ${connection}`);
+            await console.info(`Yaka Bot => ${connection}`);
         }
 
         if (connection === 'close') {
