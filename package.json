@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js "
+    "start": "node --max-old-space-size=8192 index.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,8 @@
     "@adiwajshing/keyed-db": "^0.2.4",
     "@bochilteam/scraper": "^4.0.22-alpha.0",
     "@develoka/angka-terbilang-js": "^1.4.2",
+    "@fantox01/lyrics-scraper": "^1.0.1",
+    "@hapi/boom": "^9.1.4",
     "@shineiichijo/mal-news-scraper": "^0.0.2",
     "@shineiichijo/marika": "^2.0.6",
     "anime-wallpaper": "^1.1.1",
@@ -78,7 +80,7 @@
     "node-youtube-music": "^0.9.0",
     "os": "^0.1.2",
     "path": "^0.12.7",
-    "pino": "^8.10.0",
+    "pino": "^8.1.0",
     "promise-mysql": "^5.2.0",
     "ptable": "^0.0.3",
     "qrcode": "^1.5.1",
@@ -100,9 +102,9 @@
     "youtubedl-core": "^4.11.3"
   },
   "devDependencies": {
-    "@hapi/boom": "^10.0.0",
+    "@hapi/boom": "^9.1.4",
     "jimp": "^0.16.2",
-    "pino": "^8.10.0",
+    "pino": "^8.1.0",
     "qrcode-terminal": "^0.12.0"
   }
 }
