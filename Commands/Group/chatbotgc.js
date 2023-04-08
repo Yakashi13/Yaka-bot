@@ -87,26 +87,8 @@ module.exports = {
           );
         }
       } else {
-        let buttonsntilink = [
-          {
-            buttonId: `${prefix}chatbotgc on`,
-            buttonText: { displayText: "On" },
-            type: 1,
-          },
-          {
-            buttonId: `${prefix}chatbotgc off`,
-            buttonText: { displayText: "Off" },
-            type: 1,
-          },
-        ];
-        let bmffg = {
-          image: {url : botImage4} ,
-          caption: `\n *「  Group Chatbot configuration  」*\n\nPlease click the button below\n*On / Off*\n`,
-          footer: `*${botName}*`,
-          buttons: buttonsntilink,
-          headerType: 4,
-        };
-        await Miku.sendMessage(m.from, bmffg, { quoted: m });
+
+      await Miku.sendMessage(m.from, {image: { url: botImage4 },caption: `\n *「  Group Chatbot configuration  」*\n\nNote: This will enable chatbot in this group. Bot will reply to a message in this group if someone mentions bot's message.\n\n*_Usage:_*\n\n*${prefix}chatbotgc on*\n*${prefix}chatbotgc off*\n\n*Current Status:* ${checkdata.chatBot == "true" ? "On" : "Off"}`,}, { quoted: m });
     }
   },
 };
