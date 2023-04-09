@@ -63,7 +63,7 @@ module.exports = {
 
 
             let buttons = [
-                {
+                /*{
                     buttonId: `${prefix}help`,
                     buttonText: { displayText: "🌀Menu🌀" },
                     type: 1,
@@ -72,13 +72,12 @@ module.exports = {
                     buttonId: `${prefix}owner`,
                     buttonText: { displayText: "👽Owner👽" },
                     type: 1,
-                }
+                }*/
             ];
             let buttonMessage = {
-                video: botVideo, gifPlayback: true,
+                video: {url: botVideo},
                 caption: textHelpMenu,
                 footer: `_Uptime_ | *${uptime()}*\n_Status_ | ${botName} ɪꜱ ꜱᴛᴀʙʟᴇ`,
-                buttons: buttons,
                 headerType: 4,
             };
 
