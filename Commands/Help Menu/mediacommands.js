@@ -50,16 +50,10 @@ module.exports = {
     
     ☞ _Owned By_: 𝖄𝖆𝖐𝖆𝖘𝖍𝖎`;
   
-        let buttons = [
-          {
-            buttonId: `${prefix}searchc`,
-            buttonText: { displayText: "Next Menu List" },
-            type: 1,
-          }
-        ];
+        let buttons = [];
   
         let buttonMessage = {
-          video: botVideo, gifPlayback: true,
+          image: {url: botImage3},
           caption: textHelpMenu,
           footer: `*${botName}*`,
           buttons: buttons,

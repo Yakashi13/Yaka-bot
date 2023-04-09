@@ -108,19 +108,12 @@ textHelpMenu += `NSFW Menu :\n
     
     ☞ _Owned By_: 𝖄𝖆𝖐𝖆𝖘𝖍𝖎 `;
   
-    let buttons = [
-      {
-        buttonId: `${prefix}reactionc`,
-        buttonText: { displayText: "Next Menu List" },
-        type: 1,
-      }
-    ];
+    let buttons = [];
   
         let buttonMessage = {
-          video: botVideo, gifPlayback: true,
+          image: { url: botImage2 },
           caption: textHelpMenu,
           footer: `*${botName}*`,
-          buttons: buttons,
           headerType: 4,
         };
   
