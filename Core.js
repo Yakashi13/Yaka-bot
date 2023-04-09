@@ -17,13 +17,13 @@ const prefix = global.prefa;
 global.Levels = require("discord-xp");
 Levels.setURL(mongodb);
 
-console.log(color("\nDatabase 1 has been connected Successfully !", "lime"));
+console.log(color("\nDatabase 1 connected  !\n", "lime"));
 
-console.log(color("\nDatabase 2 has been connected Successfully !\n", "lime"));
+console.log(color("\nDatabase 2 connected !\n", "lime"));
 
 console.log(color("\nLoading please wait...\n", "yellow"));
 
-console.log(color('N O T E :\nDo not modify this bot on your own!!\nAsk Owner before you do..\n', 'red'))
+console.log(color('\nDo not modify this bot on your own!!\nAsk Owner before you do..\n', 'red'))
 
 module.exports = async (Miku, m, commands, chatUpdate, store) => {
   try {
@@ -60,7 +60,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
       ? participants.filter((v) => v.admin !== null).map((v) => v.id)
       : [];
     const botNumber = await Miku.decodeJid(Miku.user.id);
-    const isBotAdmin = m.isGroup ? groupAdmin.includes(Miku.user?.jid) : false;
+    const isBotAdmin = isGroup ? groupAdmin.includes(botNumber) : false;
     const isAdmin = isGroup ? groupAdmin.includes(sender) : false;
     const isCreator = [botNumber, ...global.owner]
       .map((v) => v.replace(/[^0-9]/g, "") + "@s.whatsapp.net")
@@ -178,16 +178,21 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
         antilink: "false",
       });
     }
+
     if (checkdata) {
+      if (checkdata.antilink == "true" && !isBotAdmin) {
+        await mk.updateOne({ id: m.from }, { antilink: "false" });
+        Miku.sendMessage(m.from, { text: `Antilink has been *disabled* because I am not an admin anymore.` });
+      }
       let mongoschema = checkdata.antilink || "false";
       if (m.isGroup && mongoschema == "true") {
         linkgce = await Miku.groupInviteCode(from);
         if (budy.includes(`https://chat.whatsapp.com/${linkgce}`)) {
           m.reply(
-            `\`\`\`「  Antilink System  」\`\`\`\n\nNo action will be taken because you sent this group's link.`
+            `No action will be taken because you sent this group's link.`
           );
         } else if (budy.includes(`https://chat.whatsapp`)) {
-          bvl = `\`\`\`「  Antilink System  」\`\`\`\n\nAdmin has sent a link so no issues.`;
+          bvl = `Admin has sent a link so no issues.`;
           if (isAdmin) return m.reply(bvl);
           if (m.key.fromMe) return m.reply(bvl);
           if (isCreator) return m.reply(bvl);
@@ -218,8 +223,8 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
           Miku.sendMessage(
             from,
             {
-              text: `\`\`\`「  Antilink System  」\`\`\`\n\n@${kice.split("@")[0]
-                } Removed for sending WhatsApp group link in this group! Message has been deleted.`,
+              text: `\`\`\`*Antilink System*\`\`\`\n\n@${kice.split("@")[0]
+                } Removed for sending WhatsApp group link in this group! Message deleted.`,
               mentions: [kice],
             },
             {
@@ -381,7 +386,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
     ) {
       if (m.isGroup && !isOwner && modStatus == "false") {
         return m.reply(
-          `*${global.botName}* is *Banned* on *${groupName}* group! \n\nType *${prefix}owner* or *${prefix}support* to submit a request to unban the group!`
+          `*${global.botName}* is *Banned* on *${groupName}* group! \n\nType *${prefix}owner* to submit a request to unban the group!`
         );
       }
     }
@@ -394,33 +399,21 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
 
     const flags = args.filter((arg) => arg.startsWith("--"));
     if (body.startsWith(prefix) && !icmd) {
-      let mikutext = `No such command programmed *${pushname}* senpai! Type *${prefix}help* or press the button below to get my full command list!\n`;
-
-      let Button = [
-        {
-          buttonId: `${prefix}help`,
-          buttonText: {
-            displayText: `${prefix}help`,
-          },
-          type: 1,
+      let Mikutext = `No command programmed *${pushname}* senpai! Type *${prefix}help* to get my Command list!\n`;
+      const reactmxv = {
+        react: {
+          text: '❌',
+          key: m.key,
         },
-      ];
-      let bmffg = {
-        image: {
-          url: botImage1,
-        },
-        caption: mikutext,
-        footer: `*${botName}*`,
-        buttons: Button,
-        headerType: 4,
       };
-      Miku.sendMessage(m.from, bmffg, {
+      await Miku.sendMessage(m.from, reactmxv);
+
+      Miku.sendMessage(m.from, { image: { url: botImage1, }, caption: Mikutext, }, {
         quoted: m,
       });
     }
 
     if (m.message) {
-      //  addBalance(m.sender, randomNomor(574), balance)
       console.log(
         chalk.black(chalk.bgWhite("[ MESSAGE ]")),
         chalk.black(chalk.bgGreen(new Date())),
@@ -453,20 +446,9 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             .replace(/%command/gi, cmd.name)
             .replace(/%text/gi, text)}`
         );
-      var buttonss = [
-        {
-          buttonId: `${prefix}help`,
-          buttonText: {
-            displayText: `${prefix}help`,
-          },
-          type: 1,
-        },
-      ];
+
       let buttonmess = {
         text: `*Command Info*\n\n${data.join("\n")}`,
-        footer: `*${botName}*`,
-        buttons: buttonss,
-        headerType: 1,
       };
       let reactionMess = {
         react: {
@@ -476,7 +458,6 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
       };
       await Miku.sendMessage(m.from, reactionMess).then(() => {
         return Miku.sendMessage(m.from, buttonmess, {
-          react: "🍁",
           quoted: m,
         });
       });
@@ -506,7 +487,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
           return await Miku.sendMessage(
             m.from,
             {
-              text: `Command Rejected ! Don't Spam ! You can use command after _${timeLeft.toFixed(
+              text: `Don't Spam ! You can use command after _${timeLeft.toFixed(
                 1
               )} second(s)_`,
             },
