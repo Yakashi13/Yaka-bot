@@ -6,9 +6,9 @@ module.exports = {
     react: "🥺",
     category: "Core",
     start: async(Miku, m,{pushName}) => {
-        m.reply(`Check your DM *${pushName}* Senpai !\n\nI have sent you support group link personally.`)
+        m.reply(`Check your inbox *${pushName}* Senpai !\n`)
         let botpic = botImage1
-        let txt = `      🧣 *Support Group* 🧣\n\n*${botName}* is an open source project, and always happy to help you.\n\n*Link:* ${suppL}\n\n*Note:* Please don't spam in the group, and don't message *Admins directly* without permission. Ask for help in *Group*.\n\n*Thanks for using Yaka.*`
+        let txt = `Link:* ${suppL}\n\n*Note:* Please don't spam in group, and don't message *Admins directly* without permission. Ask for help in *Group*.\n\n*Thanks for using Yaka.*`
         await Miku.sendMessage(m.sender,{image:{url:botpic}, caption:txt},{quoted:m})
     }
 }
