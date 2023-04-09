@@ -1,23 +1,18 @@
 const { getBuffer } = require("../../lib/myfunc");
 
 module.exports = {
-  name: "hmiku",
-  alias: ["nsfwmiku", "hentaimiku", "henmiku"],
-  desc: "Hentai picture of miku",
+  name: "hMiku",
+  alias: ["nsfwMiku", "hentaiMiku", "henMiku"],
+  desc: "Hentai picture of Miku",
   category: "Weeb",
-  usage: `hmiku`,
+  usage: `hMiku`,
   react: "👹",
   start: async (Miku, m, { prefix,NSFWstatus }) => {
 
     if (NSFWstatus == "false") return m.reply(`This group is not NSFW enabled!\n\nTo configure NSFW mode, type:\n\n*${prefix}nsfw*`);
-    let Image = await getBuffer(`https://mikuhentai-api.onrender.com/`);
-    let Button = [
-      {
-        buttonId: `${prefix}hmiku`,
-        buttonText: { displayText: `⏩💦` },
-        type: 1,
-      },
-    ];
+    let Image = await getBuffer(`https://Mikuhentai-api.onrender.com/`);
+    let Button = [];
+     
     let bmffg = {
       image: Image,
       caption: `Miku Hentai API by *Team Atlas*\n\n*API link:* https://shubhapratimbiswas.tech\n`,

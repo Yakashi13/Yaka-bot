@@ -15,18 +15,8 @@ module.exports = {
     let imgURL = buff.data.url
     
 
-    let Button = [
-      {
-        buttonId: `${prefix}nsfwmenu`,
-        buttonText: { displayText: `NSFW Menu` },
-        type: 1,
-      },
-      {
-        buttonId: `${prefix}inshorts`,
-        buttonText: { displayText: `⏩💦` },
-        type: 1,
-      },
-    ];
+    let Button = [];
+     
     let bmffg = {
       image: {url: imgURL},
       ccaption: `\n* Here What you are looking for 👀..*\n`,

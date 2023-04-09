@@ -1,32 +1,22 @@
 const axios = require("axios");
 
 module.exports = {
-  name: "hatsunemiku",
-  alias: ["nsfwhatsunemiku"],
+  name: "hatsuneMiku",
+  alias: ["nsfwhatsuneMiku"],
   desc: "Hentai picture of Hatsune Miku", 
   category: "Nsfw",
-  usage: `hatsunemiku`,
+  usage: `hatsuneMiku`,
   react: "👹",
   start: async (Miku, m, { prefix,NSFWstatus }) => {
 
     if (NSFWstatus == "false") return m.reply(`This group is not NSFW enabled!\n\nTo configure NSFW mode, type:\n\n*${prefix}nsfw*`);
     m.reply(mess.waiting)
-    let buff= await axios.get(`https://fantox-apis.vercel.app/hatsunemiku`)
+    let buff= await axios.get(`https://fantox-apis.vercel.app/hatsuneMiku`)
     let imgURL = buff.data.url
     
 
-    let Button = [
-      {
-        buttonId: `${prefix}nsfwmenu`,
-        buttonText: { displayText: `NSFW Menu` },
-        type: 1,
-      },
-      {
-        buttonId: `${prefix}hatsunemiku`,
-        buttonText: { displayText: `⏩💦` },
-        type: 1,
-      },
-    ];
+    let Button = [];
+     
     let bmffg = {
       image: {url: imgURL},
       caption: `\n* Here What you are looking for 👀..*\n`,
