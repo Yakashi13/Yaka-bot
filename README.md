@@ -1,6 +1,6 @@
 <p align="center">
 <a href="https://github.com/Yakashi13/Yaka-bot">
-    <img src="./Page/yaka.jpg">
+    <img src="https://media.tenor.com/7IKhVM983G8AAAPo/nom-nom-death-note.mp4">
   </a>
 
 <h1 align="center"> Y A K A <sup>BOT
