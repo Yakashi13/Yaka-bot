@@ -75,10 +75,9 @@ module.exports = {
                 }*/
             ];
             let buttonMessage = {
-                video: botVideo, gifPlayback: true,
+                video: {url: botVideo},
                 caption: textHelpMenu,
                 footer: `_Uptime_ | *${uptime()}*\n_Status_ | ${botName} ɪꜱ ꜱᴛᴀʙʟᴇ`,
-                buttons: buttons,
                 headerType: 4,
             };
 
