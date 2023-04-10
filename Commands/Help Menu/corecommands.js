@@ -56,7 +56,6 @@ Here's the list of Core Commands.\n
         image: {url: botImage2},
         caption: textHelpMenu,
         footer: `*${botName}*`,
-        buttons: buttons,
         headerType: 4,
       };
 
