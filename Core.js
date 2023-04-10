@@ -9,6 +9,7 @@ const axios = require("axios");
 const Func = require("./lib");
 const chalk = require("chalk");
 const { color } = require("./lib/color");
+const os = require('os')
 
 const cool = new Collection();
 const { mk, mku, mkchar } = require("./Database/dataschema.js");
@@ -69,6 +70,11 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
     global.suppL = "https://chat.whatsapp.com/KLX59oSwhGWLCDNGshiwWv";
 
     const isCmd = body.startsWith(prefix);
+
+    ////server uptime?///
+    const uptimeValue = os.uptime();
+    const uptime = `${Math.floor(uptimeValue / 3600)}h ${Math.floor(uptimeValue % 3600 / 60)}m ${Math.floor(uptimeValue % 60)}s`;
+    //////
     const quoted = m.quoted ? m.quoted : m;
     const mime = (quoted.msg || m.msg).mimetype || " ";
     const isMedia = /image|video|sticker|audio/.test(mime);
@@ -259,14 +265,8 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
     let modSTATUS = await mku.findOne({
       id: m.sender,
     });
-    var modStatus = "false";
-    if (!modSTATUS) {
-      await mku.create({ id: m.sender, addedMods: "false" });
-      modStatus = modSTATUS.addedMods || "false";
-    }
-    if (modSTATUS) {
-      modStatus = modSTATUS.addedMods || "false";
-    }
+    const modStatus = modSTATUS ? modSTATUS.addedMods : "false";
+
 
     let botModeSet = await mkchar.findOne({
       id: "1",
@@ -524,6 +524,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
       NSFWstatus,
       isCreator,
       store,
+      uptime,
       command: cmd.name,
       commands,
       Function: Func,

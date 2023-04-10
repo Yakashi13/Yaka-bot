@@ -5,14 +5,9 @@ module.exports = {
     react: "💜",
     category: "Core",
 
-    start: async (Miku, m, { prefix, pushName, args, commands, text }) => {
+    start: async (Miku, m, { prefix, pushName, args, commands, text, uptime }) => {
         const pad = (s) => (s < 10 ? "0" : "") + s;
-        const formatTime = (seconds) => {
-            const hours = Math.floor(seconds / (60 * 60));
-            const minutes = Math.floor((seconds % (60 * 60)) / 60);
-            const secs = Math.floor(seconds % 60);
-            return time = `${pad(hours)}:${pad(minutes)}:${pad(secs)}`;
-        };
+        
         const now = new Date();
         const hour = now.getHours();
         let greeting;
@@ -24,7 +19,7 @@ module.exports = {
         } else {
             greeting = "Konbanwa"; //good evening
         }
-        const uptime = () => formatTime(process.uptime());
+        
         if (args[0]) {
             let data = []
             let name = args[0].toLowerCase()
@@ -77,7 +72,7 @@ module.exports = {
             let buttonMessage = {
                 video: {url: botVideo},
                 caption: textHelpMenu,
-                footer: `_Uptime_ | *${uptime()}*\n_Status_ | ${botName} ɪꜱ ꜱᴛᴀʙʟᴇ`,
+                footer: `_Uptime_ | *${uptime}*\n_Status_ | ${botName} ɪꜱ ꜱᴛᴀʙʟᴇ`,
                 headerType: 4,
             };
 
