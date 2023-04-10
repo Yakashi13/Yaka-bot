@@ -53,7 +53,6 @@ module.exports = {
           image: {url: 'https://wallpapercave.com/wp/wp11417135.jpg'},
           caption: textHelpMenu,
           footer: `*${botName}*`,
-          buttons: buttons,
           headerType: 4,
         };
   
