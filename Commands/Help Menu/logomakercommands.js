@@ -88,7 +88,6 @@ module.exports = {
           image: {url: botImage2},
           caption: textHelpMenu,
           footer: `*${botName}*`,
-          buttons: buttons,
           headerType: 4,
         };
   
