@@ -18,7 +18,8 @@ module.exports = {
       const memUsed = memTotal - memFree;
       // const network = os.networkInterfaces();
   
-      const message = `*${Miku.user.name}* is up and running!\n\n` +
+      //const message = `*${Miku.user.name}* is up and running!\n\n` +
+             const message = `*${botName}* is up and running !\n\n` +
         `• Uptime: ${uptime}\n` +
         `• Load Average: ${loadavg}\n` +
         `• CPU: ${cpu.model} (${cpu.cores} cores @ ${cpu.speed})\n` +
