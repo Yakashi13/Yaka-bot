@@ -61,7 +61,7 @@ module.exports = {
     
     
     await Miku.sendMessage(m.from, {
-        video:{url:"https://graph.org/file/2740dd34d7e91b076d302.mp4"},
+        video:{url: botVideo},
         caption:txt, 
         gifPlayback: true
     },
