@@ -128,7 +128,7 @@ global.charID7 = {
   botImage4: "https://i.pinimg.com/564x/82/53/70/825370003ba8742eef78ee5a6ffbdc6a.jpg",
   botImage5: "https://i.pinimg.com/564x/c7/55/94/c75594b74171500c0942ff5a7c60416a.jpg",
   botImage6: "https://i.pinimg.com/736x/63/ee/8c/63ee8ce41427eeba6b0b140e5342fc10.jpg",
-  botImage7: "",
+  botImage7: "https://i.pinimg.com/736x/63/ee/8c/63ee8ce41427eeba6b0b140e5342fc10.jpg",
 }
 
 global.charID8 = {
