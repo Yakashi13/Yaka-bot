@@ -158,7 +158,7 @@ Join the <a href="https://chat.whatsapp.com/KLX59oSwhGWLCDNGshiwWv">Whatsapp</a>
 
 <br>
 
-- Become a [ Contributor](https://github.com/Yakashi13/Yaka-bot/graphs/contributors).
+- Become a [Contributor](https://github.com/Yakashi13/Yaka-bot/graphs/contributors).
 - Feel free to contribute in this project. I will merge your respected contribution after reviewing it. ( Only if you not done any personal changes.. )
   
 <br>
