@@ -29,7 +29,7 @@
 
 Image Source: https://wall.alphacoders.com/
 Image Source: https://wallpapercave.com/
-Video Host: graph.org/
+Video / Img Host: graph.org/
 
 */
 
@@ -43,6 +43,7 @@ global.charID0 = {
   botImage4: "https://cdn.dribbble.com/users/2400955/screenshots/10843457/test_4x.jpg",
   botImage5: "https://cdn.dribbble.com/users/2400955/screenshots/10843457/test_4x.jpg",
   botImage6: "https://cdn.dribbble.com/users/2400955/screenshots/10843457/test_4x.jpg",
+  botImage7: "https://graph.org/file/9117a82d3253658682ae3.jpg",
 }
 
 
@@ -55,6 +56,7 @@ global.charID1 = {
   botImage4: "https://wallpapercave.com/wp/wp5950813.png",
   botImage5: "https://wallpapercave.com/wp/wp5950773.png",
   botImage6: "https://wallpapercave.com/wp/wp6240991.jpg",
+  botImage7: "https://wallpapercave.com/wp/wp6240991.jpg",
 }
 
 global.charID2 = {
@@ -66,6 +68,7 @@ global.charID2 = {
   botImage4: "https://wallpapercave.com/wp/wp11999002.jpg",
   botImage5: "https://wallpapercave.com/wp/wp11253621.jpg",
   botImage6: "https://wallpapercave.com/wp/wp11998979.jpg",
+  botImage7: "https://graph.org/file/fca4a3bc846493afc0d83.jpg",
 }
 
 global.charID3 = {
@@ -77,6 +80,7 @@ global.charID3 = {
   botImage4: "https://wallpapercave.com/wp/wp9177242.png",
   botImage5: "https://wallpapercave.com/wp/wp2598741.jpg",
   botImage6: "https://wallpapercave.com/wp/wp2598739.jpg",
+  botImage7: "https://graph.org/file/d4a02bd351469ef36507c.jpg",
 }
 
 global.charID4 = {
@@ -88,6 +92,7 @@ global.charID4 = {
   botImage4: "https://wallpapercave.com/wp/wp7757977.jpg",
   botImage5: "https://wallpapercave.com/wp/wp7757893.jpg",
   botImage6: "https://wallpapercave.com/wp/wp2605233.jpg",
+  botImage7: "https://wallpapercave.com/wp/wp2605233.jpg",
 }
 
 global.charID5 = {
@@ -99,6 +104,7 @@ global.charID5 = {
   botImage4: "https://wallpapercave.com/wp/wp1975781.jpg",
   botImage5: "https://wallpapercave.com/wp/wp9257803.jpg",
   botImage6: "https://wallpapercave.com/wp/wp1975650.jpg",
+  botImage7: "https://graph.org/file/48074616c35009ff37ff3.jpg",
 }
 
 global.charID6 = {
@@ -110,6 +116,7 @@ global.charID6 = {
   botImage4: "https://wallpapercave.com/uwp/uwp810727.png",
   botImage5: "https://wallpapercave.com/wp/wp3921802.jpg",
   botImage6: "https://wallpapercave.com/wp/wp1860762.png",
+  botImage7: "https://graph.org/file/e76bc2b10b28e017fc2d2.jpg",
 }
 
 global.charID7 = {
@@ -121,6 +128,7 @@ global.charID7 = {
   botImage4: "https://i.pinimg.com/564x/82/53/70/825370003ba8742eef78ee5a6ffbdc6a.jpg",
   botImage5: "https://i.pinimg.com/564x/c7/55/94/c75594b74171500c0942ff5a7c60416a.jpg",
   botImage6: "https://i.pinimg.com/736x/63/ee/8c/63ee8ce41427eeba6b0b140e5342fc10.jpg",
+  botImage7: "",
 }
 
 global.charID8 = {
@@ -132,6 +140,7 @@ global.charID8 = {
   botImage4: "https://wallpapercave.com/wp/wp9494653.jpg",
   botImage5: "https://wallpapercave.com/wp/wp9494754.jpg",
   botImage6: "https://wallpapercave.com/wp/wp9012050.jpg",
+  botImage7: "https://graph.org/file/07de613c664503ded5f34.jpg",
 }
 
 global.charID9 = {
@@ -143,6 +152,7 @@ global.charID9 = {
   botImage4: "https://images4.alphacoders.com/971/971659.jpg",
   botImage5: "https://wallpapercave.com/wp/wp10128838.png",
   botImage6: "https://wallpapercave.com/wp/wp10128852.jpg",
+  botImage7: "https://graph.org/file/8f908f9661b17d36e2e5f.jpg",
 }
 
 global.charID10 = {
@@ -154,6 +164,7 @@ global.charID10 = {
   botImage4: "https://wallpapercave.com/wp/wp7579195.jpg",
   botImage5: "https://wallpapercave.com/wp/wp6129404.jpg",
   botImage6: "https://wallpapercave.com/wp/wp7579058.jpg",
+  botImage7: "https://graph.org/file/26eded29711aca6f4db34.jpg",
 }
 
 global.charID11 = {
@@ -165,6 +176,7 @@ global.charID11 = {
   botImage4: "https://wallpapercave.com/wp/wp10917648.jpg",
   botImage5: "https://wallpapercave.com/wp/wp10917449.jpg",
   botImage6: "https://wallpapercave.com/wp/wp10917503.jpg",
+  botImage7: "https://graph.org/file/8a3f866018b5792d7d3c7.jpg",
 }
 
 global.charID12 = {
@@ -176,6 +188,7 @@ global.charID12 = {
   botImage4: "https://wallpapercave.com/wp/wp3923445.png",
   botImage5: "https://wallpapercave.com/wp/wp1860723.png",
   botImage6: "https://wallpapercave.com/wp/wp8557348.jpg",
+  botImage7: "https://graph.org/file/3ef85ca204bd3e37d7783.jpg",
 }
 
 global.charID13 = {
@@ -187,6 +200,7 @@ global.charID13 = {
   botImage4: "https://images.alphacoders.com/122/1220453.jpg",
   botImage5: "https://images8.alphacoders.com/129/1298210.jpg",
   botImage6: "https://wallpapercave.com/wp/wp8356203.png",
+  botImage7: "https://graph.org/file/afaeef7889f74ad69ce16.jpg",
 }
 
 global.charID14 = {
@@ -198,6 +212,7 @@ global.charID14 = {
   botImage4: "https://wallpapercave.com/wp/wp11559180.jpg",
   botImage5: "https://wallpapercave.com/wp/wp11559244.jpg",
   botImage6: "https://wallpapercave.com/wp/wp7959709.jpg",
+  botImage7: "https://graph.org/file/674499d0a5c37843356d9.jpg",
 }
 
 global.charID15 = {
@@ -209,6 +224,7 @@ global.charID15 = {
   botImage4: "https://wallpapercave.com/wp/wp7302877.jpg",
   botImage5: "https://images6.alphacoders.com/856/856539.jpg",
   botImage6: "https://images7.alphacoders.com/945/945787.png",
+  botImage7: "https://graph.org/file/b0c788680e31db74f1f12.jpg",
 }
 
 global.charID16 = {
@@ -220,6 +236,7 @@ global.charID16 = {
   botImage4: "https://wallpapercave.com/wp/wp6616005.jpg",
   botImage5: "https://images4.alphacoders.com/805/805527.png",
   botImage6: "https://wallpapercave.com/wp/wp6616168.png",
+  botImage7: "https://graph.org/file/9275b9b4b1f9b41b09259.jpg",
 }
 
 global.charID17 = {
@@ -231,6 +248,7 @@ global.charID17 = {
   botImage4: "https://wallpapercave.com/wp/wp8354223.jpg",
   botImage5: "https://images5.alphacoders.com/670/670092.jpg",
   botImage6: "https://wallpapercave.com/uwp/uwp923289.jpeg",
+  botImage7: "https://graph.org/file/b63b26e5fc4828fde6b80.jpg",
 }
 
 global.charID18 = {
@@ -242,6 +260,7 @@ global.charID18 = {
   botImage4: "https://images3.alphacoders.com/118/1185513.jpg",
   botImage5: "https://images5.alphacoders.com/113/1134110.jpg",
   botImage6: "https://wallpapercave.com/wp/wp11845436.jpg",
+  botImage7: "https://wallpapercave.com/wp/wp11845436.jpg",
 }
 
 global.charID19 = {
@@ -253,6 +272,7 @@ global.charID19 = {
   botImage4: "https://images4.alphacoders.com/115/1150021.jpg",
   botImage5: "https://images8.alphacoders.com/123/1230126.png",
   botImage6: "https://wallpapercave.com/wp/wp8716503.png",
+  botImage7: "https://graph.org/file/37e558d1820308e666017.jpg",
 }
 
 global.charID20 = {
@@ -264,6 +284,7 @@ global.charID20 = {
   botImage4: "https://wallpapercave.com/wp/wp5490828.png",
   botImage5: "https://wallpapercave.com/wp/wp6065609.jpg",
   botImage6: "https://wallpapercave.com/wp/wp7955488.jpg",
+  botImage7: "https://wallpapercave.com/wp/wp7955488.jpg",
 }
 
 global.charID21 = {
@@ -275,6 +296,7 @@ global.charID21 = {
   botImage4: "https://wallpapercave.com/wp/wp10977499.jpg",
   botImage5: "https://wallpapercave.com/wp/wp10977500.jpg",
   botImage6: "https://wallpapercave.com/wp/wp10296869.jpg",
+  botImage7: "https://graph.org/file/6cc73f55406a3c2a1bf29.jpg",
 }
 
 global.charID22 = {
@@ -286,6 +308,7 @@ global.charID22 = {
   botImage4: "https://wallpapercave.com/wp/wp2535508.png",
   botImage5: "https://wallpapercave.com/wp/wp1924816.png",
   botImage6: "https://wallpapercave.com/wp/wp5894889.jpg",
+  botImage7: "https://graph.org/file/2ec1af24f2d6ca4f22cfc.jpg",
 }
 
 global.charID23 = {
@@ -297,4 +320,5 @@ global.charID23 = {
   botImage4: "https://wallpapercave.com/wp/wp11180570.jpg",
   botImage5: "https://wallpapercave.com/wp/wp11180594.jpg",
   botImage6: "https://wallpapercave.com/wp/wp10959288.jpg",
+  botImage7: "https://graph.org/file/00b87911b213123c7eed0.jpg",
 }

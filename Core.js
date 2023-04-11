@@ -172,6 +172,8 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
     global.botImage4 = global[idConfig].botImage4;
     global.botImage5 = global[idConfig].botImage5;
     global.botImage6 = global[idConfig].botImage6;
+    global.botImage7 = global[idConfig].botImage7;
+    
 
     //------------------------------------------- Antilink Configuration --------------------------------------------//
 
@@ -399,30 +401,30 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
 
     const flags = args.filter((arg) => arg.startsWith("--"));
     if (body.startsWith(prefix) && !icmd) {
-      let Mikutext = `No command programmed *${pushname}* senpai! Type *${prefix}help* to get my Command list!\n`;
+      let Mikutext = `*${pushname}* bakaa! No Cmd Found !!\n\n Type *${prefix}help* to get my Commands!`;
       const reactmxv = {
         react: {
-          text: '❌',
+          text: '🙍🏻‍♀️',
           key: m.key,
         },
       };
       await Miku.sendMessage(m.from, reactmxv);
 
-      Miku.sendMessage(m.from, { image: { url: botImage1, }, caption: Mikutext, }, {
+      Miku.sendMessage(m.from, { video: { url: 'https://media.tenor.com/qvvKGZhH0ysAAAPo/anime-girl.mp4', }, caption: Mikutext, gifPlayback: true }, {
         quoted: m,
       });
     }
 
     if (m.message) {
       console.log(
-        chalk.black(chalk.bgWhite("[ MESSAGE ]")),
-        chalk.black(chalk.bgGreen(new Date())),
-        chalk.black(chalk.bgBlue(budy || m.mtype)) +
+        chalk.white(chalk.bgRed("[ MESSAGE ]")),
+        chalk.black(chalk.bgYellow(new Date())),
+        chalk.yellow(chalk.bgGrey(budy || m.mtype)) +
         "\n" +
-        chalk.magenta("=> From"),
-        chalk.green(pushname),
-        chalk.yellow(m.sender) + "\n" + chalk.blueBright("=> In"),
-        chalk.green(m.isGroup ? m.from : "Private Chat", m.chat)
+        chalk.blue("=> From"),
+        chalk.red(pushname),
+        chalk.green(m.sender) + "\n" + chalk.blueBright("=> In"),
+        chalk.white(m.isGroup ? m.from : "Private Chat", m.chat)
       );
     }
 
