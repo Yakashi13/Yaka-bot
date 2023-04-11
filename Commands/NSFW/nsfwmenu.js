@@ -67,6 +67,6 @@ module.exports = {
       ╠ •
       | • ━━━━━━━━━━━━━━\n\n`
 
-        await Miku.sendMessage(m.from, { image: { url: botImage5 }, caption: ntext }, { quoted: m })
+        await Miku.sendMessage(m.from, { image: { url: botImage7 }, caption: ntext }, { quoted: m })
     }
 }
