@@ -56,6 +56,19 @@
     </a>
 </p>
 </p>
+    
+ <br>   
+ 
+    
+    # Heroku ( TESTING ! USE AT YOUR OWN RISK !! )
+</p>
+
+<p align="center" >
+    <a href="https://heroku.com/deploy?template=https://github.com/Yakashi13/Yaka-bot">
+    <img src="https://www.herokucdn.com/deploy/button.png" width="160px" alt="Deploy on Heroku" >
+    </a>
+
+</p>
 
 <h2 align="center"></h2> 
 
