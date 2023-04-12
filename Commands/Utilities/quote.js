@@ -28,7 +28,6 @@ module.exports = {
           }
         }
     
-
     var waUserName = pushName;
 
     const quoteText = m.quoted ? m.quoted.msg : args ? args.join(" ") : "";
