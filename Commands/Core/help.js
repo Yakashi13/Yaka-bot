@@ -65,7 +65,7 @@ module.exports = {
      ☞ 𝙊𝙬𝙣𝙚𝙙 𝘽𝙮 | 𝖄𝖆𝖐𝖆𝖘𝖍𝖎`;
      
     await Yaka.sendMessage(m.from, {
-        video:{url: "https://media.tenor.com/7J5qrMbAAAYAAAPo/zero-two-dance.mp4"},
+        video:{url: botVideo},
         caption:txt, 
         gifPlayback: true
     },
