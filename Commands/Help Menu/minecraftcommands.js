@@ -50,8 +50,9 @@ module.exports = {
     let buttons = [];
   
         let buttonMessage = {
-          image: {url: 'https://wallpapercave.com/wp/wp11417135.jpg'},
+          video: {url: "https://telegra.ph/file/627f47bd6f2cfb035c5c0.mp4"},
           caption: textHelpMenu,
+          gifPlayback: true,
           footer: `*${botName}*`,
           headerType: 4,
         };
