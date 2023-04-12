@@ -69,7 +69,7 @@ module.exports = {
                 }*/
             ];
         await Yaka.sendMessage(m.from, {
-        video:{url: botVideo},
+        video:{url: "https://media.tenor.com/7J5qrMbAAAYAAAPo/zero-two-dance.mp4"},
         caption:textHelpMenu, 
         gifPlayback: true
     },
