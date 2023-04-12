@@ -8,9 +8,9 @@
 
 <p align="center"> 
     <b>Greetings traveller... <br>
-    I am <br>
+        I am <br>
     Y A K A <sup>B O T</sup> <br>
-     An "Anime whatsapp bot" with more <b>Features, Stability</b> and <b>Compatibility</b>.
+        <h1 align="center">An "Anime whatsapp bot" with more <b>Features, Stability</b> and <b>Compatibility</b>.</h1>
 <br>
 <br>
 
@@ -39,14 +39,13 @@
 <br>
 <br>
         
-<h2 align="center">👽 Y A K A <sup>B O T</sup> Platform Compatibility 👽
+<h2 align="center">👽 Y A K A <sup>B O T</sup> Platform Compatibility 👽 
+
 </h2> 
 
 <br>
 
-<p>
- You Can Deploy the bot by using <a href="replit.com">Replit</a> . Highly Recommended !!
-</p>
+ # You Can Deploy the bot by using <a href="replit.com">Replit</a> . Highly Recommended !!
 
   <p align="center"> <br>
 <a href="https://repl.it/github/Yakashi13/Yaka-bot">
@@ -106,15 +105,15 @@
 
 <br>
 
-- Make an account in <a href="https://replit.com/">Replit</a>. 
-- Make a database account in <a href="https://www.mongodb.com/">MongoDB</a>.
-- Make a <a href="https://tenor.com/developer/keyregistration">TENOR_API_KEY</a> in google api.
-- Get the MongoDB url and paste it in `config.js` and `env.example` files.
-- Diploy bot to the Replit.
-- Make `env.example` variables Secrets in Replit.
-- Give an Random `SESSION_ID` ( Like "dlfhdsfhdsfh" or "fkdsfdhslfhklfd" ) and put it in a `Secrets`.
-- Run and Wait until you get the `QR`.
-- Enjoy...
+- Make an account in <a href="https://replit.com/">Replit</a>.</br>
+- Make a database account in <a href="https://www.mongodb.com/">MongoDB</a>.</br>
+- Make a <a href="https://tenor.com/developer/keyregistration">TENOR_API_KEY</a> in google api.</br>
+- Get the MongoDB url and paste it in `config.js` and `env.example` files.</br>
+- Diploy bot to the Replit.</br>
+- Make `env.example` variables Secrets in Replit.</br>
+- Give an Random `SESSION_ID` ( Like "dlfhdsfhdsfh" or "fkdsfdhslfhklfd" ) and put it in a `Secrets`.</br>
+- Run and Wait until you get the `QR`.</br>
+- Enjoy...</br>
 
 <br>
 Join the <a href="https://chat.whatsapp.com/KLX59oSwhGWLCDNGshiwWv">Whatsapp</a> group if you have any issues..  
@@ -162,7 +161,19 @@ Join the <a href="https://chat.whatsapp.com/KLX59oSwhGWLCDNGshiwWv">Whatsapp</a>
 - Feel free to contribute in this project. I will merge your respected contribution after reviewing it. ( Only if you not done any personal changes.. )
   
 <br>
-<br>
-<br>
+    
+    
+   # Special thanks to :
+   <p>
+    
+ <img align="right" width="350" src="https://media.tenor.com/3754hXU1620AAAAC/roundtable-theroundtable.gif" alt="Coding gif" />
+  
+ ❤️ &emsp; [Eximinati](https://github.com/Eximinati) for helping with the codes.<br/><br/>
+ ❤️ &emsp; [BigPapaX](https://github.com/BigpapaX) for helping with codes and trying new features.<br/><br/>
+ ❤️ &emsp; [Atlas-MD](https://github.com/FantoX001/Atlas-MD) For Base.<br/><br/></br>
+ ❤️ &emsp; Ask me about anything [Here](https://github.com/Yakashi13/Yaka-bot/issues)
+
+</p>    
+<br/>
 
 <h2 align="center"> - <small> Y A K A S H I</small> - </h2>
