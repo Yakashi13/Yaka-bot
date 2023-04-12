@@ -7,7 +7,7 @@ module.exports = {
   category: "Weeb",
   usage: `cosplayamv`,
   react: "😉",
-  start: async (Miku, m, { prefix }) => {
+  start: async (Yaka, m, { prefix }) => {
     var VID = await getBuffer(`https://cosplay-video-api.onrender.com`);
     var Button = [
       {
@@ -24,7 +24,7 @@ module.exports = {
       buttons: Button,
       headerType: 4,
     };
-    await Miku.sendMessage(m.from, bmffg, { quoted: m }).catch((err) => {
+    await Yaka.sendMessage(m.from, bmffg, { quoted: m }).catch((err) => {
       return "Error!";
     });
   },

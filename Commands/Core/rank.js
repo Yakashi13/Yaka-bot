@@ -7,7 +7,7 @@ module.exports={
     cool:3,
     react:"🔮️",
     category: "General",
-    start: async(Miku, m,{text,pushName,sender}) => {
+    start: async(Yaka, m,{text,pushName,sender}) => {
         const userq = await Levels.fetch(m.sender, "bot");
 const levelRole = userq.level
 var role = 'Citizen'
@@ -104,7 +104,7 @@ if (levelRole <= 2) {
 			textr += `*🎯️ XP*: ${userq.xp} / ${Levels.xpFor(userq.level + 1)}\n*❤️ Level*: ${userq.level}\n*🔮️ Role*: ${role}`
 
 			try {
-                    ppuser = await Miku.profilePictureUrl(m.sender, 'image')
+                    ppuser = await Yaka.profilePictureUrl(m.sender, 'image')
                 } catch {
                     pppuser = 'https://www.linkpicture.com/q/IMG-20220118-WA0387.png'
                     ppuser=await fetchBuffer(pppuser)
@@ -127,7 +127,7 @@ if (levelRole <= 2) {
                     .setUsername(pushName)
                     .setDiscriminator(disc)
                 rank.build().then(async(data)=>{
-					Miku.sendMessage(m.from,{image:data,caption:textr},{quoted:m})
+					Yaka.sendMessage(m.from,{image:data,caption:textr},{quoted:m})
   })
 
     }

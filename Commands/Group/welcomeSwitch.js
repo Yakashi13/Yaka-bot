@@ -8,12 +8,12 @@ module.exports = {
   usage: "welcome [on/off]",
   react: "✨",
   start: async (
-    Miku,
+    Yaka,
     m,
     { args, isBotAdmin, isAdmin, isCreator, reply, prefix, pushName }
   ) => {
     if (!isAdmin)
-      return Miku.sendMessage(
+      return Yaka.sendMessage(
         m.from,
         {
           text: `*${pushName}* must be *Admin* to turn ON/OFF *Welcome/Goodbye* mesages !`,
@@ -22,7 +22,7 @@ module.exports = {
       );
 
     let checkdata = await mk.findOne({ id: m.from });
-    var groupe = await Miku.groupMetadata(m.from);
+    var groupe = await Yaka.groupMetadata(m.from);
     var members = groupe["participants"];
     var mems = [];
     members.map(async (adm) => {
@@ -32,7 +32,7 @@ module.exports = {
     if (args[0] === "on") {
       if (!checkdata) {
         await new mk({ id: m.from, switchWelcome: "true" }).save();
-        Miku.sendMessage(
+        Yaka.sendMessage(
           m.from,
           {
             text: `*Welcome/Goodbye* messages has been *Activated* in this group!`,
@@ -40,7 +40,7 @@ module.exports = {
           },
           { quoted: m }
         );
-        return Miku.sendMessage(
+        return Yaka.sendMessage(
           m.from,
           {
             text: `*Welcome/Goodbye* messages has been *Activated* in this group!`,
@@ -49,7 +49,7 @@ module.exports = {
         );
       } else {
         if (checkdata.switchWelcome == "true")
-          return Miku.sendMessage(
+          return Yaka.sendMessage(
             m.from,
             {
               text: `*Welcome/Goodbye* messages is already *Activated* in this group!`,
@@ -57,7 +57,7 @@ module.exports = {
             { quoted: m }
           );
         await mk.updateOne({ id: m.from }, { switchWelcome: "true" });
-        return Miku.sendMessage(
+        return Yaka.sendMessage(
           m.from,
           {
             text: `*Welcome/Goodbye* messages has been *Activated* in this group!`,
@@ -68,7 +68,7 @@ module.exports = {
     } else if (args[0] === "off") {
       if (!checkdata) {
         await new mk({ id: m.from, switchWelcome: "false" }).save();
-        return Miku.sendMessage(
+        return Yaka.sendMessage(
           m.from,
           {
             text: `*Welcome/Goodbye* messages has been *De-Activated* in this group!`,
@@ -77,13 +77,13 @@ module.exports = {
         );
       } else {
         if (checkdata.switchWelcome == "false")
-          return Miku.sendMessage(
+          return Yaka.sendMessage(
             m.from,
             { text: `*Welcome/Goodbye* is not *Activated* in this group!` },
             { quoted: m }
           );
         await mk.updateOne({ id: m.from }, { switchWelcome: "false" });
-        return Miku.sendMessage(
+        return Yaka.sendMessage(
           m.from,
           {
             text: `*Welcome/Goodbye* messages has been *De-Activated* in this group!`,
@@ -111,7 +111,7 @@ module.exports = {
         buttons: buttonsntilink,
         headerType: 4,
       };
-      await Miku.sendMessage(m.from, bmffg, { quoted: m });
+      await Yaka.sendMessage(m.from, bmffg, { quoted: m });
     }
   },
 };

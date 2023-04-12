@@ -7,7 +7,7 @@ module.exports = {
   category: "Core",
   usage: "owner",
   react: "🏅",
-  start: async (Miku, m, { text, prefix }) => {
+  start: async (Yaka, m, { text, prefix }) => {
     try {
       var modlist = await mku.find({ addedMods: "true" });
       var modlistString = "";
@@ -41,7 +41,7 @@ module.exports = {
         textM += `\n\n📛 *Don't Spam them to avoid Blocking !*\n\n🎀 For any help, type *${prefix}support* and ask in group.\n\n*💫 Thanks for using ${botName}. 💫*\n`;
       }
 
-      return Miku.sendMessage(
+      return Yaka.sendMessage(
         m.from,
         { video: { url: botVideo },
         gifPlayback: true,
@@ -51,7 +51,7 @@ module.exports = {
       );
     } catch (err) {
       console.log(err);
-      return Miku.sendMessage(
+      return Yaka.sendMessage(
         m.from,
         { text: `An internal error occurred while fetching the mod list.` },
         { quoted: m }

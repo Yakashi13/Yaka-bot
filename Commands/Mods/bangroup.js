@@ -12,9 +12,9 @@ module.exports = {
     category: "core",
     usage: "bangroup",
     react: "🍃",
-    start: async (Miku, m, { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator, groupName, modStatus }) => {
+    start: async (Yaka, m, { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator, groupName, modStatus }) => {
 
-        if (modStatus == "false" && !isCreator) return Miku.sendMessage(m.from, { text: 'Sorry, only my *Devs* and *Mods* can use this command !' }, { quoted: m });
+        if (modStatus == "false" && !isCreator) return Yaka.sendMessage(m.from, { text: 'Sorry, only my *Devs* and *Mods* can use this command !' }, { quoted: m });
 
         let checkdata = await mk.findOne({ id: m.from })
         try {
@@ -28,7 +28,7 @@ module.exports = {
             }
         } catch (err) {
             console.log(err);
-            return Miku.sendMessage(m.from, { text: `An internal error occurred while banning the user.` }, { quoted: m });
+            return Yaka.sendMessage(m.from, { text: `An internal error occurred while banning the user.` }, { quoted: m });
         }
     }
 }

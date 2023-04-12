@@ -9,7 +9,7 @@ module.exports = {
   category: "Image Manipulation",
   usage: "circle <reply to image>",
   react: "👹",
-  start: async (Miku, m, { text, prefix, quoted, pushName, mime, body }) => {
+  start: async (Yaka, m, { text, prefix, quoted, pushName, mime, body }) => {
     if (/image/.test(mime)) {
       let mediaMess = await quoted.download();
       
@@ -17,7 +17,7 @@ module.exports = {
         .then((image) => {
           return image.circle().getBuffer(Jimp.MIME_JPEG, (err, buffer) => {
             if (!err) {
-                 Miku.sendMessage(m.from, {image:buffer,caption: `_Created by:_ *${botName}*`}, { quoted: m })
+                 Yaka.sendMessage(m.from, {image:buffer,caption: `_Created by:_ *${botName}*`}, { quoted: m })
             } else {
                 console.error(err);
             }
@@ -25,7 +25,7 @@ module.exports = {
         })
         
     } else {
-      Miku.sendMessage(
+      Yaka.sendMessage(
         m.from,
         {
           text: `Please mention an *imade* and type *${prefix}circle* to create circle image.`,

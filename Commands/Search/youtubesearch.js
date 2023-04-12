@@ -7,9 +7,9 @@ module.exports = {
     category: "Search",
     usage: `yts <search term>`,
     react: "👹",
-    start: async (Miku, m, { text, prefix, args }) => {
+    start: async (Yaka, m, { text, prefix, args }) => {
       if (!args[0])
-        return Miku.sendMessage(
+        return Yaka.sendMessage(
           m.from,
           { text: `Please provide a search term !` },
           { quoted: m }
@@ -41,7 +41,7 @@ module.exports = {
                 sections,
               };
           
-              Miku.sendMessage(m.from, buttonMessage, { quoted: m });
+              Yaka.sendMessage(m.from, buttonMessage, { quoted: m });
 
 
     }}

@@ -7,9 +7,9 @@ module.exports = {
     category: "Media",
     usage: `fonts <text>`,
     react: "👹",
-    start: async (Miku, m, { text, prefix, args, mime }) => {
+    start: async (Yaka, m, { text, prefix, args, mime }) => {
       if (!args[0])
-        return Miku.sendMessage(
+        return Yaka.sendMessage(
           m.from,
           { text: `Please provide a Text !` },
           { quoted: m }

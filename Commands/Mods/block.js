@@ -8,15 +8,15 @@ module.exports = {
     usage: "block @user",
     react: "🍃",
     start: async (
-      Miku,
+      Yaka,
       m,
       { args, text,prefix, isCreator, pushName,modStatus }
     ) => {
       
-      if (modStatus=="false"&&!isCreator)  return Miku.sendMessage(m.from, { text: 'Sorry, only my *Owner* and *Mods* can use this command !' }, { quoted: m });
+      if (modStatus=="false"&&!isCreator)  return Yaka.sendMessage(m.from, { text: 'Sorry, only my *Owner* and *Mods* can use this command !' }, { quoted: m });
 
       if (!text && !m.quoted) {
-        return Miku.sendMessage( 
+        return Yaka.sendMessage( 
           m.from, 
           { text: `Please tag a user to *Block*!` }, 
           { quoted: m } 
@@ -28,13 +28,13 @@ module.exports = {
           var mentionedUser = mentionByTag[0];
         }
 
-        await Miku.updateBlockStatus(mentionedUser, 'block').then(async (res) => {
-            Miku.sendMessage(m.from, { text: `Successfully *Blocked* @${mentionedUser.split("@")[0]} Senpai !`, mentions: [mentionedUser] }, { quoted: m }).catch((e)=>{
-                Miku.sendMessage(m.from, { text: `Failed to block @${mentionedUser.split("@")[0]} Senpai ! Maybe he is already blocked !` , mentions: [mentionedUser]}, { quoted: m })
+        await Yaka.updateBlockStatus(mentionedUser, 'block').then(async (res) => {
+            Yaka.sendMessage(m.from, { text: `Successfully *Blocked* @${mentionedUser.split("@")[0]} Senpai !`, mentions: [mentionedUser] }, { quoted: m }).catch((e)=>{
+                Yaka.sendMessage(m.from, { text: `Failed to block @${mentionedUser.split("@")[0]} Senpai ! Maybe he is already blocked !` , mentions: [mentionedUser]}, { quoted: m })
             }
             )
             }).catch((e)=>{
-                Miku.sendMessage(m.from, { text: `Failed to block @${mentionedUser.split("@")[0]} Senpai ! Maybe he is already blocked !` , mentions: [mentionedUser]}, { quoted: m })
+                Yaka.sendMessage(m.from, { text: `Failed to block @${mentionedUser.split("@")[0]} Senpai ! Maybe he is already blocked !` , mentions: [mentionedUser]}, { quoted: m })
             }
             )
     },

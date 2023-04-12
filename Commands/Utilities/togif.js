@@ -8,15 +8,15 @@ module.exports = {
   category: "Utilities",
   usage: "togif <reply to animated sticker>",
   react: "👹",
-  start: async (Miku, m, { text, prefix, quoted, pushName, mime, body }) => {
+  start: async (Yaka, m, { text, prefix, quoted, pushName, mime, body }) => {
     if (/webp/.test(mime)) {
-      let mediaMess = await Miku.downloadAndSaveMediaMessage(quoted)
+      let mediaMess = await Yaka.downloadAndSaveMediaMessage(quoted)
       let webpToMp4 = await webp2mp4File(mediaMess)
 
-        await Miku.sendMessage(m.from, { video: {url:webpToMp4.result}, caption:`_Converted by:_  *${botName}*\n` ,gifPlayback: true}, { quoted: m });
+        await Yaka.sendMessage(m.from, { video: {url:webpToMp4.result}, caption:`_Converted by:_  *${botName}*\n` ,gifPlayback: true}, { quoted: m });
         fs.unlinkSync(mediaMess);
     } else {
-      Miku.sendMessage(
+      Yaka.sendMessage(
         m.from,
         {
           text: `Please mention an *Animated* sticker and type *${prefix}togif* to get GIF from sticker.`,

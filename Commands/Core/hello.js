@@ -5,7 +5,7 @@ module.exports = {
     react: "💜",
     category: "Core",
 
-    start: async (Miku, m, { prefix, pushName, args, commands, text, uptime }) => {
+    start: async (Yaka, m, { prefix, pushName, args, commands, text, uptime }) => {
         const pad = (s) => (s < 10 ? "0" : "") + s;
         
         const now = new Date();
@@ -38,7 +38,7 @@ module.exports = {
                 buttons: buttonss,
                 headerType: 1
             }
-            return Miku.sendMessage(m.from, buth, { quoted: m })
+            return Yaka.sendMessage(m.from, buth, { quoted: m })
         } else {
           
          let textHelpMenu = `| • ━━━━━━━━━━━━━━━━━━━━\n`
@@ -68,7 +68,7 @@ module.exports = {
                     type: 1,
                 }*/
             ];
-        await Miku.sendMessage(m.from, {
+        await Yaka.sendMessage(m.from, {
         video:{url: botVideo},
         caption:textHelpMenu, 
         gifPlayback: true

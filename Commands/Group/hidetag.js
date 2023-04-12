@@ -9,12 +9,12 @@ module.exports = {
   usage: "htag <your message>",
   react: "👹",
   start: async (
-    Miku,
+    Yaka,
     m,
     { text, prefix, isAdmin, participants, args }
   ) => {
     if (!isAdmin)
-      return Miku.sendMessage(m.from, { text: mess.useradmin }, { quoted: m });
+      return Yaka.sendMessage(m.from, { text: mess.useradmin }, { quoted: m });
 
       var message = "*『 Attention Here 』*";
 
@@ -34,7 +34,7 @@ module.exports = {
     else{
       message = "*『 Attention Here 』*";
     }
-    await Miku.sendMessage(
+    await Yaka.sendMessage(
       m.from,
       { text: message, mentions: participants.map((a) => a.id) },
       { quoted: m }

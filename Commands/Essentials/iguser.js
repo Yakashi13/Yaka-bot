@@ -7,7 +7,7 @@ module.exports = {
   category: "Essentials",
   usage: "iguser <instagram username>",
   react: "👹",
-  start: async (Miku, m, { text, prefix, pushName,args }) => {
+  start: async (Yaka, m, { text, prefix, pushName,args }) => {
     if (!text)
       return m.reply(
         `Please provide me a instagram username ${pushName} senpai !`
@@ -28,7 +28,7 @@ module.exports = {
 *🙋 Following:* ${fids.data.following}
 *👤 Post:* ${fids.data.posts}
 *🍭Bio:* ${fids.data.biography}\n`;
-      Miku.sendMessage(
+      Yaka.sendMessage(
         m.from,
         { image: { url: fids.data.profile_pic }, caption: reply },
         { quoted: m }

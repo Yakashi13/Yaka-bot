@@ -15,12 +15,12 @@ module.exports = {
     category: "Economy",  
     react: "💵", 
     start: async ( 
-        Miku, 
+        Yaka, 
       m, 
       { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator} 
     ) => {
         if(!text)  {
-            return Miku.sendMessage( 
+            return Yaka.sendMessage( 
                 m.from, 
                 { text: `Baka!! Provide the 💰amount you want to deposit!` }, 
                 { quoted: m } 
@@ -55,6 +55,6 @@ module.exports = {
             type: 4
           };
         
-          await Miku.sendMessage(m.from, buttonMessage, { quoted: m });
+          await Yaka.sendMessage(m.from, buttonMessage, { quoted: m });
         }
     }

@@ -6,7 +6,7 @@ module.exports = {
     cool: 3,
     react: "👻",
     category: "Core",
-    start: async (Miku, m, { uptime, prefix }) => {
+    start: async (Yaka, m, { uptime, prefix }) => {
       const loadavg = os.loadavg();
       const cpu = {
         model: os.cpus()[0].model,
@@ -18,7 +18,7 @@ module.exports = {
       const memUsed = memTotal - memFree;
       // const network = os.networkInterfaces();
   
-      //const message = `*${Miku.user.name}* is up and running!\n\n` +
+      //const message = `*${Yaka.user.name}* is up and running!\n\n` +
         const message = `*${botName}* 𝘉𝘰𝘵 𝘪𝘴 𝘶𝘱 𝘢𝘯𝘥 𝘳𝘶𝘯𝘯𝘪𝘯𝘨..\n\n` +
         `⭕ 𝐔𝐩𝐭𝐢𝐦𝐞 : *${uptime}*\n` +
         `| • ━━━━━━━━━━━━━━━━━━━━\n` +
@@ -30,6 +30,6 @@ module.exports = {
         `| • ━━━━━━━━━━━━━━━━━━━━\n`;
         // `• Network: ${JSON.stringify(network)}`;
   
-      await Miku.sendMessage(m.from, { text: message }, { quoted: m });
+      await Yaka.sendMessage(m.from, { text: message }, { quoted: m });
       },
     };

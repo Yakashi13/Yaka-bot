@@ -7,7 +7,7 @@ module.exports = {
   category: "Nsfw",
   usage: `xvideo <query>`,
   react: "🍁",
-  start: async (Miku, m, { prefix,NSFWstatus,args }) => {
+  start: async (Yaka, m, { prefix,NSFWstatus,args }) => {
 
     if (NSFWstatus == "false") return m.reply(`This group is not NSFW enabled!\n\nTo configure NSFW mode, type:\n\n*${prefix}nsfw*`);
     m.reply(`Downloading video...`)
@@ -26,7 +26,7 @@ const scrappedURL = res.data.videoUrl
       caption: `\n_*❌Videos Downloader*_\n\n*Scrappy API - by FantoX*\n\n_*Url:*_ https://github.com/FantoX001/Scrappy-API \n`,
     };
 
-    await Miku.sendMessage(m.from, bmffg, { quoted: m }).catch((err) => {
+    await Yaka.sendMessage(m.from, bmffg, { quoted: m }).catch((err) => {
       return "Error!";
     });
   },

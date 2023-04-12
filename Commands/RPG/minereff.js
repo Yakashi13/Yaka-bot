@@ -15,19 +15,19 @@ module.exports = {
     category: "RPG",
     usage: "hunt/mine/dig/chop [axe]",
     react: "🔨",
-    start: async (Miku, message, { text, prefix, args }) => {
+    start: async (Yaka, message, { text, prefix, args }) => {
       const user = await player.findOne({ id: message.sender });
       if (!user) {
-        return Miku.sendMessage(message.from, { text:` 😕 You don't have an inventory. Use ${prefix}reg-inv to register.` }, { quoted: message });
+        return Yaka.sendMessage(message.from, { text:` 😕 You don't have an inventory. Use ${prefix}reg-inv to register.` }, { quoted: message });
       }
     
       const axeUsed = args[0]
       if (!axeUsed) {
-        return Miku.sendMessage(message.from, { text: `😕 You need to specify which axe to use (woodenAxe, woodPickaxe, stonePickaxe, ironPickaxe, diamondPickaxe).` }, { quoted: message });
+        return Yaka.sendMessage(message.from, { text: `😕 You need to specify which axe to use (woodenAxe, woodPickaxe, stonePickaxe, ironPickaxe, diamondPickaxe).` }, { quoted: message });
       }
     
       if (!user.inventory[axeUsed]) {
-        return Miku.sendMessage(message.from, { text:` 😕 You don't have a ${axeUsed}. Use ${prefix}buy to purchase one.` }, { quoted: message });
+        return Yaka.sendMessage(message.from, { text:` 😕 You don't have a ${axeUsed}. Use ${prefix}buy to purchase one.` }, { quoted: message });
       }
       let loot;
       switch (axeUsed) {
@@ -44,7 +44,7 @@ module.exports = {
           user.inventory.iron += loot.iron;
           user.inventory.diamonds += loot.diamonds;
           await user.save();
-          Miku.sendMessage(message.from, { text: `[ 🐺MINE RESULT🐺 ]\n\n used: ${axeUsed}\n\n *🔮Stone*: ${loot.stone}\n*🔥Wood*: ${loot.wood}\n*🔩Iron*: ${loot.iron}\n*💎Diamonds*: ${loot.diamonds}`}, { quoted: message });
+          Yaka.sendMessage(message.from, { text: `[ 🐺MINE RESULT🐺 ]\n\n used: ${axeUsed}\n\n *🔮Stone*: ${loot.stone}\n*🔥Wood*: ${loot.wood}\n*🔩Iron*: ${loot.iron}\n*💎Diamonds*: ${loot.diamonds}`}, { quoted: message });
           break;
             case "stonepickaxe":
             user.inventory.stonepickaxe -= 1;
@@ -59,7 +59,7 @@ module.exports = {
             user.inventory.iron += loot.iron;
             user.inventory.diamonds += loot.diamonds;
             await user.save();
-            Miku.sendMessage(message.from, { text: `[ 🐺MINE RESULT🐺 ]\n\n used: ${axeUsed}\n\n *🔮Stone*: ${loot.stone}\n*🔥Wood*: ${loot.wood}\n*🔩Iron*: ${loot.iron}\n*💎Diamonds*: ${loot.diamonds}`}, { quoted: message });
+            Yaka.sendMessage(message.from, { text: `[ 🐺MINE RESULT🐺 ]\n\n used: ${axeUsed}\n\n *🔮Stone*: ${loot.stone}\n*🔥Wood*: ${loot.wood}\n*🔩Iron*: ${loot.iron}\n*💎Diamonds*: ${loot.diamonds}`}, { quoted: message });
             break;
             case "ironpickaxe":
                 user.inventory.ironpickaxe -= 1;
@@ -74,7 +74,7 @@ module.exports = {
                 user.inventory.iron += loot.iron;
                 user.inventory.diamonds += loot.diamonds;
                 await user.save();
-                Miku.sendMessage(message.from, { text: `[ 🐺MINE RESULT🐺 ]\n\n used: ${axeUsed}\n\n *🔮Stone*: ${loot.stone}\n*🔥Wood*: ${loot.wood}\n*🔩Iron*: ${loot.iron}\n*💎Diamonds*: ${loot.diamonds}`}, { quoted: message });
+                Yaka.sendMessage(message.from, { text: `[ 🐺MINE RESULT🐺 ]\n\n used: ${axeUsed}\n\n *🔮Stone*: ${loot.stone}\n*🔥Wood*: ${loot.wood}\n*🔩Iron*: ${loot.iron}\n*💎Diamonds*: ${loot.diamonds}`}, { quoted: message });
                 break;
                 case "diamondpickaxe":
                 user.inventory.diamondpickaxe -= 1;
@@ -97,10 +97,10 @@ module.exports = {
                 if (loot.goldenApple) {
                   lootMessage += `\n\n🍎You found a Golden Apple!🍎`;
                 }
-                Miku.sendMessage(message.from, { text: lootMessage }, { quoted: message });
+                Yaka.sendMessage(message.from, { text: lootMessage }, { quoted: message });
                 break;
                 default:
-                Miku.sendMessage(message.from, { text: `😕 Invalid axe specified, valid axes are (woodenAxe, woodPickaxe, stonePickaxe, ironPickaxe, diamondPickaxe). `}, { quoted: message });
+                Yaka.sendMessage(message.from, { text: `😕 Invalid axe specified, valid axes are (woodenAxe, woodPickaxe, stonePickaxe, ironPickaxe, diamondPickaxe). `}, { quoted: message });
                 break;
                 }
                 }

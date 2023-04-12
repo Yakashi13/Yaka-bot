@@ -9,26 +9,26 @@ module.exports = {
   usage: "revoke",
   react: "👹",
   start: async (
-    Miku,
+    Yaka,
     m,
     { prefix, isBotAdmin, isAdmin}
   ) => {
     if (m.from == '120363071838447699@g.us') return m.reply('Sorry, this command is not allowed in *Yaka Support Group* !\n\nYou are not allowed to change support group link !' );
     
     if (!isAdmin)
-      return Miku.sendMessage(m.from, { text: mess.useradmin }, { quoted: m });
+      return Yaka.sendMessage(m.from, { text: mess.useradmin }, { quoted: m });
 
     try {
-      await Miku.groupRevokeInvite(m.from).then(
+      await Yaka.groupRevokeInvite(m.from).then(
         (res) =>
-          Miku.sendMessage(
+          Yaka.sendMessage(
             m.from,
             { text: `Group link has been *Updated* Successfully!` },
             { quoted: m }
           )
       );
     } catch (err) {
-      Miku.sendMessage(m.from, { text: `${mess.botadmin}` }, { quoted: m });
+      Yaka.sendMessage(m.from, { text: `${mess.botadmin}` }, { quoted: m });
     }
   },
 };

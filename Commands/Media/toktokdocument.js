@@ -5,9 +5,9 @@ module.exports = {
     category: "Media",
     usage: `tiktokdoc <link>`,
     react: "👹",
-    start: async (Miku, m, { text, prefix, args, mime }) => {
+    start: async (Yaka, m, { text, prefix, args, mime }) => {
       if (!args[0])
-        return Miku.sendMessage(
+        return Yaka.sendMessage(
           m.from,
           { text: `Please provide a Tiktok Video link !` },
           { quoted: m }
@@ -18,7 +18,7 @@ module.exports = {
         }
 
         require('../../lib/tiktokScrapper').Tiktok(args[0]).then( data => {
-        Miku.sendMessage(m.from, { document: { url: data.audio },mimetype: "audio/mpeg",fileName: `Downloaded by ${botName}.mp3`,},{ quoted: m })
+        Yaka.sendMessage(m.from, { document: { url: data.audio },mimetype: "audio/mpeg",fileName: `Downloaded by ${botName}.mp3`,},{ quoted: m })
         })
         },
     }

@@ -1,17 +1,17 @@
 const axios = require("axios");
 
 module.exports = {
-  name: "hatsuneMiku",
-  alias: ["nsfwhatsuneMiku"],
-  desc: "Hentai picture of Hatsune Miku", 
+  name: "hatsuneYaka",
+  alias: ["nsfwhatsuneYaka"],
+  desc: "Hentai picture of Hatsune Yaka", 
   category: "Nsfw",
-  usage: `hatsuneMiku`,
+  usage: `hatsuneYaka`,
   react: "👹",
-  start: async (Miku, m, { prefix,NSFWstatus }) => {
+  start: async (Yaka, m, { prefix,NSFWstatus }) => {
 
     if (NSFWstatus == "false") return m.reply(`This group is not NSFW enabled!\n\nTo configure NSFW mode, type:\n\n*${prefix}nsfw*`);
     m.reply(mess.waiting)
-    let buff= await axios.get(`https://fantox-apis.vercel.app/hatsuneMiku`)
+    let buff= await axios.get(`https://fantox-apis.vercel.app/hatsuneYaka`)
     let imgURL = buff.data.url
     
 
@@ -25,7 +25,7 @@ module.exports = {
       headerType: 4,
     };
     
-    await Miku.sendMessage(m.from, bmffg, { quoted: m }).catch((err) => {
+    await Yaka.sendMessage(m.from, bmffg, { quoted: m }).catch((err) => {
       return "Error!";
     });
   },

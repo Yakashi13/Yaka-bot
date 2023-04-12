@@ -8,16 +8,16 @@ module.exports = {
   usage: "delmod @user",
   react: "🍃",
   start: async (
-    Miku,
+    Yaka,
     m,
     { text, prefix, mentionByTag, pushName, isCreator, owner,modStatus }
   ) => {
 
-      if (modStatus=="false"&&!isCreator)  return Miku.sendMessage(m.from, { text: 'Sorry, only my *Owner* and *Mods* can use this command !' }, { quoted: m });
+      if (modStatus=="false"&&!isCreator)  return Yaka.sendMessage(m.from, { text: 'Sorry, only my *Owner* and *Mods* can use this command !' }, { quoted: m });
     //var TaggedUser = mentionByTag[0];
 
     if (!text && !m.quoted) {
-      return Miku.sendMessage(
+      return Yaka.sendMessage(
         m.from,
         { text: `Please tag a *Mod* to remove from *Moderation* !` },
         { quoted: m }
@@ -37,14 +37,14 @@ module.exports = {
           if (!user) {
             await mku.create({id:userId, addedMods: false});
             return m.reply("User is not a *Mod* !");
-            /*Miku.sendMessage( 
+            /*Yaka.sendMessage( 
               m.from, 
               { text: `@${mentionedUser.split("@")[0]} has been removed from *Mods* Successfully !`, mentions: [mentionedUser] }, 
               { quoted: m } 
             );*/
           }
           else if (user.addedMods=="false" && !ownerlist.includes(`${mentionedUser.split("@")[0]}`)) {
-            return Miku.sendMessage(
+            return Yaka.sendMessage(
               m.from,
               {
                 text: `@${mentionedUser.split("@")[0]} is not a *Mod* !`,
@@ -54,7 +54,7 @@ module.exports = {
             );
           }
           else if (ownerlist.includes(`${mentionedUser.split("@")[0]}`)) {
-            return Miku.sendMessage(
+            return Yaka.sendMessage(
               m.from,
               {
                 text: `@${mentionedUser.split("@")[0]
@@ -66,7 +66,7 @@ module.exports = {
           } else {
             await mku.findOneAndUpdate({ id: userId }, { addedMods: false }, { new: true }).then((user) => {
 
-              Miku.sendMessage(
+              Yaka.sendMessage(
                 m.from,
                 {
                   text: `@${mentionedUser.split("@")[0]

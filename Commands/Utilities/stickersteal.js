@@ -7,7 +7,7 @@ module.exports = {
     category: "Utilities",
     usage: "steal <reply to sticker>",
     react: "👹",
-    start: async (Miku, m, { text, prefix,quoted,pushName,mime,args }) => {
+    start: async (Yaka, m, { text, prefix,quoted,pushName,mime,args }) => {
         if(!args.join(" ")){
             var packName = pushName;
             var authorName = pushName;
@@ -32,9 +32,9 @@ module.exports = {
                 background: 'transparent'
             });
             const stickerBuffer = await stickerMess.toBuffer()
-            Miku.sendMessage(m.from, {sticker:stickerBuffer}, { quoted: m })
+            Yaka.sendMessage(m.from, {sticker:stickerBuffer}, { quoted: m })
         }
        else{
-        Miku.sendMessage(m.from,{text:`Please mention an *Sticker* and type *${prefix}steal <packname | authorname>* to create sticker with your name.`},{quoted:m})
+        Yaka.sendMessage(m.from,{text:`Please mention an *Sticker* and type *${prefix}steal <packname | authorname>* to create sticker with your name.`},{quoted:m})
     } 
 }}

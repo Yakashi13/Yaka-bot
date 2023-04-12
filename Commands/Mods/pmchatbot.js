@@ -13,7 +13,7 @@ module.exports = {
     usage: "pmchatbot [on/off]",
     react: "🍃",
     start: async (
-      Miku,
+      Yaka,
       m,
       { args, isBotAdmin, isAdmin, isCreator, reply,prefix,pushName,modStatus }
     ) => {
@@ -21,7 +21,7 @@ module.exports = {
           if (modStatus=="false"&&!isCreator)  return m.reply('Sorry, only my *Devs* and *Mods* can use this command !');
   
       let checkdata = await mkchar.findOne({ id: '1' });
-      /*var groupe = await Miku.groupMetadata(m.from);
+      /*var groupe = await Yaka.groupMetadata(m.from);
       var members = groupe["participants"];
       var mems = [];
       members.map(async (adm) => {
@@ -31,27 +31,27 @@ module.exports = {
       if (args[0] === "on") {
         if (!checkdata) {
           await new mkchar({ id: '1', PMchatBot: "true" }).save();
-          Miku.sendMessage(
+          Yaka.sendMessage(
             m.from,
             {
               text: `*PM Chatbot Activated! *\n\nBot will reply to all personal messages.`
             },
             { quoted: m }
           );
-          return Miku.sendMessage(
+          return Yaka.sendMessage(
             m.from,
             { text: `*PM Chatbot Activated !*\n\nBot will reply to all personal messages.` },
             { quoted: m }
           );
         } else {
           if (checkdata.PMchatBot == "true")
-            return Miku.sendMessage(
+            return Yaka.sendMessage(
                 m.from,
                 { text: `*Already activated.*\n\nBot will reply to all personal messages.` },
                 { quoted: m }
               );
           await mkchar.updateOne({ id: '1' }, { PMchatBot: "true" });
-          return Miku.sendMessage(
+          return Yaka.sendMessage(
             m.from,
             { text: `*PM Chatbot Activated !*` },
             { quoted: m }
@@ -60,19 +60,19 @@ module.exports = {
       } else if (args[0] === "off") {
         if (!checkdata) {
           await new mkchar({ id: '1', PMchatBot: "false" }).save();
-          return Miku.sendMessage(
+          return Yaka.sendMessage(
             m.from,
             { text: `*PM Group Chatbot De-Activated!*` },
             { quoted: m }
           );
         } else {
-          if (checkdata.PMchatBot == "false") return Miku.sendMessage(
+          if (checkdata.PMchatBot == "false") return Yaka.sendMessage(
             m.from,
             { text: `*Already deactivated.*` },
             { quoted: m }
           );
           await mkchar.updateOne({ id: '1'}, { PMchatBot: "false" });
-          return Miku.sendMessage(
+          return Yaka.sendMessage(
             m.from,
             { text: `*PM Chatbot De-Activated !*` },
             { quoted: m }
@@ -98,7 +98,7 @@ module.exports = {
           buttons: buttonsntilink,
           headerType: 4,
         };
-        await Miku.sendMessage(m.from, bmffg, { quoted: m });
+        await Yaka.sendMessage(m.from, bmffg, { quoted: m });
     }
   },
 };

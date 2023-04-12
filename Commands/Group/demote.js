@@ -9,12 +9,12 @@ module.exports = {
   usage: "demote @user",
   react: "👹",
   start: async (
-    Miku,
+    Yaka,
     m,
     { text, prefix, isBotAdmin, isAdmin, mentionByTag,pushName,groupAdmin}
   ) =>{
     if (!isAdmin) {
-      return Miku.sendMessage(
+      return Yaka.sendMessage(
         m.from,
         { text: `${mess.useradmin}` },
         { quoted: m }
@@ -22,7 +22,7 @@ module.exports = {
     }
   //
     if (!text && !m.quoted) {
-      return Miku.sendMessage(
+      return Yaka.sendMessage(
         m.from,
         { text: `Please tag a user to *Demote*!` },
         { quoted: m }
@@ -35,7 +35,7 @@ module.exports = {
 
     let userId = (await mentionedUser) || m.msg.contextInfo.participant;
     if(!groupAdmin.includes(userId)){
-      return Miku.sendMessage(
+      return Yaka.sendMessage(
         m.from,
         { text: `@${
           mentionedUser.split("@")[0]
@@ -45,9 +45,9 @@ module.exports = {
     }
 
     try {
-      await Miku.groupParticipantsUpdate(m.from, [userId], "demote").then(
+      await Yaka.groupParticipantsUpdate(m.from, [userId], "demote").then(
         (res) =>
-          Miku.sendMessage(
+          Yaka.sendMessage(
             m.from,
             {
               text: `Sorry @${
@@ -59,7 +59,7 @@ module.exports = {
           )
       );
     } catch (error) {
-       Miku.sendMessage(
+       Yaka.sendMessage(
         m.from,
         { text: `${mess.botadmin}` },
         { quoted: m }

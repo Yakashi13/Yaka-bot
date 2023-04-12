@@ -7,7 +7,7 @@ module.exports = {
   usage: "question easy/medium/hard",
   react: "🍁",
   category: "Essentials",
-  start: async (Miku, m, { pushName, prefix, args, text }) => {
+  start: async (Yaka, m, { pushName, prefix, args, text }) => {
     if (!args[0]) return m.reply(`Please use this command like this: ${prefix}question easy/medium/hard`);
     const query = args.join(" ");
     await axios
@@ -27,7 +27,7 @@ module.exports = {
 
 
 
-        Miku.sendMessage(m.from, buttonMessage, { quoted: m });
+        Yaka.sendMessage(m.from, buttonMessage, { quoted: m });
       })
       .catch((err) => {
         m.reply(`Please use this command like this: ${prefix}question easy/medium/hard`);

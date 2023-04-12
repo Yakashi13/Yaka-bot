@@ -9,15 +9,15 @@ module.exports = {
   usage: "remove @user",
   react: "👹",
   start: async (
-    Miku,
+    Yaka,
     m,
     { text, prefix, isBotAdmin, isAdmin, mentionByTag,pushName}
   ) => {
     if (!text && !m.quoted) return m.reply(`Please tag a user to *Remove* from group!`)
-    if (!isAdmin) return Miku.sendMessage(m.from, { text: mess.useradmin }, { quoted: m });
+    if (!isAdmin) return Yaka.sendMessage(m.from, { text: mess.useradmin }, { quoted: m });
 
     if (!text && !m.quoted) {
-      return Miku.sendMessage(
+      return Yaka.sendMessage(
         m.from,
         { text: `Please tag a user to *Remove* !` },
         { quoted: m }
@@ -31,16 +31,16 @@ module.exports = {
     let users = (await mentionedUser) || m.msg.contextInfo.participant;
 
     try {
-      await Miku.groupParticipantsUpdate(m.from, [users], "remove").then(
+      await Yaka.groupParticipantsUpdate(m.from, [users], "remove").then(
         (res) =>
-          Miku.sendMessage(
+          Yaka.sendMessage(
             m.from,
             { text: `User has been *Removed* Successfully by *${pushName}*` },
             { quoted: m }
           )
       );
     } catch (err) {
-      Miku.sendMessage(m.from, { text: `${mess.botadmin}` }, { quoted: m });
+      Yaka.sendMessage(m.from, { text: `${mess.botadmin}` }, { quoted: m });
     }
   },
 };

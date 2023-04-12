@@ -6,7 +6,7 @@ module.exports = {
     desc: "Get anime bog boobs girls picture.",
     react: "🥵",
     category: "Weeb",
-    start: async(Miku, m,{pushName,prefix}) => {
+    start: async(Yaka, m,{pushName,prefix}) => {
         let oppai = await axios.get('https://nekosenpai-apis.onrender.com/oppai');  
 
 let Button = [
@@ -23,7 +23,7 @@ let Button = [
       buttons: Button,
       headerType: 4,
     };
-    await Miku.sendMessage(m.from, oppais, { quoted: m }).catch((err) => {
+    await Yaka.sendMessage(m.from, oppais, { quoted: m }).catch((err) => {
       return "Error!";
     });
 }, 

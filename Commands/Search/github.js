@@ -6,9 +6,9 @@ module.exports = {
   category: "Search",
   usage: `gh <github username>`,
   react: "👹",
-  start: async (Miku, m, { text, prefix, pushName, args,mime }) => {
+  start: async (Yaka, m, { text, prefix, pushName, args,mime }) => {
     if (!args[0])
-      return Miku.sendMessage(
+      return Yaka.sendMessage(
         m.from,
         { text: `Please provide a GitHub username !` },
         { quoted: m }
@@ -24,7 +24,7 @@ module.exports = {
     let GhUserPP = GHuserInfo.avatar_url;
     let resText = `*『 GitHub User Info 』*\n\n_🔷 Username:_ *${GHuserInfo.login}*\n\n_🔷 Name:_ *${GHuserInfo.name}*\n\n_🔷 Bio:_ *${GHuserInfo.bio}*\n\n_🔷 Tatal Followers:_ *${GHuserInfo.followers}*\n\n_🔷 Following:_ *${GHuserInfo.following}*\n\n_🔷 Total Public Repos:_ *${GHuserInfo.public_repos}*\n\n_🔷 Total Public Gists:_ *${GHuserInfo.public_gists}*\n\n_🔷 User Location:_ *${GHuserInfo.location}*\n\n_🔷 Company/Organisation:_ *${GHuserInfo.company}*\n\n🔷 _Website:_ ${GHuserInfo.blog}`;
 
-    await Miku.sendMessage(
+    await Yaka.sendMessage(
       m.from,
       {
         image: { url: GhUserPP, mimetype: "image/jpeg" },

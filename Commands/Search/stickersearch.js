@@ -12,9 +12,9 @@ module.exports = {
   category: "Search",
   usage: `stickersearch <search term>`,
   react: "🔥",
-  start: async (Miku, m, { text, prefix, args, pushName }) => {
+  start: async (Yaka, m, { text, prefix, args, pushName }) => {
     if (!args[0])
-      return Miku.sendMessage(
+      return Yaka.sendMessage(
         m.from,
         { text: `Please provide a Search Term !` },
         { quoted: m }
@@ -42,6 +42,6 @@ module.exports = {
         background: 'transparent'
     });
     const stickerBuffer2 = await stickerMess.toBuffer()
-    Miku.sendMessage(m.from, {sticker:stickerBuffer2}, { quoted: m })
+    Yaka.sendMessage(m.from, {sticker:stickerBuffer2}, { quoted: m })
   },
 };

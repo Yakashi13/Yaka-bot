@@ -5,7 +5,7 @@ module.exports = {
   usage: "stalk 9181011564xxx",
   react: "👹",
   category: "Core",
-  start: async (Miku, m, { pushName, args, prefix }) => {
+  start: async (Yaka, m, { pushName, args, prefix }) => {
     if (!args[0])
       return m.reply(`Use command like: ${prefix}stalk 9181011564xxx`);
     var inputnumber = args[0];
@@ -53,11 +53,11 @@ module.exports = {
         }else if (random_length == 5) {
           rndm = `${status1}${status2}${status3}${status4}${dom4}`
         }
-        var anu = await Miku.onWhatsApp(`${number0}${i}${number1}@s.whatsapp.net`);
+        var anu = await Yaka.onWhatsApp(`${number0}${i}${number1}@s.whatsapp.net`);
         var anuu = anu.length !== 0 ? anu : false
         try {
         try {
-        var anu1 = await Miku.fetchStatus(anu[0].jid)
+        var anu1 = await Yaka.fetchStatus(anu[0].jid)
         } catch {
         var anu1 = '401'
         }
@@ -70,6 +70,6 @@ module.exports = {
         nowhatsapp += `${number0}${i}${number1}\n`
         }
         }
-        await Miku.sendMessage(m.from, { text: `${nomerny} ${nobio} ${nowhatsapp}` }, { quoted: m });
+        await Yaka.sendMessage(m.from, { text: `${nomerny} ${nobio} ${nowhatsapp}` }, { quoted: m });
   },
 };

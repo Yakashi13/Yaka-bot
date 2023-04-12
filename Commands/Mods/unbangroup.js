@@ -12,9 +12,9 @@ module.exports = {
     category: "core",
     usage: "unbangroup",
     react: "🍃",
-    start: async (Miku, m, { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,groupName,modStatus }) => {
+    start: async (Yaka, m, { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,groupName,modStatus }) => {
     
-    if (modStatus == "false" && !isCreator) return Miku.sendMessage(m.from, { text: 'Sorry, only my *Devs* and *Mods* can use this command !' }, { quoted: m });
+    if (modStatus == "false" && !isCreator) return Yaka.sendMessage(m.from, { text: 'Sorry, only my *Devs* and *Mods* can use this command !' }, { quoted: m });
     let checkdata = await mk.findOne({ id: m.from });
     mku.findOne({id:m.sender}).then(async (user) => {
         if (user.addedMods=="false" && !isCreator) {

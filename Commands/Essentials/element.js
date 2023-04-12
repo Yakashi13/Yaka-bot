@@ -9,7 +9,7 @@ module.exports = {
     usage: "element br",
     react: "👹",
     category: "Essentials",
-    start: async(Miku, m,{pushName,prefix,args,text}) => {
+    start: async(Yaka, m,{pushName,prefix,args,text}) => {
         if(!args[0]) return m.reply(`Please use this command like this: ${prefix}element br`);
         const query = args.join(" ");
        const search = await pTable(query);
@@ -30,6 +30,6 @@ module.exports = {
 		caption += `⚫ *Shells:* ${response.shells.join(", ")}\n`;
 		caption += `🌐 *URL:* ${response.source}\n\n`;
 		caption += `💬 *Summary:* ${response.summary}\n`;
-        await Miku.sendMessage(m.from,  {image: {url: botImage1},caption: caption}, {quoted: m });
+        await Yaka.sendMessage(m.from,  {image: {url: botImage1},caption: caption}, {quoted: m });
     }
 }

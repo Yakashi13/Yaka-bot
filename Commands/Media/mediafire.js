@@ -7,9 +7,9 @@ module.exports = {
     category: "Media",
     usage: `mediafire <link>`,
     react: "👹",
-    start: async (Miku, m, { text, prefix, args, mime }) => {
+    start: async (Yaka, m, { text, prefix, args, mime }) => {
       if (!args[0])
-        return Miku.sendMessage(
+        return Yaka.sendMessage(
           m.from,
           { text: `Please provide a Mediafire link !` },
           { quoted: m }
@@ -31,6 +31,6 @@ module.exports = {
 Downloading...`
 
         m.reply(txt);
-        Miku.sendMessage(m.from, { document: { url: MDF[0].url },mimetype: MDF[0].mime,fileName: MDF[0].nama,},{ quoted: m })
+        Yaka.sendMessage(m.from, { document: { url: MDF[0].url },mimetype: MDF[0].mime,fileName: MDF[0].nama,},{ quoted: m })
         },
     }

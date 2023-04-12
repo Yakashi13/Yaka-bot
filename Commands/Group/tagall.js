@@ -9,12 +9,12 @@ module.exports = {
   usage: "tagall",
   react: "👹",
   start: async (
-    Miku,
+    Yaka,
     m,
     { text, prefix, isBotAdmin, isAdmin, participants, args }
   ) => {
     if (!isAdmin)
-      return Miku.sendMessage(m.from, { text: `Only *Admins* can use this command.` }, { quoted: m });
+      return Yaka.sendMessage(m.from, { text: `Only *Admins* can use this command.` }, { quoted: m });
 
     let message = args ? args.join(' ') :  m.quoted ? m.quoted.msg : 'No Message';
 
@@ -29,7 +29,7 @@ module.exports = {
     }
     mess += `\n\n                    *Thank You*\n`;
 
-    await Miku.sendMessage(m.from, { text: mess,mentions: participants.map(a => a.id) }, { quoted: m });
+    await Yaka.sendMessage(m.from, { text: mess,mentions: participants.map(a => a.id) }, { quoted: m });
   },
 };
 

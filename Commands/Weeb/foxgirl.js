@@ -7,7 +7,7 @@ module.exports = {
   category: "Weeb",
   usage: `foxgirl`,
   react: "👹",
-  start: async (Miku, m, { prefix }) => {
+  start: async (Yaka, m, { prefix }) => {
     var foxgirl = await axios.get(`https://nekos.life/api/v2/img/fox_girl`)
     var fgbutton = [
       {
@@ -23,7 +23,7 @@ module.exports = {
       buttons: fgbutton,
       headerType: 4,
     };
-    await Miku.sendMessage(m.from, bmffg, { quoted: m }).catch((err) => {
+    await Yaka.sendMessage(m.from, bmffg, { quoted: m }).catch((err) => {
       return "Error!";
     });
   },

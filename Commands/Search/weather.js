@@ -7,9 +7,9 @@ module.exports = {
     category: "Search",
     usage: `weather <search term>`,
     react: "👹",
-    start: async (Miku, m, { text, prefix, args }) => {
+    start: async (Yaka, m, { text, prefix, args }) => {
       if (!args[0])
-        return Miku.sendMessage(
+        return Yaka.sendMessage(
           m.from,
           { text: `Please provide a location name !` },
           { quoted: m }
@@ -20,7 +20,7 @@ module.exports = {
 
         const weathertext = `           🌤 *Weather Report* 🌤  \n\n🔎 *Search Location:* ${myweather.data.name}\n*💮 Country:* ${myweather.data.sys.country}\n🌈 *Weather:* ${myweather.data.weather[0].description}\n🌡️ *Temperature:* ${myweather.data.main.temp}°C\n❄️ *Minimum Temperature:* ${myweather.data.main.temp_min}°C\n📛 *Maximum Temperature:* ${myweather.data.main.temp_max}°C\n💦 *Humidity:* ${myweather.data.main.humidity}%\n🎐 *Wind:* ${myweather.data.wind.speed} km/h\n`
 
-      await Miku.sendMessage(
+      await Yaka.sendMessage(
         m.from,
         {
           video: {url: 'https://media.tenor.com/bC57J4v11UcAAAPo/weather-sunny.mp4'},

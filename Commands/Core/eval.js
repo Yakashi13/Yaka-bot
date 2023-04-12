@@ -6,8 +6,8 @@ module.exports = {
     react: "👾",
     desc: "evaluates js codes",
     category: "Mods",
-    start: async (Miku, m, { text, ban, pushName, mentionByTag, isCreator, args, body, quoted, mime }) => {
-        if (!isCreator) return Miku.sendMessage(m.from, { text: '*Only mods can use this command*' }, { quoted: m })
+    start: async (Yaka, m, { text, ban, pushName, mentionByTag, isCreator, args, body, quoted, mime }) => {
+        if (!isCreator) return Yaka.sendMessage(m.from, { text: '*Only mods can use this command*' }, { quoted: m })
         let out
         try {
             const result = eval(text)

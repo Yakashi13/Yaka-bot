@@ -9,10 +9,10 @@ module.exports = {
     category: "Utilities",
     usage: "smeme <reply to image>",
     react: "👹",
-    start: async (Miku, m, { text, prefix,quoted,pushName,mime,body }) => {
+    start: async (Yaka, m, { text, prefix,quoted,pushName,mime,body }) => {
         if (/image/.test(mime)) {
             m.reply(`Chotto Matte...`)
-            media = await Miku.downloadAndSaveMediaMessage(quoted)
+            media = await Yaka.downloadAndSaveMediaMessage(quoted)
             mem = await TelegraPh(media)
             meme = `https://api.memegen.link/images/custom/-/${text}.png?background=${mem}`
 
@@ -27,7 +27,7 @@ module.exports = {
             });
         
             const stickerBuffer2 = await stickerMess.toBuffer()
-            await Miku.sendMessage(m.from, {sticker:stickerBuffer2}, { quoted: m })
+            await Yaka.sendMessage(m.from, {sticker:stickerBuffer2}, { quoted: m })
             fs.unlinkSync(media);
             }
             else{

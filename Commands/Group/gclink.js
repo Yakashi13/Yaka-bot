@@ -9,24 +9,24 @@ module.exports = {
   usage: "gclink",
   react: "👹",
   start: async (
-    Miku,
+    Yaka,
     m,
     { prefix, isBotAdmin, isAdmin, metadata,mime }
   ) => {
     if (!isAdmin)
-      return Miku.sendMessage(m.from, { text: mess.useradmin }, { quoted: m });
+      return Yaka.sendMessage(m.from, { text: mess.useradmin }, { quoted: m });
 
-    var link = await Miku.groupInviteCode(m.from);
+    var link = await Yaka.groupInviteCode(m.from);
     var linkcode = `https://chat.whatsapp.com/${link}`;
 
     try {
-      ppgc = await Miku.profilePictureUrl(m.from, "image");
+      ppgc = await Yaka.profilePictureUrl(m.from, "image");
     } catch {
       ppgc = botImage1;
     }
 
     try {
-      await Miku.sendMessage(
+      await Yaka.sendMessage(
         m.from,
         {
           image: { url: ppgc, mimetype: "image/jpeg" },
@@ -35,7 +35,7 @@ module.exports = {
         { quoted: m }
       );
     } catch (err) {
-      Miku.sendMessage(m.from, { text: `${mess.botadmin}` }, { quoted: m });
+      Yaka.sendMessage(m.from, { text: `${mess.botadmin}` }, { quoted: m });
     }
   },
 };

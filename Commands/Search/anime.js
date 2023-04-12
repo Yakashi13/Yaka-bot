@@ -8,9 +8,9 @@ module.exports = {
   category: "Search",
   usage: `anime <search term>`,
   react: "👹",
-  start: async (Miku, m, { text, prefix, args }) => {
+  start: async (Yaka, m, { text, prefix, args }) => {
     if (!args[0])
-      return Miku.sendMessage(
+      return Yaka.sendMessage(
         m.from,
         { text: `Please provide a anime name to search !` },
         { quoted: m }
@@ -44,7 +44,7 @@ module.exports = {
     details += `*🏅 Rank:* ${result.rank}\n\n`;
     details += `\n*🌐 URL:* ${result.url}\n\n`;
 
-      await Miku.sendMessage(m.from,{image:{url:result.images.jpg.large_image_url},caption:details},{quoted:m});
+      await Yaka.sendMessage(m.from,{image:{url:result.images.jpg.large_image_url},caption:details},{quoted:m});
     
   },
 };

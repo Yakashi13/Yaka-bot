@@ -7,9 +7,9 @@ module.exports = {
   category: "Search",
   usage: `pin <search term>`,
   react: "👹",
-  start: async (Miku, m, { text, prefix, args }) => {
+  start: async (Yaka, m, { text, prefix, args }) => {
     if (!args[0])
-      return Miku.sendMessage(
+      return Yaka.sendMessage(
         m.from,
         { text: `Please provide a Search Term !` },
         { quoted: m }
@@ -35,7 +35,7 @@ module.exports = {
           buttons: buttons,
           headerType: 4,
         };
-        Miku.sendMessage(m.from, buttonMessage, { quoted: m });
+        Yaka.sendMessage(m.from, buttonMessage, { quoted: m });
       })
       .catch((_) => _);
   },

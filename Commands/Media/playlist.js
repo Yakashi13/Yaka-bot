@@ -13,7 +13,7 @@ module.exports = {
     alias: ["pl", "music"],
     category: "playlist",  
     react: "🎵", 
-    start: async (Miku, m, { text, prefix, mentionByTag, args, pushname, owner, includes}) => { 
+    start: async (Yaka, m, { text, prefix, mentionByTag, args, pushname, owner, includes}) => { 
         const commandRegex = /^(create|add|remove|view)\s+(\S+)(?:\s+(\S+))?/i;
         const match = text.match(commandRegex);
         if (!match) {
@@ -21,10 +21,10 @@ module.exports = {
             playlist.find({ owner: m.sender }, (err, pls) => {
                 if (err) {
                     console.log(err);
-                    Miku.sendMessage(m.from, { text: `An error occurred while retrieving playlists.` }, { quoted: m });
+                    Yaka.sendMessage(m.from, { text: `An error occurred while retrieving playlists.` }, { quoted: m });
                 } else {
                     if (pls.length == 0) {
-                        Miku.sendMessage(m.from, { text: `You have no playlists.` }, { quoted: m });
+                        Yaka.sendMessage(m.from, { text: `You have no playlists.` }, { quoted: m });
                     } else {
                         var sections = [{
                             "title": "Your Playlists",
@@ -46,7 +46,7 @@ module.exports = {
                             mentions: ments, 
                             sections
                         }
-                        const sendMsg = Miku.sendMessage(m.from, listMessage, { quoted:m });
+                        const sendMsg = Yaka.sendMessage(m.from, listMessage, { quoted:m });
                     }
                 }
             });
@@ -57,7 +57,7 @@ var playlistName = match[2];
 var songUrl = match[3];
         switch (action) {
             case "create":
-                if(!playlistName) return Miku.sendMessage(m.from, { text: `Please provide a name for the playlist` }, { quoted: m });
+                if(!playlistName) return Yaka.sendMessage(m.from, { text: `Please provide a name for the playlist` }, { quoted: m });
                 var newPlaylist = new playlist({
                     name: playlistName,
                     owner: m.sender,
@@ -65,55 +65,55 @@ var songUrl = match[3];
                 });
                 newPlaylist.save()
                     .then(() => {
-                        Miku.sendMessage(m.from, { text: `Playlist ${playlistName} created successfully` }, { quoted: m });
+                        Yaka.sendMessage(m.from, { text: `Playlist ${playlistName} created successfully` }, { quoted: m });
                     })
                     .catch(error => {
                         console.log(error);
-                        Miku.sendMessage(m.from, { text: `An error occurred while creating the playlist` }, { quoted: m });
+                        Yaka.sendMessage(m.from, { text: `An error occurred while creating the playlist` }, { quoted: m });
                     });
                 break;
                 case "add":
-                    if(!playlistName) return Miku.sendMessage(m.from, { text: `Please provide the name of the playlist to add the song to to`}, { quoted: m });
-                    if(!songUrl) return Miku.sendMessage(m.from, { text: `Please provide the url of the song to add` }, { quoted: m });
+                    if(!playlistName) return Yaka.sendMessage(m.from, { text: `Please provide the name of the playlist to add the song to to`}, { quoted: m });
+                    if(!songUrl) return Yaka.sendMessage(m.from, { text: `Please provide the url of the song to add` }, { quoted: m });
                     const songSerachTerm = args.join(" ");
                     const songInfo = await yts(songSerachTerm);
                     const song =songInfo.videos[0];
                     playlist.findOne({name: playlistName, owner: m.sender})
                     .then(async (pl) => {
-                    if(!pl) return Miku.sendMessage(m.from, { text: `Playlist not found` }, { quoted: m });
+                    if(!pl) return Yaka.sendMessage(m.from, { text: `Playlist not found` }, { quoted: m });
                     pl.songs.push({
                         title: song.title,
                         url: song.url,
                         savedAt: new Date()
                         });
-                        if(!song.title) return Miku.sendMessage(m.from, { text: `title not found` }, { quoted: m });
+                        if(!song.title) return Yaka.sendMessage(m.from, { text: `title not found` }, { quoted: m });
                     await pl.save();
-                    Miku.sendMessage(m.from, { text: `Song added to ${playlistName} successfully` }, { quoted: m });
+                    Yaka.sendMessage(m.from, { text: `Song added to ${playlistName} successfully` }, { quoted: m });
                     }).catch(error => {
                     console.log(error);
-                    Miku.sendMessage(m.from, { text: `An error occurred while adding the song to the playlist` }, { quoted: m });
+                    Yaka.sendMessage(m.from, { text: `An error occurred while adding the song to the playlist` }, { quoted: m });
                     });
                     break;
                 case "remove":
-                if(!playlistName) return Miku.sendMessage(m.from, { text: `Please provide the name of the playlist to remove the song from` }, { quoted: m });
-                if(!songUrl) return Miku.sendMessage(m.from, { text: `Please provide the url of the song to remove` }, { quoted: m });
+                if(!playlistName) return Yaka.sendMessage(m.from, { text: `Please provide the name of the playlist to remove the song from` }, { quoted: m });
+                if(!songUrl) return Yaka.sendMessage(m.from, { text: `Please provide the url of the song to remove` }, { quoted: m });
                 playlist.findOne({name: playlistName, owner: m.sender})
                 .then(async (pl) => {
-                if(!pl) return Miku.sendMessage(m.from, { text: `Playlist not found` }, { quoted: m });
+                if(!pl) return Yaka.sendMessage(m.from, { text: `Playlist not found` }, { quoted: m });
                 pl.songs = pl.songs.filter(song => song.url !=songUrl);
                 await pl.save();
-                Miku.sendMessage(m.from, { text: `Song removed from ${playlistName} successfully` }, { quoted: m });
+                Yaka.sendMessage(m.from, { text: `Song removed from ${playlistName} successfully` }, { quoted: m });
                 })
                 .catch(error => {
                 console.log(error);
-                Miku.sendMessage(m.from, { text: `An error occurred while removing the song from the playlist` }, { quoted: m });
+                Yaka.sendMessage(m.from, { text: `An error occurred while removing the song from the playlist` }, { quoted: m });
             });
             break;
             case "view":
-               if(!playlistName) return Miku.sendMessage(m.from, { text: 'Please provide the name of the playlist to view' }, { quoted: m });
+               if(!playlistName) return Yaka.sendMessage(m.from, { text: 'Please provide the name of the playlist to view' }, { quoted: m });
                playlist.findOne({name: playlistName, owner: m.sender})
                .then((pl) => {
-                if(!pl) return Miku.sendMessage(m.from, { text: 'Playlist not found' }, { quoted: m });
+                if(!pl) return Yaka.sendMessage(m.from, { text: 'Playlist not found' }, { quoted: m });
                 var sections = [{
                 "title": "Songs in Playlist",
                 "rows": []
@@ -133,7 +133,7 @@ var songUrl = match[3];
                 mentions: ments,
                 sections
                 }
-                const sendMsg = Miku.sendMessage(m.from, listMessage,{ quoted:m })
+                const sendMsg = Yaka.sendMessage(m.from, listMessage,{ quoted:m })
                 });
                 break;
             }

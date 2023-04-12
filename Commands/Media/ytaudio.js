@@ -8,17 +8,17 @@ module.exports = {
   category: "Media",
   usage: `ytad <song link>`,
   react: "👹",
-  start: async (Miku, m, { text, prefix, args,mime }) => {
+  start: async (Yaka, m, { text, prefix, args,mime }) => {
 
     if (!args[0])
-        return Miku.sendMessage(
+        return Yaka.sendMessage(
           m.from,
           { text: `Please provide a YouTube Video link !` },
           { quoted: m }
         );
     
           const ytaud= await YT.mp3(text);
-          const aud=await Miku.sendMessage(m.from,{
+          const aud=await Yaka.sendMessage(m.from,{
             audio: fs.readFileSync(ytaud.path),
             mimetype: 'audio/mpeg',
             

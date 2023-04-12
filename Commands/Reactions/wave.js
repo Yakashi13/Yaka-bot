@@ -8,7 +8,7 @@ module.exports = {
   category: "Reaction",
   usage: `wave @user`,
   react: "👋",
-  start: async (Miku, m, { text, prefix, args,mentionByTag }) => {
+  start: async (Yaka, m, { text, prefix, args,mentionByTag }) => {
     var pat = await fetchJson(`https://api.waifu.pics/sfw/wave`);
     try {
       let user1 = m.sender;
@@ -48,7 +48,7 @@ module.exports = {
       const buffer = Buffer.from(response.data, "utf-8");
       var sgif = await GIFBufferToVideoBuffer(buffer);
 
-      await Miku.sendMessage(
+      await Yaka.sendMessage(
         m.from,
         {
           video: sgif,

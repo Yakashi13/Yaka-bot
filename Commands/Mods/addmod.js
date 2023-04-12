@@ -8,19 +8,19 @@ module.exports = {
   usage: "addmod @user",
   react: "🤝",
   start: async (
-    Miku,
+    Yaka,
     m,
     { text, prefix, mentionByTag, pushName, isCreator, owner, modStatus }
   ) => {
     if (modStatus == "false" && !isCreator)
-      return Miku.sendMessage(
+      return Yaka.sendMessage(
         m.from,
         { text: "Sorry, only my *Owner* and *Mods* can use this command !" },
         { quoted: m }
       );
 
     if (!text && !m.quoted) {
-      return Miku.sendMessage(
+      return Yaka.sendMessage(
         m.from,
         { text: `Please tag a user to make *Mod*!` },
         { quoted: m }
@@ -44,7 +44,7 @@ module.exports = {
         .then(async (user) => {
           if (!user) {
             await mku.create({ id: userId, addedMods: true });
-            return Miku.sendMessage(
+            return Yaka.sendMessage(
               m.from,
               {
                 text: `@${
@@ -63,7 +63,7 @@ module.exports = {
               { addedMods: true },
               { new: true }
             );
-            return Miku.sendMessage(
+            return Yaka.sendMessage(
               m.from,
               {
                 text: `@${
@@ -74,7 +74,7 @@ module.exports = {
               { quoted: m }
             );
           } else if (user.addedMods === true) {
-            return Miku.sendMessage(
+            return Yaka.sendMessage(
               m.from,
               {
                 text: `@${mentionedUser.split("@")[0]} is already a *Mod* !`,
@@ -87,7 +87,7 @@ module.exports = {
               user.addedMods == "true" ||
               ownerlist.includes(`${mentionedUser.split("@")[0]}`)
             )
-              return Miku.sendMessage(
+              return Yaka.sendMessage(
                 m.from,
                 {
                   text: `@${mentionedUser.split("@")[0]} is already a *Mod* !`,
@@ -101,7 +101,7 @@ module.exports = {
               !ownerlist.includes(`${mentionedUser.split("@")[0]}`)
             ) {
               await mku.create({ id: userId, addedMods: true });
-              return Miku.sendMessage(
+              return Yaka.sendMessage(
                 m.from,
                 {
                   text: `@${
@@ -117,7 +117,7 @@ module.exports = {
                 { addedMods: true },
                 { new: true }
               );
-              return Miku.sendMessage(
+              return Yaka.sendMessage(
                 m.from,
                 {
                   text: `@${
@@ -132,7 +132,7 @@ module.exports = {
         })
         .catch((error) => {
           console.log(error);
-          return Miku.sendMessage(
+          return Yaka.sendMessage(
             m.from,
             { text: `An internal error occurred while adding the user.` },
             { quoted: m }
@@ -140,7 +140,7 @@ module.exports = {
         });
     } catch (err) {
       console.log(err);
-      return Miku.sendMessage(
+      return Yaka.sendMessage(
         m.from,
         { text: `An internal error occurred while adding the user.` },
         { quoted: m }

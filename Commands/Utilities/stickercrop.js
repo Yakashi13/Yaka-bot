@@ -7,7 +7,7 @@ module.exports = {
     category: "Utilities",
     usage: "scrop <reply to image>",
     react: "👹",
-    start: async (Miku, m, { text, prefix,quoted,pushName,mime,body }) => {
+    start: async (Yaka, m, { text, prefix,quoted,pushName,mime,body }) => {
         if (/image/.test(mime)) {
             let mediaMess = await quoted.download();
             let stickerMess = new Sticker(mediaMess, {
@@ -20,11 +20,11 @@ module.exports = {
                 background: 'transparent'
             });
             const stickerBuffer = await stickerMess.toBuffer()
-            Miku.sendMessage(m.from, {sticker:stickerBuffer}, { quoted: m })
+            Yaka.sendMessage(m.from, {sticker:stickerBuffer}, { quoted: m })
         }
         else if (/video/.test(mime)) {
             let mediaMess = await quoted.download();
-            if ((quoted.msg || quoted).seconds > 15)  return Miku.sendMessage(m.from,{text:'Please send video less than 15 seconds.'},{quoted:m})
+            if ((quoted.msg || quoted).seconds > 15)  return Yaka.sendMessage(m.from,{text:'Please send video less than 15 seconds.'},{quoted:m})
             let stickerMess = new Sticker(mediaMess, {
                 pack: packname,
                 author: pushName,
@@ -35,8 +35,8 @@ module.exports = {
                 background: 'transparent'
             });
             const stickerBuffer2 = await stickerMess.toBuffer()
-             Miku.sendMessage(m.from, {sticker:stickerBuffer2}, { quoted: m })
+             Yaka.sendMessage(m.from, {sticker:stickerBuffer2}, { quoted: m })
     }else{
-        Miku.sendMessage(m.from,{text:`Please mention an *imade/video* and type *${prefix}s* to create cropped sticker.`},{quoted:m})
+        Yaka.sendMessage(m.from,{text:`Please mention an *imade/video* and type *${prefix}s* to create cropped sticker.`},{quoted:m})
     } 
 }}

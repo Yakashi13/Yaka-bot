@@ -1,16 +1,16 @@
 require("../Core.js");
 const { mk } = require("../Database/dataschema.js");
 
-module.exports = async (Miku, anu) => {
+module.exports = async (Yaka, anu) => {
   try {
-    let metadata = await Miku.groupMetadata(anu.id);
+    let metadata = await Yaka.groupMetadata(anu.id);
     let participants = anu.participants;
     let desc = metadata.desc;
     if (desc == undefined) desc = "No Description";
 
     for (let num of participants) {
       try {
-        ppuser = await Miku.profilePictureUrl(num, "image");
+        ppuser = await Yaka.profilePictureUrl(num, "image");
       } catch {
         ppuser = botImage4;
       }
@@ -28,7 +28,7 @@ module.exports = async (Miku, anu) => {
             metadata.subject
           }\n`
         );
-        mikutext = `
+        Yakatext = `
 Hello @${WAuserName.split("@")[0]} -Kun,
 
 Welcome to *${metadata.subject}*.
@@ -40,9 +40,9 @@ ${desc}
 *Thank You.*
   `;
         if (WelcomeFeature == "true") {
-          Miku.sendMessage(anu.id, {
+          Yaka.sendMessage(anu.id, {
             image: { url: ppuser },
-            caption: mikutext,
+            caption: Yakatext,
             mentions: [num],
           });
         }
@@ -59,13 +59,13 @@ ${desc}
             metadata.subject
           }\n`
         );
-        mikutext = `
+        Yakatext = `
   @${WAuserName.split("@")[0]} -Kun left the group.
   `;
         if (WelcomeFeature == "true") {
-          Miku.sendMessage(anu.id, {
+          Yaka.sendMessage(anu.id, {
             image: { url: ppuser },
-            caption: mikutext,
+            caption: Yakatext,
             mentions: [num],
           });
         }

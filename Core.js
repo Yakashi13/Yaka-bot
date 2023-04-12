@@ -26,7 +26,7 @@ console.log(color("\nLoading please wait...\n", "yellow"));
 
 console.log(color('\nDo not modify this bot on your own!!\nAsk Owner before you do..\n', 'red'))
 
-module.exports = async (Miku, m, commands, chatUpdate, store) => {
+module.exports = async (Yaka, m, commands, chatUpdate, store) => {
   try {
     let { type, isGroup, sender, from } = m;
     let body =
@@ -54,13 +54,13 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
                   ? body
                   : "";
 
-    const metadata = isGroup ? await Miku.groupMetadata(from) : {};
+    const metadata = isGroup ? await Yaka.groupMetadata(from) : {};
     const pushname = m.pushName; //|| 'NO name'
     const participants = isGroup ? metadata.participants : [sender];
     const groupAdmin = isGroup
       ? participants.filter((v) => v.admin !== null).map((v) => v.id)
       : [];
-    const botNumber = await Miku.decodeJid(Miku.user.id);
+    const botNumber = await Yaka.decodeJid(Yaka.user.id);
     const isBotAdmin = isGroup ? groupAdmin.includes(botNumber) : false;
     const isAdmin = isGroup ? groupAdmin.includes(sender) : false;
     const isCreator = [botNumber, ...global.owner]
@@ -190,11 +190,11 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
     if (checkdata) {
       if (checkdata.antilink == "true" && !isBotAdmin) {
         await mk.updateOne({ id: m.from }, { antilink: "false" });
-        Miku.sendMessage(m.from, { text: `Antilink has been *disabled* because I am not an admin anymore.` });
+        Yaka.sendMessage(m.from, { text: `Antilink has been *disabled* because I am not an admin anymore.` });
       }
       let mongoschema = checkdata.antilink || "false";
       if (m.isGroup && mongoschema == "true") {
-        linkgce = await Miku.groupInviteCode(from);
+        linkgce = await Yaka.groupInviteCode(from);
         if (budy.includes(`https://chat.whatsapp.com/${linkgce}`)) {
           m.reply(
             `No action will be taken because you sent this group's link.`
@@ -205,8 +205,8 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
           if (m.key.fromMe) return m.reply(bvl);
           if (isCreator) return m.reply(bvl);
           kice = m.sender;
-          await Miku.groupParticipantsUpdate(m.from, [kice], "remove");
-          await Miku.sendMessage(
+          await Yaka.groupParticipantsUpdate(m.from, [kice], "remove");
+          await Yaka.sendMessage(
             from,
             {
               delete: {
@@ -228,7 +228,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
               antilink: "true",
             }
           );
-          Miku.sendMessage(
+          Yaka.sendMessage(
             from,
             {
               text: `\`\`\`*Antilink System*\`\`\`\n\n@${kice.split("@")[0]
@@ -240,7 +240,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
             }
           );
         } else if (isUrl(m.text) && !icmd && !isAdmin && !isCreator) {
-          await Miku.sendMessage(
+          await Yaka.sendMessage(
             from,
             {
               delete: {
@@ -401,16 +401,16 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
 
     const flags = args.filter((arg) => arg.startsWith("--"));
     if (body.startsWith(prefix) && !icmd) {
-      let Mikutext = `*${pushname}* bakaa! No Cmd Found !!\n\n Type *${prefix}help* to get my Commands!`;
+      let Yakatext = `*${pushname}* bakaa! No Cmd Found !!\n\n Type *${prefix}help* to get my Commands!`;
       const reactmxv = {
         react: {
           text: '🙍🏻‍♀️',
           key: m.key,
         },
       };
-      await Miku.sendMessage(m.from, reactmxv);
+      await Yaka.sendMessage(m.from, reactmxv);
 
-      Miku.sendMessage(m.from, { video: { url: 'https://media.tenor.com/qvvKGZhH0ysAAAPo/anime-girl.mp4', }, caption: Mikutext, gifPlayback: true }, {
+      Yaka.sendMessage(m.from, { video: { url: 'https://media.tenor.com/qvvKGZhH0ysAAAPo/anime-girl.mp4', }, caption: Yakatext, gifPlayback: true }, {
         quoted: m,
       });
     }
@@ -458,8 +458,8 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
           key: m.key,
         },
       };
-      await Miku.sendMessage(m.from, reactionMess).then(() => {
-        return Miku.sendMessage(m.from, buttonmess, {
+      await Yaka.sendMessage(m.from, reactionMess).then(() => {
+        return Yaka.sendMessage(m.from, buttonmess, {
           quoted: m,
         });
       });
@@ -471,7 +471,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
           key: m.key,
         },
       };
-      await Miku.sendMessage(m.from, reactm);
+      await Yaka.sendMessage(m.from, reactm);
     }
     if (!cool.has(m.sender)) {
       cool.set(m.sender, new Collection());
@@ -486,7 +486,7 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
 
         if (now < expiration) {
           let timeLeft = (expiration - now) / 1000;
-          return await Miku.sendMessage(
+          return await Yaka.sendMessage(
             m.from,
             {
               text: `Don't Spam ! You can use command after _${timeLeft.toFixed(
@@ -503,8 +503,8 @@ module.exports = async (Miku, m, commands, chatUpdate, store) => {
     timestamps.set(m.sender, now);
     setTimeout(() => timestamps.delete(m.sender), cdAmount);
 
-    cmd.start(Miku, m, {
-      name: "Miku",
+    cmd.start(Yaka, m, {
+      name: "Yaka",
       metadata,
       pushName: pushname,
       participants,

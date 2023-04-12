@@ -11,15 +11,15 @@ module.exports = {
     usage: "unban @user", 
     react: "🍃", 
     start: async (
-      Miku, 
+      Yaka, 
       m, 
       { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,modStatus} 
     ) => { 
 
-      if (modStatus=="false"&&!isCreator)  return Miku.sendMessage(m.from, { text: 'Sorry, only my *Owner* and *Mods* can use this command !' }, { quoted: m });
+      if (modStatus=="false"&&!isCreator)  return Yaka.sendMessage(m.from, { text: 'Sorry, only my *Owner* and *Mods* can use this command !' }, { quoted: m });
 
         if (!text && !m.quoted) {
-          return Miku.sendMessage( 
+          return Yaka.sendMessage( 
             m.from, 
             { text: `Please tag a user to *Unban*!` }, 
             { quoted: m } 
@@ -37,15 +37,15 @@ module.exports = {
       try { 
          mku.findOne({id:userId}).then(async (user) => {
             if (!user) {
-              return Miku.sendMessage( 
+              return Yaka.sendMessage( 
                 m.from, 
                 { text: `@${mentionedUser.split("@")[0]} is not *Banned* !` , mentions: [mentionedUser] }, 
                 { quoted: m } 
               );
             }else{
-                if (user.ban == "false") return Miku.sendMessage(m.from, { text: `@${mentionedUser.split("@")[0]} is not *Banned* !` , mentions: [mentionedUser]}, { quoted: m });
+                if (user.ban == "false") return Yaka.sendMessage(m.from, { text: `@${mentionedUser.split("@")[0]} is not *Banned* !` , mentions: [mentionedUser]}, { quoted: m });
                 await mku.findOneAndUpdate({ id: userId }, { ban: false }, { new: true });
-                return Miku.sendMessage( 
+                return Yaka.sendMessage( 
                   m.from, 
                   { text: `@${mentionedUser.split("@")[0]} has been *Unbanned* Successfully! by *${pushName}*`, mentions: [mentionedUser] }, 
                   { quoted: m } 
@@ -53,11 +53,11 @@ module.exports = {
             }
          }).catch(error => {
            console.log(error)
-           return Miku.sendMessage(m.from, { text: `An internal error occurred while Unbanning the user.` }, { quoted: m });
+           return Yaka.sendMessage(m.from, { text: `An internal error occurred while Unbanning the user.` }, { quoted: m });
          });
       } catch (err) { 
         console.log(err);
-        return Miku.sendMessage(m.from, { text: `An internal error occurred while Unbanning the user.` }, { quoted: m });
+        return Yaka.sendMessage(m.from, { text: `An internal error occurred while Unbanning the user.` }, { quoted: m });
       } 
     }, 
   };

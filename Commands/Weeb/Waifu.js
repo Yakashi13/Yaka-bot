@@ -6,7 +6,7 @@ module.exports = {
     desc: "Get anime girls picture.",
     react: "🥵",
     category: "Weeb",
-    start: async(Miku, m,{pushName,prefix}) => {
+    start: async(Yaka, m,{pushName,prefix}) => {
         let waifus = await axios.get('https://api.waifu.pics/sfw/waifu');  
 
 var Button = [
@@ -23,7 +23,7 @@ var Button = [
       buttons: Button,
       headerType: 4,
     };
-    await Miku.sendMessage(m.from, waf, { quoted: m }).catch((err) => {
+    await Yaka.sendMessage(m.from, waf, { quoted: m }).catch((err) => {
       return "Error!";
     });
 }, 

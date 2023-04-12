@@ -6,7 +6,7 @@ module.exports = {
     usage: "admins <your message>",
     react: "👹",
     start: async (
-      Miku,
+      Yaka,
       m,
       { text, prefix, isAdmin, participants, args ,groupAdmin}
     ) => {
@@ -30,6 +30,6 @@ module.exports = {
       message = "       『 *Attention Admins* 』";
     }
     
-        Miku.sendMessage(m.from, { text: message, mentions: groupAdmin}, { quoted: m });
+        Yaka.sendMessage(m.from, { text: message, mentions: groupAdmin}, { quoted: m });
     }
 }

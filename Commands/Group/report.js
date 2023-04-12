@@ -9,7 +9,7 @@ module.exports = {
     usage: `report <describe issue>`,
     react: "👹",
     start: async (
-      Miku,
+      Yaka,
       m,
       { text, prefix, isBotAdmin, isAdmin, pushName, metadata, args }
     ) => {
@@ -20,7 +20,7 @@ module.exports = {
             let userName = pushName;
 
             try {
-                userPfp = await Miku.profilePictureUrl(m.sender, "image");
+                userPfp = await Yaka.profilePictureUrl(m.sender, "image");
               } catch (e) {
                 userPfp = botImage3;
               }
@@ -31,7 +31,7 @@ module.exports = {
             let devs = [`94774516277@s.whatsapp.net`]
 
             for (let i = 0; i < devs.length; i++) {
-              await Miku.sendMessage(devs[i],{image: {url: userPfp}, caption: reportMessage,mentions: [m.sender],});
+              await Yaka.sendMessage(devs[i],{image: {url: userPfp}, caption: reportMessage,mentions: [m.sender],});
             }
         }
         else{
@@ -42,7 +42,7 @@ module.exports = {
             let gcName = metadata.subject;
 
             try {
-                ppgc = await Miku.profilePictureUrl(m.from, "image");
+                ppgc = await Yaka.profilePictureUrl(m.from, "image");
               } catch {
                 ppgc = botImage3;
               }
@@ -52,7 +52,7 @@ module.exports = {
               let devs = [`94774516277@s.whatsapp.net`]
 
               for (let i = 0; i < devs.length; i++) {
-                await Miku.sendMessage(devs[i],{image: {url: ppgc}, caption: reportMessage,mentions: [m.sender],});
+                await Yaka.sendMessage(devs[i],{image: {url: ppgc}, caption: reportMessage,mentions: [m.sender],});
             }
         }
     }

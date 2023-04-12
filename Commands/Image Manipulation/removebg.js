@@ -10,7 +10,7 @@ module.exports = {
   category: "Image Manipulation",
   usage: "removebg <reply to image>",
   react: "👹",
-  start: async (Miku, m, { text, prefix, quoted, pushName, mime, body }) => {
+  start: async (Yaka, m, { text, prefix, quoted, pushName, mime, body }) => {
     if (!m.quoted&&!/image/.test(mime)) return m.reply (`Send/Reply Image With Caption *${prefix}removebg* to remove background of an image`);
 	if (/webp/.test(mime)) return m.reply (`Send/Reply Image With Caption *${prefix}removebg* to remove background of an image`);
 
@@ -18,7 +18,7 @@ module.exports = {
         let rbgKEY = rbgKEYS[Math.floor(Math.random() * rbgKEYS.length)];
         let filename = await './Assets/removeBgIN-'+ getRandom('');
         let outputFile = await './Assets/removeBgOUT-'+ getRandom('.png');
-        let qFile =await Miku.downloadAndSaveMediaMessage(quoted, filename)
+        let qFile =await Yaka.downloadAndSaveMediaMessage(quoted, filename)
 
 
         var bgRempic = await remobg.removeBackgroundFromImageFile({
@@ -30,7 +30,7 @@ module.exports = {
             outputFile
         })
 
-        await Miku.sendMessage(m.from, {image: fs.readFileSync(outputFile),caption:`_Created by: *${botName}*_`}, {quoted: m}).then (async () => {
+        await Yaka.sendMessage(m.from, {image: fs.readFileSync(outputFile),caption:`_Created by: *${botName}*_`}, {quoted: m}).then (async () => {
             await fs.unlinkSync(filename+'.png');
             await fs.unlinkSync(outputFile);
         }) 

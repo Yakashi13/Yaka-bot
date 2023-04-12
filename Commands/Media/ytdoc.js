@@ -10,9 +10,9 @@ module.exports = {
   category: "Media",
   usage: `ytdoc <song link>`,
   react: "👹",
-  start: async (Miku, m, { text, prefix, args, mime }) => {
+  start: async (Yaka, m, { text, prefix, args, mime }) => {
     if (!args[0])
-      return Miku.sendMessage(
+      return Yaka.sendMessage(
         m.from,
         { text: `Please provide a YouTube Video link !` },
         { quoted: m }
@@ -31,7 +31,7 @@ module.exports = {
           );
         } else {
           const ytaud =  YT.mp3(text).then((file) => {
-            Miku.sendMessage(
+            Yaka.sendMessage(
               m.from,
               {
                 document: fs.readFileSync(file.path),

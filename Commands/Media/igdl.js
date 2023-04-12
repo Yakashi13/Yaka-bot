@@ -11,16 +11,16 @@ module.exports = {
     category: "Media",
     usage: `igdl <video /> image link>`,
     react: "👹",
-    start: async (Miku, m, { text, prefix, args }) => {
+    start: async (Yaka, m, { text, prefix, args }) => {
 
         if (!args[0])
-          return Miku.sendMessage(
+          return Yaka.sendMessage(
             m.from,
             { text: `Please provide a Instagram Video / Image link !` },
             { quoted: m }
           );
       if(!args[0].includes("instagram.com"))
-          return Miku.sendMessage(
+          return Yaka.sendMessage(
               m.from,
               { text: `Please provide a valid Instagram Video / Image link !` },
               { quoted: m }
@@ -33,7 +33,7 @@ module.exports = {
         ig.fetchPost(InstaLink).then((res) => {
             if (res.media_count == 1) {
                 if (res.links[0].type == "video") {
-                    Miku.sendMessage(
+                    Yaka.sendMessage(
                         m.from,
                         {
                             video: { url: res.links[0].url }, 
@@ -42,7 +42,7 @@ module.exports = {
                         { quoted: m }
                     )
                 }else if (res.links[0].type == "image") {
-                    Miku.sendMessage(
+                    Yaka.sendMessage(
                         m.from,
                         {
                             image: { url: res.links[0].url }, 
@@ -55,7 +55,7 @@ module.exports = {
             else if (res.media_count > 1) {
                 for (let i = 0; i < res.media_count; i++) {
                     if (res.links[i].type == "video") {
-                        Miku.sendMessage(
+                        Yaka.sendMessage(
                             m.from,
                             {
                                 video: { url: res.links[i].url },
@@ -64,7 +64,7 @@ module.exports = {
                             { quoted: m }
                         )
                     } else if (res.links[i].type == "image") {
-                        Miku.sendMessage(
+                        Yaka.sendMessage(
                             m.from,
                             {
                                 image: { url: res.links[i].url },

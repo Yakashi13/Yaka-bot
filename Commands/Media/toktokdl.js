@@ -5,9 +5,9 @@ module.exports = {
     category: "Media",
     usage: `tiktok <song link>`,
     react: "👹",
-    start: async (Miku, m, { text, prefix, args, mime }) => {
+    start: async (Yaka, m, { text, prefix, args, mime }) => {
       if (!args[0])
-        return Miku.sendMessage(
+        return Yaka.sendMessage(
           m.from,
           { text: `Please provide a Tiktok Video link !` },
           { quoted: m }
@@ -45,6 +45,6 @@ module.exports = {
             buttons: buttons,
             headerType: 4,
           };
-          Miku.sendMessage(m.from, buttonMessage, { quoted: m });
+          Yaka.sendMessage(m.from, buttonMessage, { quoted: m });
         },
     }

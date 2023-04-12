@@ -5,10 +5,10 @@ module.exports = {
     cool:3,
     react: "😆",
     category: "Fun",
-    start: async(Miku, m,{text, prefix, args,mentionedJid,mentionByTag}) => {
+    start: async(Yaka, m,{text, prefix, args,mentionedJid,mentionByTag}) => {
 
         if (!text)
-      return Miku.sendMessage(
+      return Yaka.sendMessage(
         m.from,
         { text: `Please tag a user to use this command!` },
         { quoted: m }
@@ -19,9 +19,9 @@ module.exports = {
 ]
     const dey = shibam[Math.floor(Math.random() * shibam.length)]
 
-    let Mikutext = `Horny Check Of : @${mentionedUser.split("@")[0]}\n\nAnswer : *${dey}%*🤣`
+    let Yakatext = `Horny Check Of : @${mentionedUser.split("@")[0]}\n\nAnswer : *${dey}%*🤣`
 
-    Miku.sendMessage(m.from, { image: {url: botImage3},caption: Mikutext , mentions: [mentionedUser]}, { quoted: m });
+    Yaka.sendMessage(m.from, { image: {url: botImage3},caption: Yakatext , mentions: [mentionedUser]}, { quoted: m });
 
 }
 }

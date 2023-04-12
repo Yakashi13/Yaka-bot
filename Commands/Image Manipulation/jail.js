@@ -7,7 +7,7 @@ module.exports = {
     category: "Image Manipulation",
     usage: "jail <reply to image>",
     react: "👹",
-    start: async (Miku, m, { text, prefix, quoted, pushName, mime, body }) => {
+    start: async (Yaka, m, { text, prefix, quoted, pushName, mime, body }) => {
         if (!m.quoted && !/image/.test(mime)) return m.reply('Please tag someone ! or mention a picture !');
 
 
@@ -16,7 +16,7 @@ module.exports = {
         }
         else if(m.quoted){
             try {
-                userPfp = await Miku.profilePictureUrl(m.quoted.sender, "image");
+                userPfp = await Yaka.profilePictureUrl(m.quoted.sender, "image");
               } catch (e) {
                 return m.reply("User profile pic is Private ! or User doesn't have any profile picture !")
               }
@@ -29,7 +29,7 @@ module.exports = {
 
         const result = await Canvacord.Canvacord.jail(userPfp, false);
 
-        await Miku.sendMessage(m.from, { image: result, caption:"*Sent to Horney jail*\n" }, { quoted: m });
+        await Yaka.sendMessage(m.from, { image: result, caption:"*Sent to Horney jail*\n" }, { quoted: m });
 
 
     }}

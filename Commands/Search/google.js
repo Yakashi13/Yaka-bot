@@ -7,9 +7,9 @@ module.exports = {
     category: "Search",
     usage: `google <search term>`,
     react: "👹",
-    start: async (Miku, m, { text, prefix, args }) => {
+    start: async (Yaka, m, { text, prefix, args }) => {
       if (!args[0])
-        return Miku.sendMessage(
+        return Yaka.sendMessage(
           m.from,
           { text: `Please provide a Search Term !` },
           { quoted: m }
@@ -28,7 +28,7 @@ module.exports = {
             resText += `_📍 Result:_ *${num+1}*\n\n_🍃 Title:_ *${googleSearch[num].title}*\n\n_🔶 Description:_ *${googleSearch[num].snippet}*\n\n_🔷 Link:_ *${googleSearch[num].link}*\n\n\n`;
         }
 
-      await Miku.sendMessage(
+      await Yaka.sendMessage(
         m.from,
         {
           video: {url: 'https://media.tenor.com/3aaAzbTrTMwAAAPo/google-technology-company.mp4'},

@@ -9,7 +9,7 @@ module.exports = {
   usage: "announce <your message>",
   react: "👹",
   start: async (
-    Miku,
+    Yaka,
     m,
     { text, prefix, isAdmin, participants, args,buttonId }
   ) => {
@@ -35,7 +35,7 @@ module.exports = {
     else{
       message = "*『 Attention Here 』*";
     }
-    await Miku.sendMessage(
+    await Yaka.sendMessage(
       m.from,
       { text: message, mentions: participants.map((a) => a.id) },
       { quoted: m }

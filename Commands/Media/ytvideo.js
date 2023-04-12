@@ -7,10 +7,10 @@ module.exports = {
   category: "Media",
   usage: `ytvd <song link>`,
   react: "👹",
-  start: async (Miku, m, { text, prefix, args }) => {
+  start: async (Yaka, m, { text, prefix, args }) => {
 
     if (!args[0])
-        return Miku.sendMessage(
+        return Yaka.sendMessage(
           m.from,
           { text: `Please provide a YouTube Video link !` },
           { quoted: m }
@@ -18,7 +18,7 @@ module.exports = {
     
           const vid= await YT.mp4(text);
         const vidname = vid.title;
-        await Miku.sendMessage(m.from,{
+        await Yaka.sendMessage(m.from,{
             video: {url:vid.videoUrl},
             caption: vidname + ` By: *${botName}*`
         },{quoted:m})

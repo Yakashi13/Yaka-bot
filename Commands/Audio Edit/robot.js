@@ -9,9 +9,9 @@ module.exports = {
     category: "Audio Edit",
     usage: "robot <reply to audio>",
     react: "👹",
-    start: async (Miku, m, { text, prefix,quoted,pushName,mime,body }) => {
+    start: async (Yaka, m, { text, prefix,quoted,pushName,mime,body }) => {
 
-     let media = await Miku.downloadAndSaveMediaMessage(quoted)
+     let media = await Yaka.downloadAndSaveMediaMessage(quoted)
      let set = '-filter_complex "afftfilt=real=\'hypot(re,im)*sin(0)\':imag=\'hypot(re,im)*cos(0)\':win_size=512:overlap=0.75"'
      let ran = getRandom('.mp3')
      try{
@@ -19,7 +19,7 @@ module.exports = {
             fs.unlinkSync(media)
             if (err) return m.reply('An error Occurd !')
             let buff = fs.readFileSync(ran)
-            Miku.sendMessage(m.from, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : m })
+            Yaka.sendMessage(m.from, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : m })
             fs.unlinkSync(ran)
             })
 

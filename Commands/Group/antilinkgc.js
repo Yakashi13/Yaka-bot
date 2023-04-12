@@ -13,12 +13,12 @@ module.exports = {
     usage: "antilinkgc [on/off]",
     react: "🔐",
     start: async (
-      Miku,
+      Yaka,
       m,
       { args, isBotAdmin, isAdmin, isCreator, reply,prefix,pushName }
     ) => {
         if (!isAdmin && !isBotAdmin)
-        return Miku.sendMessage(
+        return Yaka.sendMessage(
           m.from,
           {
             text: `Bot and *${pushName}* both must be admin in order to use this command !`,
@@ -27,7 +27,7 @@ module.exports = {
         );
   
       let checkdata = await mk.findOne({ id: m.from });
-      var groupe = await Miku.groupMetadata(m.from);
+      var groupe = await Yaka.groupMetadata(m.from);
       var members = groupe["participants"];
       var mems = [];
       members.map(async (adm) => {
@@ -37,7 +37,7 @@ module.exports = {
       if (args[0] === "on") {
         if (!checkdata) {
           await new mk({ id: m.from, antilink: "true" }).save();
-          Miku.sendMessage(
+          Yaka.sendMessage(
             m.from,
             {
               text: `\`\`\`「 Warning 」\`\`\`\n\nAntilink System Activated!`,
@@ -45,20 +45,20 @@ module.exports = {
             },
             { quoted: m }
           );
-          return Miku.sendMessage(
+          return Yaka.sendMessage(
             m.from,
             { text: `*Successfully activated antilink*` },
             { quoted: m }
           );
         } else {
           if (checkdata.antilink == "true")
-            return Miku.sendMessage(
+            return Yaka.sendMessage(
                 m.from,
                 { text: `*Already activated.*` },
                 { quoted: m }
               );
           await mk.updateOne({ id: m.from }, { antilink: "true" });
-          return Miku.sendMessage(
+          return Yaka.sendMessage(
             m.from,
             { text: `*Antilink is enabled in this group*` },
             { quoted: m }
@@ -67,19 +67,19 @@ module.exports = {
       } else if (args[0] === "off") {
         if (!checkdata) {
           await new mk({ id: m.from, antilink: "false" }).save();
-          return Miku.sendMessage(
+          return Yaka.sendMessage(
             m.from,
             { text: `*Successfully deactivated antilink*` },
             { quoted: m }
           );
         } else {
-          if (checkdata.antilink == "false") return Miku.sendMessage(
+          if (checkdata.antilink == "false") return Yaka.sendMessage(
             m.from,
             { text: `*Already deactivated.*` },
             { quoted: m }
           );
           await mk.updateOne({ id: m.from }, { antilink: "false" });
-          return Miku.sendMessage(
+          return Yaka.sendMessage(
             m.from,
             { text: `*Antilink is disabled in this group*` },
             { quoted: m }
@@ -105,7 +105,7 @@ module.exports = {
           buttons: buttonsntilink,
           headerType: 4,
         };
-        await Miku.sendMessage(m.from, bmffg, { quoted: m });
+        await Yaka.sendMessage(m.from, bmffg, { quoted: m });
     }
   },
 };

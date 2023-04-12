@@ -10,15 +10,15 @@ module.exports = {
   usage: `Tag an Image and type -setppgc}`,
   react: "👹",
   start: async (
-    Miku,
+    Yaka,
     m,
     { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, mime, quoted }
   ) => {
     if (!isAdmin && !isBotAdmin)
-      return Miku.sendMessage(m.from, { text: `*Bot* and *${pushName}* both must be Admin in order to use this Command!` }, { quoted: m });
+      return Yaka.sendMessage(m.from, { text: `*Bot* and *${pushName}* both must be Admin in order to use this Command!` }, { quoted: m });
 
     if (!/image/.test(mime))
-      return Miku.sendMessage(
+      return Yaka.sendMessage(
         m.from,
         {
           text: `Send/Reply Image With Caption ${
@@ -28,7 +28,7 @@ module.exports = {
         { quoted: m }
       );
     if (/webp/.test(mime))
-      return Miku.sendMessage(
+      return Yaka.sendMessage(
         m.from,
         {
           text: `Send/Reply Image With Caption ${
@@ -38,10 +38,10 @@ module.exports = {
         { quoted: m }
       );
 
-      let quotedimage = await Miku.downloadAndSaveMediaMessage(quoted)
+      let quotedimage = await Yaka.downloadAndSaveMediaMessage(quoted)
       var { preview } = await generatePP(quotedimage)   
       
-      await Miku.query({
+      await Yaka.query({
         tag: 'iq',
         attrs: {
             to: m.from,
@@ -56,9 +56,9 @@ module.exports = {
     })
     fs.unlinkSync(quotedimage)
 
-    ppgc = await Miku.profilePictureUrl(m.from, "image");
+    ppgc = await Yaka.profilePictureUrl(m.from, "image");
 
-    Miku.sendMessage(
+    Yaka.sendMessage(
         m.from,
         { image: {url: ppgc},caption: `\nGroup Profile Picture has been updated Successfully by *${pushName}* !` },
         { quoted: m }

@@ -15,8 +15,8 @@ module.exports = {
     category: "RPG",
     usage: "shop",
     react: "🛍",
-    start: async (Miku, m, { text, prefix, botName}) => {
-        Miku.sendMessage(m.from, { text: `🛍️ 💎 ${global.botName} STORE 💎 🛍️
+    start: async (Yaka, m, { text, prefix, botName}) => {
+        Yaka.sendMessage(m.from, { text: `🛍️ 💎 ${global.botName} STORE 💎 🛍️
 
         👋 Hi there! 🤗 Welcome to the ${global.botName} Store.💼 Here's what you can purchase using Gold 💰:
         

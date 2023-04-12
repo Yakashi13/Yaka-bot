@@ -9,13 +9,13 @@ module.exports = {
     category: "Utilities",
     usage: "sticker <reply to image>",
     react: "👹",
-    start: async (Miku, m, { text, prefix,quoted,pushName,mime,body }) => {
-        let media = await Miku.downloadAndSaveMediaMessage(quoted);
+    start: async (Yaka, m, { text, prefix,quoted,pushName,mime,body }) => {
+        let media = await Yaka.downloadAndSaveMediaMessage(quoted);
         let m2 = await quoted.download()
         if (/image/.test(mime)) {
             let anu = await TelegraPh(media)
             //m.reply(`*Generated Image Link:* \n\n${util.format(anu)}\n`)
-            await Miku.sendMessage(m.from, { image: m2, caption:`*Generated Image Link:* \n\n${util.format(anu)}\n` }, { quoted: m });
+            await Yaka.sendMessage(m.from, { image: m2, caption:`*Generated Image Link:* \n\n${util.format(anu)}\n` }, { quoted: m });
             } else if (!/image/.test(mime)) {
             m.reply(`Plese provide an image to generate a link!`)
             }

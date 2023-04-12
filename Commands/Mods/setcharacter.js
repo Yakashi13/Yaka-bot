@@ -14,7 +14,7 @@ module.exports = {
     usage: "setchar 0/1/2/3/4/5/6/7",
     react: "✔️",
     start: async (
-        Miku,
+        Yaka,
         m,
         { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator, modStatus }
     ) => {
@@ -110,63 +110,63 @@ module.exports = {
             }
             else if (charNum == '0') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
             }
             else if (charNum == '1') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
             }
             else if (charNum == '2') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
             }
             else if (charNum == '3') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
             }
             else if (charNum == '4') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
             }
             else if (charNum == '5') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
             }
             else if (charNum == '6') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
             }
             else if (charNum == '7') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
             }
             else if (charNum == '8') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
@@ -174,7 +174,7 @@ module.exports = {
 
             else if (charNum == '9') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
@@ -182,98 +182,98 @@ module.exports = {
 
             else if (charNum == '10') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
             }
             else if (charNum == '11') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
             }
             else if (charNum == '12') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
             }
             else if (charNum == '13') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
             }
             else if (charNum == '14') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
             }
             else if (charNum == '15') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
             }
             else if (charNum == '16') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
             }
             else if (charNum == '17') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
             }
             else if (charNum == '18') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
             }
             else if (charNum == '19') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
             }
             else if (charNum == '20') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
             }
             else if (charNum == '21') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
             }
             else if (charNum == '22') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })
             }
             else if (charNum == '23') {
                 await mkchar.findOneAndUpdate({ id: '1' }, { $set: { seletedCharacter: charNum } }, { new: true }).then(async (res) => {
-                    await Miku.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
+                    await Yaka.sendMessage(m.from, { image: { url: botLogos[charNum] }, caption: `Character number ${charNum} - ${botNames[charNum]} is now Activated!.\n` }, { quoted: m })
                 }).catch(error => {
                     return m.reply(`An error occurred while updating the character number.`)
                 })

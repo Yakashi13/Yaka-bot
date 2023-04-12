@@ -3,7 +3,7 @@ require("./Core.js");
 
 const pino = require('pino');
 const {
-    default: MikuConnect,
+    default: YakaConnect,
     DisconnectReason,
     delay,
     fetchLatestBaileysVersion,
@@ -100,7 +100,7 @@ const app = express();
 let QR_GENERATE = "invalid";
 
 let status;
-async function startMiku() {
+async function startYaka() {
     await mongoose.connect(mongodb)
 
     const {
@@ -135,7 +135,7 @@ async function startMiku() {
         version,
         isLatest
     } = await fetchLatestBaileysVersion()
-    const Miku = MikuConnect({
+    const Yaka = YakaConnect({
         logger: pino({
             level: 'silent'
         }),
@@ -145,13 +145,13 @@ async function startMiku() {
         version
     })
 
-    store.bind(Miku.ev)
+    store.bind(Yaka.ev)
 
-    Miku.public = true
-    Miku.ev.on('creds.update', saveState)
-    Miku.serializeM = (m) => smsg(Miku, m, store)
+    Yaka.public = true
+    Yaka.ev.on('creds.update', saveState)
+    Yaka.serializeM = (m) => smsg(Yaka, m, store)
 
-    Miku.ev.on('connection.update', async (update) => {
+    Yaka.ev.on('connection.update', async (update) => {
         const {
             connection,
             lastDisconnect,
@@ -169,10 +169,10 @@ async function startMiku() {
                 process.exit();
             } else if (reason === DisconnectReason.connectionClosed) {
                 console.log("Connection closed, reconnecting....");
-                startMiku();
+                startYaka();
             } else if (reason === DisconnectReason.connectionLost) {
                 console.log("Connection Lost from Server, reconnecting...");
-                startMiku();
+                startYaka();
             } else if (reason === DisconnectReason.connectionReplaced) {
                 console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First");
                 process.exit();
@@ -182,10 +182,10 @@ async function startMiku() {
                 process.exit();
             } else if (reason === DisconnectReason.restartRequired) {
                 console.log("Restart Required, Restarting...");
-                startMiku();
+                startYaka();
             } else if (reason === DisconnectReason.timedOut) {
                 console.log("Connection TimedOut, Reconnecting...");
-                startMiku();
+                startYaka();
             } else {
                 console.log(`Disconnected: "Reboot the bot!\n\nCheck your WhatsApp !"`)
             }
@@ -196,39 +196,39 @@ async function startMiku() {
     })
 
 
-    Miku.ev.on("group-participants.update", async (m) => {
-        welcomeLeft(Miku, m);
+    Yaka.ev.on("group-participants.update", async (m) => {
+        welcomeLeft(Yaka, m);
     });
 
-    Miku.ev.on("messages.upsert", async (chatUpdate) => {
-        m = serialize(Miku, chatUpdate.messages[0])
+    Yaka.ev.on("messages.upsert", async (chatUpdate) => {
+        m = serialize(Yaka, chatUpdate.messages[0])
 
         if (!m.message) return
         if (m.key && m.key.remoteJid == "status@broadcast") return
         if (m.key.id.startsWith("BAE5") && m.key.id.length == 16) return
-        require("./Core.js")(Miku, m, Commands, chatUpdate)
+        require("./Core.js")(Yaka, m, Commands, chatUpdate)
     })
 
 
-    Miku.getName = (jid, withoutContact = false) => {
-        id = Miku.decodeJid(jid)
-        withoutContact = Miku.withoutContact || withoutContact
+    Yaka.getName = (jid, withoutContact = false) => {
+        id = Yaka.decodeJid(jid)
+        withoutContact = Yaka.withoutContact || withoutContact
         let v
         if (id.endsWith("@g.us")) return new Promise(async (resolve) => {
             v = store.contacts[id] || {}
-            if (!(v.name || v.subject)) v = Miku.groupMetadata(id) || {}
+            if (!(v.name || v.subject)) v = Yaka.groupMetadata(id) || {}
             resolve(v.name || v.subject || PhoneNumber('+' + id.replace('@s.whatsapp.net', '')).getNumber('international'))
         })
         else v = id === '0@s.whatsapp.net' ? {
             id,
             name: 'WhatsApp'
-        } : id === Miku.decodeJid(Miku.user.id) ?
-            Miku.user :
+        } : id === Yaka.decodeJid(Yaka.user.id) ?
+            Yaka.user :
             (store.contacts[id] || {})
         return (withoutContact ? '' : v.name) || v.subject || v.verifiedName || PhoneNumber('+' + jid.replace('@s.whatsapp.net', '')).getNumber('international')
     }
 
-    Miku.decodeJid = (jid) => {
+    Yaka.decodeJid = (jid) => {
         if (!jid) return jid
         if (/:\d+@/gi.test(jid)) {
             let decode = jidDecode(jid) || {}
@@ -236,9 +236,9 @@ async function startMiku() {
         } else return jid
     }
 
-    Miku.ev.on('contacts.update', update => {
+    Yaka.ev.on('contacts.update', update => {
         for (let contact of update) {
-            let id = Miku.decodeJid(contact.id)
+            let id = Yaka.decodeJid(contact.id)
             if (store && store.contacts) store.contacts[id] = {
                 id,
                 name: contact.notify
@@ -256,12 +256,12 @@ async function startMiku() {
      * @param {*} options
      * @returns
      */
-    Miku.send5ButImg = async (jid, text = '', footer = '', img, but = [], thumb, options = {}) => {
+    Yaka.send5ButImg = async (jid, text = '', footer = '', img, but = [], thumb, options = {}) => {
         let message = await prepareWAMessageMedia({
             image: img,
             jpegThumbnail: thumb
         }, {
-            upload: Miku.waUploadToServer
+            upload: Yaka.waUploadToServer
         })
         var template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
             templateMessage: {
@@ -273,7 +273,7 @@ async function startMiku() {
                 }
             }
         }), options)
-        Miku.relayMessage(jid, template.message, {
+        Yaka.relayMessage(jid, template.message, {
             messageId: template.key.id
         })
     }
@@ -287,7 +287,7 @@ async function startMiku() {
      * @param {*} quoted 
      * @param {*} options 
      */
-    Miku.sendButtonText = (jid, buttons = [], text, footer, quoted = '', options = {}) => {
+    Yaka.sendButtonText = (jid, buttons = [], text, footer, quoted = '', options = {}) => {
         let buttonMessage = {
             text,
             footer,
@@ -295,7 +295,7 @@ async function startMiku() {
             headerType: 2,
             ...options
         }
-        Miku.sendMessage(jid, buttonMessage, {
+        Yaka.sendMessage(jid, buttonMessage, {
             quoted,
             ...options
         })
@@ -309,7 +309,7 @@ async function startMiku() {
      * @param {*} options 
      * @returns 
      */
-    Miku.sendText = (jid, text, quoted = '', options) => Miku.sendMessage(jid, {
+    Yaka.sendText = (jid, text, quoted = '', options) => Yaka.sendMessage(jid, {
         text: text,
         ...options
     }, {
@@ -325,9 +325,9 @@ async function startMiku() {
      * @param {*} options 
      * @returns 
      */
-    Miku.sendImage = async (jid, path, caption = '', quoted = '', options) => {
+    Yaka.sendImage = async (jid, path, caption = '', quoted = '', options) => {
         let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
-        return await Miku.sendMessage(jid, {
+        return await Yaka.sendMessage(jid, {
             image: buffer,
             caption: caption,
             ...options
@@ -345,9 +345,9 @@ async function startMiku() {
      * @param {*} options 
      * @returns 
      */
-    Miku.sendVideo = async (jid, path, caption = '', quoted = '', gif = false, options) => {
+    Yaka.sendVideo = async (jid, path, caption = '', quoted = '', gif = false, options) => {
         let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
-        return await Miku.sendMessage(jid, {
+        return await Yaka.sendMessage(jid, {
             video: buffer,
             caption: caption,
             gifPlayback: gif,
@@ -366,9 +366,9 @@ async function startMiku() {
      * @param {*} options 
      * @returns 
      */
-    Miku.sendAudio = async (jid, path, quoted = '', ptt = false, options) => {
+    Yaka.sendAudio = async (jid, path, quoted = '', ptt = false, options) => {
         let buffer = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
-        return await Miku.sendMessage(jid, {
+        return await Yaka.sendMessage(jid, {
             audio: buffer,
             ptt: ptt,
             ...options
@@ -385,7 +385,7 @@ async function startMiku() {
      * @param {*} options 
      * @returns 
      */
-    Miku.sendTextWithMentions = async (jid, text, quoted, options = {}) => Miku.sendMessage(jid, {
+    Yaka.sendTextWithMentions = async (jid, text, quoted, options = {}) => Yaka.sendMessage(jid, {
         text: text,
         contextInfo: {
             mentionedJid: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net')
@@ -403,7 +403,7 @@ async function startMiku() {
      * @param {*} options 
      * @returns 
      */
-    Miku.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
+    Yaka.sendImageAsSticker = async (jid, path, quoted, options = {}) => {
         let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
         let buffer
         if (options && (options.packname || options.author)) {
@@ -412,7 +412,7 @@ async function startMiku() {
             buffer = await imageToWebp(buff)
         }
 
-        await Miku.sendMessage(jid, {
+        await Yaka.sendMessage(jid, {
             sticker: {
                 url: buffer
             },
@@ -431,7 +431,7 @@ async function startMiku() {
      * @param {*} options 
      * @returns 
      */
-    Miku.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
+    Yaka.sendVideoAsSticker = async (jid, path, quoted, options = {}) => {
         let buff = Buffer.isBuffer(path) ? path : /^data:.*?\/.*?;base64,/i.test(path) ? Buffer.from(path.split`,`[1], 'base64') : /^https?:\/\//.test(path) ? await (await getBuffer(path)) : fs.existsSync(path) ? fs.readFileSync(path) : Buffer.alloc(0)
         let buffer
         if (options && (options.packname || options.author)) {
@@ -439,7 +439,7 @@ async function startMiku() {
         } else {
             buffer = await videoToWebp(buff)
         }
-        await Miku.sendMessage(jid, {
+        await Yaka.sendMessage(jid, {
             sticker: {
                 url: buffer
             },
@@ -450,8 +450,8 @@ async function startMiku() {
         return buffer
     }
 
-    Miku.sendMedia = async (jid, path, fileName = '', caption = '', quoted = '', options = {}) => {
-        let types = await Miku.getFile(path, true)
+    Yaka.sendMedia = async (jid, path, fileName = '', caption = '', quoted = '', options = {}) => {
+        let types = await Yaka.getFile(path, true)
         let {
             mime,
             ext,
@@ -492,7 +492,7 @@ async function startMiku() {
         else if (/video/.test(mime)) type = 'video'
         else if (/audio/.test(mime)) type = 'audio'
         else type = 'document'
-        await Miku.sendMessage(jid, {
+        await Yaka.sendMessage(jid, {
             [type]: {
                 url: pathFile
             },
@@ -513,7 +513,7 @@ async function startMiku() {
      * @param {*} attachExtension 
      * @returns 
      */
-    Miku.downloadAndSaveMediaMessage = async (message, filename, attachExtension = true) => {
+    Yaka.downloadAndSaveMediaMessage = async (message, filename, attachExtension = true) => {
         let quoted = message.msg ? message.msg : message
         let mime = (message.msg || message).mimetype || ''
         let messageType = message.mtype ? message.mtype.replace(/Message/gi, '') : mime.split('/')[0]
@@ -529,7 +529,7 @@ async function startMiku() {
         return trueFileName
     }
 
-    Miku.downloadMediaMessage = async (message) => {
+    Yaka.downloadMediaMessage = async (message) => {
         let mime = (message.msg || message).mimetype || ''
         let messageType = message.mtype ? message.mtype.replace(/Message/gi, '') : mime.split('/')[0]
         const stream = await downloadContentFromMessage(message, messageType)
@@ -542,7 +542,7 @@ async function startMiku() {
     }
 
 
-    Miku.sendListMsg = (jid, text = '', footer = '', title = '', butText = '', sects = [], quoted) => {
+    Yaka.sendListMsg = (jid, text = '', footer = '', title = '', butText = '', sects = [], quoted) => {
         let sections = sects
         var listMes = {
             text: text,
@@ -551,12 +551,12 @@ async function startMiku() {
             buttonText: butText,
             sections
         }
-        Miku.sendMessage(jid, listMes, {
+        Yaka.sendMessage(jid, listMes, {
             quoted: quoted
         })
     }
 
-    Miku.getFile = async (PATH, save) => {
+    Yaka.getFile = async (PATH, save) => {
         let res
         let data = Buffer.isBuffer(PATH) ? PATH : /^data:.*?\/.*?;base64,/i.test(PATH) ? Buffer.from(PATH.split`,`[1], 'base64') : /^https?:\/\//.test(PATH) ? await (res = await getBuffer(PATH)) : fs.existsSync(PATH) ? (filename = PATH, fs.readFileSync(PATH)) : typeof PATH === 'string' ? PATH : Buffer.alloc(0)
         //if (!Buffer.isBuffer(data)) throw new TypeError('Result is not a buffer')
@@ -575,8 +575,8 @@ async function startMiku() {
         }
     }
 
-    Miku.sendFile = async (jid, PATH, fileName, quoted = {}, options = {}) => {
-        let types = await Miku.getFile(PATH, true)
+    Yaka.sendFile = async (jid, PATH, fileName, quoted = {}, options = {}) => {
+        let types = await Yaka.getFile(PATH, true)
         let {
             filename,
             size,
@@ -608,7 +608,7 @@ async function startMiku() {
         else if (/video/.test(mime)) type = 'video'
         else if (/audio/.test(mime)) type = 'audio'
         else type = 'document'
-        await Miku.sendMessage(jid, {
+        await Yaka.sendMessage(jid, {
             [type]: {
                 url: pathFile
             },
@@ -621,14 +621,14 @@ async function startMiku() {
         })
         return fs.promises.unlink(pathFile)
     }
-    Miku.parseMention = async (text) => {
+    Yaka.parseMention = async (text) => {
         return [...text.matchAll(/@([0-9]{5,16}|0)/g)].map(v => v[1] + '@s.whatsapp.net')
     }
 
-    return Miku
+    return Yaka
 }
 
-startMiku();
+startYaka();
 
 app.use("/", express.static(join(__dirname, "Page")));
 app.get("/qr", async (req, res) => {

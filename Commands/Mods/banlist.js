@@ -12,7 +12,7 @@ module.exports = {
     category: "core", 
     usage: "banlist", 
     start: async ( 
-      Miku, 
+      Yaka, 
       m, 
       { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator,modStatus} 
     ) => { 
@@ -26,14 +26,14 @@ module.exports = {
           });
         var mention = banlist.map(ban => ban.id)
         if(banlistString == "") banlistString = "No banned members found.";
-        return Miku.sendMessage( 
+        return Yaka.sendMessage( 
           m.from, 
           { text: `Current banned members: ${banlistString}`, mentions: mention }, 
           { quoted: m } 
         );
       } catch (err) { 
         console.log(err);
-        return Miku.sendMessage(m.from, { text: `An internal error occurred while fetching the banned list.` }, { quoted: m });
+        return Yaka.sendMessage(m.from, { text: `An internal error occurred while fetching the banned list.` }, { quoted: m });
       } 
     }, 
 }

@@ -4,7 +4,7 @@ module.exports = {
     desc: "Gives Help command list",
     react: "⭕",
     category: "Help Menu",
-    start: async (Miku, m, { prefix, pushName, args, commands, text }) => {
+    start: async (Yaka, m, { prefix, pushName, args, commands, text }) => {
   
       if (args[0]) {
         let data = []
@@ -24,7 +24,7 @@ module.exports = {
           buttons: buttonss,
           headerType: 1
         }
-        return Miku.sendMessage(m.from, buth, { quoted: m })
+        return Yaka.sendMessage(m.from, buth, { quoted: m })
       } else {
   
         let textHelpMenu = `Hello, I'm *${botName}* Bot..
@@ -70,7 +70,7 @@ module.exports = {
           headerType: 4,
         };
   
-        await Miku.sendMessage(m.from, buttonMessage, { quoted: m });
+        await Yaka.sendMessage(m.from, buttonMessage, { quoted: m });
       }
     }
   }

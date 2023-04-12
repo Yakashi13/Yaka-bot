@@ -9,20 +9,20 @@ module.exports = {
   category: "Search",
   usage: `q <Your line>`,
   react: "👀",
-  start: async (Miku, m, { text, prefix, args, pushName }) => {
+  start: async (Yaka, m, { text, prefix, args, pushName }) => {
     if (!args[0] && !m.quoted)
       return m.reply(`Please provide a text (Type or mention a message) !`)
       
         if (m.quoted){
           try {
-            userPfp = await Miku.profilePictureUrl(m.quoted.sender, "image");
+            userPfp = await Yaka.profilePictureUrl(m.quoted.sender, "image");
           } catch (e) {
             userPfp = botImage3;
           }
         }
         else{
           try {
-            userPfp = await Miku.profilePictureUrl(m.sender, "image");
+            userPfp = await Yaka.profilePictureUrl(m.sender, "image");
           } catch (e) {
             userPfp = botImage3;
           }
@@ -76,7 +76,7 @@ module.exports = {
     });
 
     const stickerBuffer2 = await stickerMess.toBuffer()
-    await Miku.sendMessage(m.from, {sticker:stickerBuffer2}, { quoted: m }).then((result) => {
+    await Yaka.sendMessage(m.from, {sticker:stickerBuffer2}, { quoted: m }).then((result) => {
       fs.unlinkSync("quote.png");
     }).catch((err) => {
       m.reply("An error occurd!")

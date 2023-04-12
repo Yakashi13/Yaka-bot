@@ -4,7 +4,7 @@ module.exports = {
   desc: "Gives all bot commands list",
   react: "🤖",
   category: "Core",
-  start: async (Miku, m, { prefix, pushName, NSFWstatus, args, commands, uptime }) => {
+  start: async (Yaka, m, { prefix, pushName, NSFWstatus, args, commands, uptime }) => {
       const pad = (s) => (s < 10 ? "0" : "") + s;
 
 
@@ -64,7 +64,7 @@ module.exports = {
     📶 𝚂𝚎𝚛𝚟𝚎𝚛 𝚄𝚙𝚝𝚒𝚖𝚎 | *${uptime}*
      ☞ 𝙊𝙬𝙣𝙚𝙙 𝘽𝙮 | 𝖄𝖆𝖐𝖆𝖘𝖍𝖎`;
      
-    await Miku.sendMessage(m.from, {
+    await Yaka.sendMessage(m.from, {
         video:{url: "https://media.tenor.com/7J5qrMbAAAYAAAPo/zero-two-dance.mp4"},
         caption:txt, 
         gifPlayback: true

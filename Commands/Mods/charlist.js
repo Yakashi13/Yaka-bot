@@ -5,7 +5,7 @@ module.exports = {
   category: "Mods",
   usage: "setchar 0/1/2/3/4/5/6/7",
   react: "🧝‍♀️",
-  start: async (Miku, m, { text, prefix, modStatus }) => {
+  start: async (Yaka, m, { text, prefix, modStatus }) => {
 
     let txt = `\n                  ＢＯＴ ＣＨＡＲＡＣＴＥＲ ＬＩＳＴ
        ━━━━━━━━━━━━━━━━━━━━━━
@@ -203,7 +203,7 @@ module.exports = {
       //sections,
     };*/
 
-    await Miku.sendMessage(m.from, {
+    await Yaka.sendMessage(m.from, {
         video:{ url: 'https://media.tenor.com/jWRFHjiNdkgAAAPo/anime-dance.mp4' },
         caption:txt, 
         gifPlayback: true

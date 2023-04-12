@@ -14,18 +14,18 @@ module.exports = {
   usage: "ban @user",
   react: "🍃",
   start: async (
-    Miku,
+    Yaka,
     m,
     { text, prefix, isBotAdmin, isAdmin, mentionByTag, metadata, pushName, isCreator, args, modStatus }
   ) => {
 
 
-    if (modStatus == "false" && !isCreator) return Miku.sendMessage(m.from, { text: 'Sorry, only my *Devs* and *Mods* can use this command !' }, { quoted: m });
+    if (modStatus == "false" && !isCreator) return Yaka.sendMessage(m.from, { text: 'Sorry, only my *Devs* and *Mods* can use this command !' }, { quoted: m });
 
     //var TaggedUser = mentionByTag[0];
 
     if (!text && !m.quoted) {
-      return Miku.sendMessage(
+      return Yaka.sendMessage(
         m.from,
         { text: `Please tag a user to *Ban*!` },
         { quoted: m }
@@ -58,25 +58,25 @@ module.exports = {
     if (banreason == undefined) {
       banreason = "No reason provided";
     }
-    //if (!banreason) return Miku.sendMessage(m.from, { text: `Please provide the reason for ban.\n\n${prefix}ban spamming` }, { quoted: m });
+    //if (!banreason) return Yaka.sendMessage(m.from, { text: `Please provide the reason for ban.\n\n${prefix}ban spamming` }, { quoted: m });
     var ownerlist = global.owner;
 
     let userId = (await mentionedUser) || m.msg.contextInfo.participant;
     try {
       mku.findOne({ id: userId }).then(async (user) => {
         if (!user) {
-          if (modStatus == "true" || ownerlist.includes(`${mentionedUser.split("@")[0]}`)) return Miku.sendMessage(m.from, { text: `@${mentionedUser.split("@")[0]} is a *Mod* and can't be banned !`, mentions: [mentionedUser] }, { quoted: m });
+          if (modStatus == "true" || ownerlist.includes(`${mentionedUser.split("@")[0]}`)) return Yaka.sendMessage(m.from, { text: `@${mentionedUser.split("@")[0]} is a *Mod* and can't be banned !`, mentions: [mentionedUser] }, { quoted: m });
           await mku.create({ id: userId, ban: true, reason: banreason, gcname: GroupName });
-          return Miku.sendMessage(
+          return Yaka.sendMessage(
             m.from,
             { text: `@${mentionedUser.split("@")[0]} has been *Banned* Successfully by *${pushName}*\n\n *Reason*: ${banreason}`, mentions: [mentionedUser] },
             { quoted: m }
           );
         } else {
-          if (modStatus == "true" || ownerlist.includes(`${mentionedUser.split("@")[0]}`)) return Miku.sendMessage(m.from, { text: `@${mentionedUser.split("@")[0]} is a *Mod* and can't be banned !`, mentions: [mentionedUser] }, { quoted: m });
-          if (user.ban == "true") return Miku.sendMessage(m.from, { text: `@${mentionedUser.split("@")[0]} is already *Banned* !`, mentions: [mentionedUser] }, { quoted: m });
+          if (modStatus == "true" || ownerlist.includes(`${mentionedUser.split("@")[0]}`)) return Yaka.sendMessage(m.from, { text: `@${mentionedUser.split("@")[0]} is a *Mod* and can't be banned !`, mentions: [mentionedUser] }, { quoted: m });
+          if (user.ban == "true") return Yaka.sendMessage(m.from, { text: `@${mentionedUser.split("@")[0]} is already *Banned* !`, mentions: [mentionedUser] }, { quoted: m });
           await mku.findOneAndUpdate({ id: userId }, { $set: { ban: true, reason: banreason, gcname: GroupName } }, { new: true });
-          return Miku.sendMessage(
+          return Yaka.sendMessage(
             m.from,
             { text: `@${mentionedUser.split("@")[0]} has been *Banned* Successfully by *${pushName}*\n\n *Reason*: ${banreason}`, mentions: [mentionedUser] },
             { quoted: m }
@@ -84,11 +84,11 @@ module.exports = {
         }
       }).catch(error => {
         console.log(error)
-        return Miku.sendMessage(m.from, { text: `An internal error occurred while banning the user.` }, { quoted: m });
+        return Yaka.sendMessage(m.from, { text: `An internal error occurred while banning the user.` }, { quoted: m });
       });
     } catch (err) {
       console.log(err);
-      return Miku.sendMessage(m.from, { text: `An internal error occurred while banning the user.` }, { quoted: m });
+      return Yaka.sendMessage(m.from, { text: `An internal error occurred while banning the user.` }, { quoted: m });
     }
   },
 };

@@ -9,9 +9,9 @@ module.exports = {
   category: "Media",
   usage: `play <song name>`,
   react: "🎶",
-  start: async (Miku, m, { text, prefix, args }) => {
+  start: async (Yaka, m, { text, prefix, args }) => {
     if (!args[0])
-      return Miku.sendMessage(
+      return Yaka.sendMessage(
         m.from,
         { text: `Please provide a song name to play !` },
         { quoted: m }
@@ -55,6 +55,6 @@ module.exports = {
       buttons: buttons,
       headerType: 4,
     };
-    Miku.sendMessage(m.from, buttonMessage, { quoted: m });
+    Yaka.sendMessage(m.from, buttonMessage, { quoted: m });
   },
 };

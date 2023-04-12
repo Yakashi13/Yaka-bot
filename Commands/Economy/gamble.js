@@ -16,7 +16,7 @@ const ty = eco.connect(config.mongodb);
     category: "Economy",  
     react: "💸", 
     start: async ( 
-        Miku, 
+        Yaka, 
         m, 
         { text, prefix, isBotAdmin, isAdmin, mentionByTag, pushName, isCreator} 
     ) => {
@@ -66,7 +66,7 @@ const ty = eco.connect(config.mongodb);
             type: 4
           };
         
-          await Miku.sendMessage(m.from, buttonMessage, { quoted: m });
+          await Yaka.sendMessage(m.from, buttonMessage, { quoted: m });
         }
          else{
          let deduct = await eco.deduct(user, cara, texts[0]);
@@ -90,7 +90,7 @@ const ty = eco.connect(config.mongodb);
             type: 4
           };
         
-          await Miku.sendMessage(m.from, buttonMessage, { quoted: m });
+          await Yaka.sendMessage(m.from, buttonMessage, { quoted: m });
         }
     }
 }

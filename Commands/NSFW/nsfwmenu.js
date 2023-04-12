@@ -5,7 +5,7 @@ module.exports = {
     category: "Nsfw",
     usage: `hmaid`,
     react: "👅",
-    start: async (Miku, m, { prefix, NSFWstatus }) => {
+    start: async (Yaka, m, { prefix, NSFWstatus }) => {
 
         if (NSFWstatus == "false") return m.reply(`This group is not NSFW enabled!\n\nTo configure NSFW mode, type:\n\n*${prefix}nsfw*`);
 
@@ -67,6 +67,6 @@ module.exports = {
       ╠ •
       | • ━━━━━━━━━━━━━━\n\n`
 
-        await Miku.sendMessage(m.from, { image: { url: botImage7 }, caption: ntext }, { quoted: m })
+        await Yaka.sendMessage(m.from, { image: { url: botImage7 }, caption: ntext }, { quoted: m })
     }
 }

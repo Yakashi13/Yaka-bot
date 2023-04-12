@@ -11,7 +11,7 @@ module.exports = {
     category: "Image Manipulation",
     usage: "trigger <reply to image / mention user>",
     react: "👹",
-    start: async (Miku, m, { text, prefix, quoted, pushName, mime, body }) => {
+    start: async (Yaka, m, { text, prefix, quoted, pushName, mime, body }) => {
       if (!m.quoted && !/image/.test(mime)) return m.reply('Please tag someone ! or mention a picture !');
   
   
@@ -20,7 +20,7 @@ module.exports = {
       }
       else if(m.quoted){
           try {
-              image = await Miku.profilePictureUrl(m.quoted.sender, "image");
+              image = await Yaka.profilePictureUrl(m.quoted.sender, "image");
             } catch (e) {
               return m.reply("User profile pic is Private ! or User doesn't have any profile picture !")
             }
@@ -75,7 +75,7 @@ module.exports = {
 
         if (!stickerm) return  m.reply(`I couldn't find an image to trigger.`);
     const stickerBuffer2 = await stickerm.toBuffer()
-    await Miku.sendMessage(m.from, {sticker:stickerBuffer2}, { quoted: m })
+    await Yaka.sendMessage(m.from, {sticker:stickerBuffer2}, { quoted: m })
 
     
     } catch (error) {

@@ -13,13 +13,13 @@ module.exports = {
     usage: "nsfw [on/off]",
     react: "🍃",
     start: async (
-      Miku,
+      Yaka,
       m,
       { args, isBotAdmin, isAdmin, isCreator, reply,prefix,pushName }
     ) => {
       
         if (!isAdmin)
-        return Miku.sendMessage(
+        return Yaka.sendMessage(
           m.from,
           {
             text: `*${pushName}* must be *Admin* to turn ON/OFF NSFW !`,
@@ -28,7 +28,7 @@ module.exports = {
         );
   
       let checkdata = await mk.findOne({ id: m.from });
-      var groupe = await Miku.groupMetadata(m.from);
+      var groupe = await Yaka.groupMetadata(m.from);
       var members = groupe["participants"];
       var mems = [];
       members.map(async (adm) => {
@@ -38,7 +38,7 @@ module.exports = {
       if (args[0] === "on") {
         if (!checkdata) {
           await new mk({ id: m.from, switchNSFW: "true" }).save();
-          Miku.sendMessage(
+          Yaka.sendMessage(
             m.from,
             {
               text: `*NSFW* has been *Activated* in this group!`,
@@ -46,20 +46,20 @@ module.exports = {
             },
             { quoted: m }
           );
-          return Miku.sendMessage(
+          return Yaka.sendMessage(
             m.from,
             { text: `*NSFW* has been *Activated* in this group!` },
             { quoted: m }
           );
         } else {
           if (checkdata.switchNSFW == "true")
-            return Miku.sendMessage(
+            return Yaka.sendMessage(
                 m.from,
                 { text: `*NSFW* is already *Activated* in this group !` },
                 { quoted: m }
               );
           await mk.updateOne({ id: m.from }, { switchNSFW: "true" });
-          return Miku.sendMessage(
+          return Yaka.sendMessage(
             m.from,
             { text: `*NSFW* has been *Activated* in this group!` },
             { quoted: m }
@@ -68,19 +68,19 @@ module.exports = {
       } else if (args[0] === "off") {
         if (!checkdata) {
           await new mk({ id: m.from, switchNSFW: "false" }).save();
-          return Miku.sendMessage(
+          return Yaka.sendMessage(
             m.from,
             { text: `*NSFW* has been *De-Activated* in this group !` },
             { quoted: m }
           );
         } else {
-          if (checkdata.switchNSFW == "false") return Miku.sendMessage(
+          if (checkdata.switchNSFW == "false") return Yaka.sendMessage(
             m.from,
             { text: `*NSFW* is already *De-Activated* in this group !` },
             { quoted: m }
           );
           await mk.updateOne({ id: m.from }, { switchNSFW: "false" });
-          return Miku.sendMessage(
+          return Yaka.sendMessage(
             m.from,
             { text: `*NSFW* has been *De-Activated* in this group !` },
             { quoted: m }
@@ -106,7 +106,7 @@ module.exports = {
           buttons: buttonsntilink,
           headerType: 4,
         };
-        await Miku.sendMessage(m.from, bmffg, { quoted: m });
+        await Yaka.sendMessage(m.from, bmffg, { quoted: m });
     }
   },
 };

@@ -9,15 +9,15 @@ module.exports = {
     category: 'Core',
     usage: 'stats',
     react: '📊',
-    start: async (Miku, m, { text, prefix, mentionByTag, pushName, isCreator, participants, modStatus, commands, store, from }) => {
+    start: async (Yaka, m, { text, prefix, mentionByTag, pushName, isCreator, participants, modStatus, commands, store, from }) => {
         try {
             if (!isCreator && modStatus === 'false') {
-                return Miku.sendMessage(m.from, { text: 'Sorry, only my *Owner* and *Mods* can use this command !' }, { quoted: m });
+                return Yaka.sendMessage(m.from, { text: 'Sorry, only my *Owner* and *Mods* can use this command !' }, { quoted: m });
             }
 
             const [modlist, FetchGC, totalUsers, sessionCount] = await Promise.all([
                 mku.find({ addedMods: 'true' }),
-                Miku.groupFetchAllParticipating(),
+                Yaka.groupFetchAllParticipating(),
                 mku.find({}),
                 sessionSchema.countDocuments(),
             ]);
@@ -28,11 +28,11 @@ module.exports = {
             const cmds = Array.from(commands.values()).filter(v => v.type !== 'hide').length;
 
             const statsText = generateStatsText(totalUsers.length, 2, groupIds.length, modIds.length, cmds, sessionCount, process.uptime());
-            return Miku.sendMessage(m.from, { text: statsText }, { quoted: m });
+            return Yaka.sendMessage(m.from, { text: statsText }, { quoted: m });
 
         } catch (error) {
             console.error('Error in stats command:', error);
-            return Miku.sendMessage(m.from, { text: 'An error occurred while fetching bot statistics.' }, { quoted: m });
+            return Yaka.sendMessage(m.from, { text: 'An error occurred while fetching bot statistics.' }, { quoted: m });
         }
     },
 };
