@@ -84,7 +84,7 @@ global.charID1 = {
 
 global.charID2 = {
   botName: "𝐏𝐨𝐰𝐞𝐫",
-  botVideo: "https://graph.org/file/1a8b961841a37ab1fdf07.mp4",
+  botVideo: "https://telegra.ph/file/ffe3d7795a4a0d5efffb1.mp4",
   botImage1: "https://wallpapercave.com/wp/wp11628561.jpg",
   botImage2: "https://wallpapercave.com/wp/wp11253602.jpg",
   botImage3: "https://wallpapercave.com/wp/wp11970943.png",
@@ -96,7 +96,7 @@ global.charID2 = {
 
 global.charID3 = {
   botName: "𝐇𝐢𝐧𝐚𝐭𝐚",
-  botVideo: "https://graph.org/file/553c0e8c84f83de7be17a.mp4",
+  botVideo: "https://telegra.ph/file/b69410cdb85c1afe0a00b.mp4",
   botImage1: "https://wallpapercave.com/wp/wp2598741.jpg",
   botImage2: "https://wallpapercave.com/wp/wp9177084.jpg",
   botImage3: "https://wallpapercave.com/wp/wp8526286.jpg",
@@ -120,7 +120,7 @@ global.charID4 = {
 
 global.charID5 = {
   botName: "𝐌𝐢𝐤𝐚𝐬𝐚",
-  botVideo: "https://graph.org/file/05c087ab479c5bfc711c4.mp4",
+  botVideo: "https://telegra.ph/file/8fb69bf06b82e839e94c9.mp4",
   botImage1: "https://wallpapercave.com/uwp/uwp2564410.jpeg",
   botImage2: "https://wallpapercave.com/wp/wp9257843.jpg",
   botImage3: "https://wallpapercave.com/wp/wp6281199.jpg",
@@ -132,7 +132,7 @@ global.charID5 = {
 
 global.charID6 = {
   botName: "𝐄𝐦𝐢𝐥𝐢𝐚",
-  botVideo: "https://graph.org/file/e9e2af846b74a2be41f00.mp4",
+  botVideo: "https://telegra.ph/file/326ad5c93250f313126ec.mp4",
   botImage1: "https://wallpapercave.com/uwp/uwp1074204.jpeg",
   botImage2: "https://wallpapercave.com/uwp/uwp1074206.jpeg",
   botImage3: "https://wallpapercave.com/uwp/uwp2505155.jpeg",
@@ -144,7 +144,7 @@ global.charID6 = {
 
 global.charID7 = {
   botName: "𝐀𝐲𝐚𝐧𝐞",
-  botVideo: "https://graph.org/file/ccdd56e4ae3d9f8f29217.mp4",
+  botVideo: "https://telegra.ph/file/facc9d6581ab7d1f255d6.mp4",
   botImage1: "https://i.pinimg.com/564x/a9/98/c8/a998c8653cd690080c2c2232355fadd2.jpg",
   botImage2: "https://i.pinimg.com/originals/1d/cb/09/1dcb091b56d89c7b501c8c850bbe6e76.jpg",
   botImage3: "https://i.pinimg.com/564x/be/0d/f3/be0df3a2aa21181b6431e13cfbe71793.jpg",
@@ -156,7 +156,7 @@ global.charID7 = {
 
 global.charID8 = {
   botName: "𝐘𝐨𝐭𝐬𝐮𝐛𝐚",
-  botVideo: "https://graph.org/file/3396267711b6535513739.mp4",
+  botVideo: "https://telegra.ph/file/2830c04dd4619986f74e6.mp4",
   botImage1: "https://wallpapercave.com/wp/wp9494921.png",
   botImage2: "https://wallpapercave.com/wp/wp8144247.jpg",
   botImage3: "https://wallpapercave.com/wp/wp9494776.jpg",
@@ -168,7 +168,7 @@ global.charID8 = {
 
 global.charID9 = {
   botName: "𝐌𝐚𝐢",
-  botVideo: "https://graph.org/file/1f4a55dfbc644464b9e5b.mp4",
+  botVideo: "https://telegra.ph/file/5126e5e77ee9c456f5977.mp4",
   botImage1: "https://wallpapercave.com/wp/wp8435260.png",
   botImage2: "https://images6.alphacoders.com/129/1292073.png",
   botImage3: "https://wallpapercave.com/wp/wp5233923.jpg",
@@ -192,7 +192,7 @@ global.charID10 = {
 
 global.charID11 = {
   botName: "𝐌𝐚𝐫𝐢𝐧",
-  botVideo: "https://graph.org/file/d7b443f0a7351db334220.mp4",
+  botVideo: "https://telegra.ph/file/290f37be82297f4100aed.mp4",
   botImage1: "https://wallpapercave.com/wp/wp10917529.jpg",
   botImage2: "https://wallpapercave.com/wp/wp10917592.jpg",
   botImage3: "https://wallpapercave.com/wp/wp10917602.jpg",
@@ -216,7 +216,7 @@ global.charID12 = {
 
 global.charID13 = {
   botName: "𝐌𝐚𝐤𝐢𝐦𝐚",
-  botVideo: "https://graph.org/file/208d811cf40c5e79b22a0.mp4",
+  botVideo: "https://telegra.ph/file/da8e10dc28d545fe115c4.mp4",
   botImage1: "https://images6.alphacoders.com/112/1126221.jpg",
   botImage2: "https://wallpapercave.com/wp/wp9666949.jpg",
   botImage3: "https://wallpapercave.com/uwp/uwp712486.jpeg",
@@ -228,7 +228,7 @@ global.charID13 = {
 
 global.charID14 = {
   botName: "𝐍𝐞𝐳𝐮𝐤𝐨",
-  botVideo: "https://graph.org/file/1cb81a4103caabb85db58.mp4",
+  botVideo: "https://telegra.ph/file/3aae7324efcb6c88e5479.mp4",
   botImage1: "https://wallpapercave.com/wp/wp9269166.jpg",
   botImage2: "https://wallpapercave.com/wp/wp5090922.jpg",
   botImage3: "https://wallpapercave.com/wp/wp4898429.jpg",
