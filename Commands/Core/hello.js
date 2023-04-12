@@ -41,7 +41,6 @@ module.exports = {
             return Miku.sendMessage(m.from, buth, { quoted: m })
         } else {
           
-
          let textHelpMenu = `| • ━━━━━━━━━━━━━━━━━━━━\n`
 
             textHelpMenu += `| • ${greeting} ~ ${pushName} -Kun ❤️‍🔥 !!\n`
@@ -69,14 +68,12 @@ module.exports = {
                     type: 1,
                 }*/
             ];
-            let buttonMessage = {
-                video: {url: botVideo},
-                caption: textHelpMenu,
-                footer: `_Uptime_ | *${uptime}*\n_Status_ | ${botName} ɪꜱ ꜱᴛᴀʙʟᴇ`,
-                headerType: 4,
-            };
-
-            await Miku.sendMessage(m.from, buttonMessage, { quoted: m });
-        }
-    }
+        await Miku.sendMessage(m.from, {
+        video:{url: botVideo},
+        caption:textHelpMenu, 
+        gifPlayback: true
+    },
+        {quoted:m})
+      }
+  }
 }
