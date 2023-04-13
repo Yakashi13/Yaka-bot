@@ -73,7 +73,7 @@ module.exports = {
       ╠ •🖼 ${prefix}ᴛʀᴀɴꜱꜰᴏʀᴍᴇʀ
       ╠ •🖼 ${prefix}ᴡᴀʟʟ
       ╠ •🖼 ${prefix}ᴡᴏʟꜰ
-      ╠ •
+      ╠ •🖼 ${prefix}ʙᴜʀɢᴇʀ
       | • ━━━━━━━━━━━━━━
     
     \n\n`
