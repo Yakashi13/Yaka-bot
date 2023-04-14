@@ -181,9 +181,9 @@ Join the <a href="https://chat.whatsapp.com/KLX59oSwhGWLCDNGshiwWv">Whatsapp</a>
     
  <img align="right" width="350" src="https://media.tenor.com/3754hXU1620AAAAC/roundtable-theroundtable.gif" alt="Coding gif" />
   
- ❤️ &emsp; [Eximinati](https://github.com/Eximinati) for helping with the codes.<br/><br/>
- ❤️ &emsp; [BigPapaX](https://github.com/BigpapaX) for helping with codes and trying new features.<br/><br/>
- ❤️ &emsp; [Atlas-MD](https://github.com/FantoX001/Atlas-MD) For Base.<br/><br/></br>
+ ❤️ &emsp; [Eximinati](https://github.com/Eximinati).<br/><br/>
+ ❤️ &emsp; [BigPapaX](https://github.com/BigpapaX).<br/><br/>
+ ❤️ &emsp; [Atlas-MD](https://github.com/FantoX001/Atlas-MD).<br/><br/></br>
  ❤️ &emsp; Ask me about anything [Here](https://github.com/Yakashi13/Yaka-bot/issues)
 
 </p>    
