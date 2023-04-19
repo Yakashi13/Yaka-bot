@@ -7,7 +7,7 @@ module.exports = {
     react: "🥵",
     category: "Weeb",
     start: async(Yaka, m,{pushName,prefix}) => {
-        let maids = await axios.get('https://neko-maid-api.onrender.com');  
+        let maids = await axios.get('https://zany-teal-alligator-suit.cyclic.app/maid');  
 
 var Button = [
       {
