@@ -4,7 +4,10 @@
   </a>
 
 <h1 align="center"> Y A K A <sup>BOT
-</h1>
+</h1> 
+<br> 
+<h1 align="center"> ⚠️⚠️⚠️ ATTENTION! - THE BOT IS OUTDATED DUE TO BUSY OWNER AND MODS. SO PLEASE, IF YOU PLAN TO USE THE BOT, MAKE SURE TO UPDATE THE MODULES AND DEPLOY SITES. ⚠️⚠️⚠️ </h1>
+
 
 <p align="center"> 
     <b>Greetings traveller... <br>
